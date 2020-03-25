@@ -12,13 +12,13 @@ However, we thought that extending existing OpenID specs would be needed to fulf
 The core specification for OpenID includes the main elements that will help fully adoption by the industry, however and by design, in order to support many use cases it's a very open specification subject to individual implementations.
 That led us to the conclusion that we should create our own profile restricting less secure elements and flows within OpenID Core, but also to produce a set of extensions to cover specific features for identity and verified data sharing.
 
-- Read specifications [here](https://gruposantander.github.io/digital-trust-docs/dtp-auth-code-00.html)
+- Read specifications [here](https://gruposantander.github.io/digital-trust-docs/auth_code/dtp-auth-code-00.html)
 
 ### Assertion Claims
 In order to provide the information that is needed by the RP, and the same time avoid unnecessary leak of information, the answer to some claims may be only a boolean verifying the claim instead of returning the actual claim.  
 By providing a rich syntax for creating such assertions, it will be possible to accommodate a variety of use cases, as far as we also provide sufficient explanation to end user when providing the consent to share the assertion.
 
-- Read specifications [here](https://gruposantander.github.io/digital-trust-docs/claim-assertions-00.html)
+- Read specifications [here](https://gruposantander.github.io/digital-trust-docs/assertions/claim-assertions-00.html)
 
 ### Level of Assurance
 Within current OpenID specifications, when returning claims to the RP, with the exception of email and telephone, there is no a way to declare and differentiate those claims that have been validated by the OP following their current customer due diligence or onboarding processes.  
