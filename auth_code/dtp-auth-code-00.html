@@ -10,7 +10,7 @@
 <meta content="Jorge Oliva Fernandez" name="author">
 <meta content="Davide Bianchini" name="author">
 <meta content="
-       This document defines the Digital Trust Protocol authorization code flow, which allows End-Users share verified information with Clients in a secure way using OIDC and OAuth 2.0 protocols. 
+       This document defines the Digital Trust Protocol authorization code flow, which allows End-Users to share verified information with Clients in a secure way using OIDC and OAuth 2.0 protocols. 
     " name="description">
 <meta content="xml2rfc 2.40.1" name="generator">
 <meta content="security" name="keyword">
@@ -1120,7 +1120,7 @@ tr:nth-child(2n+1) > td {
 <h1 id="title">Digital Trust Protocol Authorization Code Flow</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document defines the Digital Trust Protocol authorization code flow, which allows End-Users share verified information with Clients in a secure way using OIDC and OAuth 2.0 protocols.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document defines the Digital Trust Protocol authorization code flow, which allows End-Users to share verified information with Clients in a secure way using OIDC and OAuth 2.0 protocols.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <div id="toc">
 <section id="section-toc.1">
@@ -1307,11 +1307,11 @@ tr:nth-child(2n+1) > td {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Privacy is one of the most important things of our lives, thanks to the grown of online services we have improved our day to day, but we are losing our privacy, while services are relying in non trusted data that allows the creation of fake identities in the internet.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Privacy is one of the most important things in our lives and thanks to the growth of online services, we have began to lose direct control of our own data. Many services rely on data from untrusted sources, leading to the creation and usage of fake identities online.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">Most of the services require private information that is introduced by the user, making users spread the same details around the different service providers while not allowing these service providers to verify the information filled by customers. We believe that this is inefficient for both parties.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">We want to define a way that will help customers to share the minimum required level of details while allow services to get rich and trusted information from the customer, preserving and avoiding the risk of storing sensitive information.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">OIDC provides a mechanism to verify identity of the End-User based on authentication performed by an Auth Server and get Basic profile information. We would like to use this mechanism in order to provide certified information by a secure communication protocol, to achieve this we will use OpenId as base.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">The specification depicted in this document covers only the security profile for Digital Trust Protocol, other extensions will also complement the full protocol specifications.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-3">We want to define a way that will help customers to share the minimum required level of details whilst allowing services to get rich and trusted information. Taking advantage of the assertion claims proccess will give third parties the option of not having to handle sensitive data storage.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">OIDC provides a mechanism to verify the identity of the End-User based on authentication performed by an Auth Server and retrieval of Basic profile information. We would like to use this mechanism in order to provide certified information via a secure communication protocol, therefore, we chose OpenId as base.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">The specification depicted in this document covers only the security profile for Digital Trust Protocol. Any other extensions will also complement the full protocol specifications.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <div id="notational-conventions">
 <section id="section-1.1">
         <h3 id="name-notational-conventions">
@@ -1342,7 +1342,7 @@ tr:nth-child(2n+1) > td {
       <h2 id="name-dtp-authorization-code-flow">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-dtp-authorization-code-flow" class="section-name selfRef">DTP Authorization Code flow</a>
       </h2>
-<p id="section-2-1">This section describes how to perform a customer information share using the Authorization Code Flow, this flow is based on "Authentication using the Authorization Code Flow" Section 3.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> specification with some add ons and changes to fulfil our requirements, with customer privacy control and security best practices.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">This section describes how to perform a customer information share using the Authorization Code Flow, this flow is based on the "Authentication using the Authorization Code Flow" Section 3.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> specification. We have made some add ons and changes to fulfil our requirements, with focus on customer privacy control and security best practices.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <div id="authorization-code-flow-steps">
 <section id="section-2.1">
         <h3 id="name-authorization-code-flow-ste">
@@ -1567,22 +1567,22 @@ Country: US
           </div>
 <figcaption><a href="#figure-1" class="selfRef">Figure 1</a></figcaption></figure>
 <p id="section-2.1-3"><a href="http://www.plantuml.com/plantuml/uml/XLFHRjiw37ttL_0n1b8aj_Tbo9QXGHPi7OhPQBBrCL0bDXPgIvb4T-s-nj_YBnlbHe6zP9kV3F6SG_AGlF8a7DLLcNWfIeHAFCERwHH-Q4L58YHP1ylQawtG9SdAaAONkCsFlrcUy3UVynlSuRtNX9F5VW_pUPBmqyNx8tisY0l_gCqE7bXU2H994c5COQqPoC9QZv0x-wGLkfZZ5h_Nw2dglsDqnkYL9t5VQbz0LLCjIjZSh6C176-RjicpzGOcscZIWl12r5HOftyYZ6IfqH18XmeDHqi_1dV8y_bkdIP9bhVD8TCtKMh50h1W0LXsrBE0A74-k9PsZnxi0r1nXC98UAY4OOHrBoai2vIFeMifJCG4l4TGI4ANVY2-TDZBkwsTXj7Nsoyfi29ubiJGJg2mBMqJNFwqsUHmEVslJngt3JxljKE_rQRp_JYRXPIu9n-dS7RA_qyluSPAGTgQ6KoEFh-DHb-hSJzTEfnzblT9V-PaUKHdzoIqwKyCQi_BrIT4_606hzAQfNsOHiYWj4CPNUWfjaslojUbWrct0a511hNHZTrfavxWPWVNG5hZ6GqJM6F9MK0RNl-gCmh8WY-4mmaib88FWiHnzVkrTrECIXpuc_V3TfWg2CVCLGYZQ727l0XlwUa9VbnjO03S1k11AGm-0jlcANhQnUAnRkmZ6hWsX4uMmkpmjxDjct_SBRmUBGMTitTwjhvXtpid3BtiSNOA7Lxsqvd3ZHrgjJqK4TRBEjw9LJfc7wL4xoSE7npw8askqAYwAdy1">Diagram Source Here</a><a href="#section-2.1-3" class="pilcrow">¶</a></p>
-<p id="section-2.1-4">The Authorization Code Flow goes through the following steps: (separated in groups as in the flow diagram)<a href="#section-2.1-4" class="pilcrow">¶</a></p>
+<p id="section-2.1-4">The Authorization Code Flow follows the steps outlined below: (separated in groups as in the flow diagram)<a href="#section-2.1-4" class="pilcrow">¶</a></p>
 <div id="rp-website-app-flow-steps">
 <section id="section-2.1.1">
           <h4 id="name-rp-website-app-flow-steps">
 <a href="#section-2.1.1" class="section-number selfRef">2.1.1. </a><a href="#name-rp-website-app-flow-steps" class="section-name selfRef">RP website/APP Flow Steps</a>
           </h4>
-<p id="section-2.1.1-1">This is the start of the process, can be initiated and presented to the customer in many different ways but common steps are:<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1.1-1">The start of the process can be initiated and presented to the customer in different ways, but common steps are:<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.1.1-2">
             <li id="section-2.1.1-2.1">
-              <p id="section-2.1.1-2.1.1">Customer is navigating in a RP website or using an RP app.<a href="#section-2.1.1-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.1-2.1.1">Customer is going through a journey in an RP website or app.<a href="#section-2.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.1-2.2">
               <p id="section-2.1.1-2.2.1">RP website/app asks for a certified data to the customer and offers the different providers that are integrated in the RP implementation.<a href="#section-2.1.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.1-2.3">
-              <p id="section-2.1.1-2.3.1">Customer selects a provider to provide the requested information.<a href="#section-2.1.1-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.1-2.3.1">Customer selects a provider to retrieve the requested information.<a href="#section-2.1.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 </section>
@@ -1595,22 +1595,22 @@ Country: US
 <p id="section-2.1.2-1">Once the RP gets the provider selected by the customer the steps to initiate the information interchange are:<a href="#section-2.1.2-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.1.2-2">
             <li id="section-2.1.2-2.1">
-              <p id="section-2.1.2-2.1.1">It is RECOMMENDED that RP and OP establish a mutual TLS connection, if not possible communication with the Authorization Server MUST utilize TLS. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-2.1.2-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.2-2.1.1">It is RECOMMENDED that RP and OP establish a mutual TLS connection. If a mutual TLS connection is not possible, then communication with the Authorization Server MUST utilize TLS. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-2.1.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.2-2.2">
-              <p id="section-2.1.2-2.2.1">RP sends the request to the Initiate Authorization endpoint in OP to initiate the process, the auhtorization data is sent inside a request object as described in section <a href="#initi-auth-req">Initiate Authorization Request</a> of this specification.<a href="#section-2.1.2-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.2-2.2.1">RP sends the request to the Initiate Authorization endpoint in the OP to initiate the process and the authorization data is sent inside a request object as described in section <a href="#initi-auth-req">Initiate Authorization Request</a> of this specification.<a href="#section-2.1.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.2-2.3">
-              <p id="section-2.1.2-2.3.1">OP MUST validate that the client is correctly authenticate and MUST validate the request object as described in Section 3.1.2.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>, additionally MUST validate the <code>request</code> JWS following Section 6.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> specification.<a href="#section-2.1.2-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.2-2.3.1">OP MUST validate that the client is correctly authenticated and MUST validate the request object as described in Section 3.1.2.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. Additionally the OP MUST validate the <code>request</code> JWS following Section 6.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> specification.<a href="#section-2.1.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.2-2.4">
-              <p id="section-2.1.2-2.4.1">If validations are correct the OP MUST store the JWS and generate a <code>request_uri</code> that identify where is located. As described in <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span> specification.<a href="#section-2.1.2-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.2-2.4.1">If validations are correct, the OP MUST store the JWS and generate a <code>request_uri</code> that identifies where it is located. This is as described in the <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span> specification.<a href="#section-2.1.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.2-2.5">
               <p id="section-2.1.2-2.5.1">OP will return to the RP a response with the format described in section <a href="#succ-init-auth-resp">Successful Initiate Authorization Response</a> of this specification.<a href="#section-2.1.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.2-2.6">
-              <p id="section-2.1.2-2.6.1">In case of any error OP will return an error response as described in section <a href="#err-init-auth-resp">Initiate Authorization Error Response</a> of this specification.<a href="#section-2.1.2-2.6.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.2-2.6.1">In case of any error, the OP will return an error response as described in section <a href="#err-init-auth-resp">Initiate Authorization Error Response</a> of this specification.<a href="#section-2.1.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 </section>
@@ -1620,37 +1620,37 @@ Country: US
           <h4 id="name-customer-accepts-request-fl">
 <a href="#section-2.1.3" class="section-number selfRef">2.1.3. </a><a href="#name-customer-accepts-request-fl" class="section-name selfRef">Customer Accepts Request Flow Steps</a>
           </h4>
-<p id="section-2.1.3-1">Once the OP has validated the request JWS from RP, the user authentication and consent flow continues as follow:<a href="#section-2.1.3-1" class="pilcrow">¶</a></p>
+<p id="section-2.1.3-1">Once the OP has validated the request JWS from the RP, the user authentication and consent flow continues as follows:<a href="#section-2.1.3-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.1.3-2">
             <li id="section-2.1.3-2.1">
-              <p id="section-2.1.3-2.1.1">RP responds to the user with a HTTP 302 redirect response as described in Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>, containing in Location header the url with the needed params to make an authentication Request to OP. An example of this response can be found in <a href="#auth-redirect-resp">Authorize redirect response</a><a href="#section-2.1.3-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.1.1">RP responds to the user with a HTTP 302 redirect response as described in Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. Contained in the Location header, is the url with the needed params to make an authentication Request to the OP. An example of this response can be found in <a href="#auth-redirect-resp">Authorize redirect response</a><a href="#section-2.1.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.2">
-              <p id="section-2.1.3-2.2.1">The customer User Agent follows the redirection and make an Authentication Request to the Authorization Endpoint in OP. Example of the request: <a href="#auth-req">Authentication request</a>.<a href="#section-2.1.3-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.2.1">The customer User Agent follows the redirection and makes a new Authentication Request to the Authorization Endpoint in the OP. Example of the request: <a href="#auth-req">Authentication request</a>.<a href="#section-2.1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.3">
-              <p id="section-2.1.3-2.3.1">OP MUST obtain the request JWS from storage using the <code>request_uri</code> parameter, OP MUST check that <code>request_uri</code> is still valid and not expired.<a href="#section-2.1.3-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.3.1">OP MUST obtain the request JWS from storage using the <code>request_uri</code> parameter. OP MUST check that <code>request_uri</code> is still valid and has not expired.<a href="#section-2.1.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.4">
-              <p id="section-2.1.3-2.4.1">OP then MUST validate the request as described in Section 3.1.2.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>, OP MUST be aware that even if the <code>request_uri</code> parameter is used, parameters MAY also be passed using the OAuth 2.0 request syntax, parameter values contained in the referenced JWT supersede those passed using the OAuth 2.0 request syntax, as described in Section 6.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.3-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.4.1">OP MUST then validate the request as described in Section 3.1.2.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. OP MUST be aware that even if the <code>request_uri</code> parameter is used, parameters MAY also be passed using the OAuth 2.0 request syntax. This occurs when the parameter values contained in the referenced JWT supersede those passed using the OAuth 2.0 request syntax, as described in Section 6.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.5">
-              <p id="section-2.1.3-2.5.1">If the request is valid, the OP attempts to Authenticate the End-User or determines whether the End-User is Authenticated, the way to authenticate the user (user, password, 2FA, cookies... ) is out of the scope of this specification. The normal approach is to present the user one or more pages (steps auth) to authenticate the user. More details in Section 3.1.2.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.3-2.5.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.5.1">If the request is valid, the OP attempts to Authenticate the End-User or determine whether the End-User is Authenticated. The way to authenticate the user (user, password, 2FA, cookies... ) is out of the scope of this specification. The normal approach is to present the user one or more pages (steps auth) to allow them to authenticate. More details in Section 3.1.2.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.3-2.5.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.6">
-              <p id="section-2.1.3-2.6.1">Once customer is authenticated, the Authorization Server MUST obtain an authorization decision before releasing information to the RP, as described in Section 3.1.2.4. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. The OP will present an interactive dialog to the customer explaining what are the claims requested by the RP, RP MAY show the data that is going to be share in order to help End-user to take a decision, in this case please follow the security recommendations described in section <a href="#security-considerations">Security Considetarions</a>. The customer then accepts or selects information to share with the RP.<a href="#section-2.1.3-2.6.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.6.1">Once the customer is authenticated, the Authorization Server MUST obtain an authorization decision before releasing information to the RP, as described in Section 3.1.2.4. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. The OP will present an interactive dialog to the customer explaining what are the claims requested by the RP. The RP MAY show the data that is going to be shared in order to help the End-user to take a decision and in this case, please follow the security recommendations described in section <a href="#security-considerations">Security Considetarions</a>. The customer then accepts or selects information to share with the RP.<a href="#section-2.1.3-2.6.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.7">
-              <p id="section-2.1.3-2.7.1">Once customer consents the request, OP will store the consent information (which claims has been consented) and generates an authorization code.<a href="#section-2.1.3-2.7.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.7.1">Once customer gives their consent to the request, the OP will store the information (which of the claims have been consented) and generate an authorization code.<a href="#section-2.1.3-2.7.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.8">
-              <p id="section-2.1.3-2.8.1">OP responds to the user with a HTTP 302 redirect response, with Location header pointing to the <code>redirect_uri</code> and as query parameter the generated <code>code</code>, as described in Section 3.1.2.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. Example of the response: <a href="#succ-auth-resp">Successful Authorize response</a>.<a href="#section-2.1.3-2.8.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.8.1">OP responds to the user with a HTTP 302 redirect response, with Location header pointing to the <code>redirect_uri</code> and the generated <code>code</code> passed as a query parameter, as described in Section 3.1.2.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. Example of the response: <a href="#succ-auth-resp">Successful Authorize response</a>.<a href="#section-2.1.3-2.8.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.9">
-              <p id="section-2.1.3-2.9.1">In case of any error OP will return an error response as described in section <a href="#err-resp">Error Response</a>, and will use the error codes from Section 3.1.2.6 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.3-2.9.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.9.1">In case of any error, the OP will return an error response as described in section <a href="#err-resp">Error Response</a>, and will use the error codes from Section 3.1.2.6 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.3-2.9.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.10">
-              <p id="section-2.1.3-2.10.1">The customer User Agent follows the redirection and makes a request to the RP callback uri, providing the authorization code in the query string, example of the request: <a href="#callback-req">Callback RP request</a>.<a href="#section-2.1.3-2.10.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.3-2.10.1">The customer User Agent follows the redirection and makes a request to the RP callback uri, providing the authorization code in the query string. An example of the request is: <a href="#callback-req">Callback RP request</a>.<a href="#section-2.1.3-2.10.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.3-2.11">
               <p id="section-2.1.3-2.11.1">RP MUST validate the authorization response following Section 3.1.2.7. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> specification.<a href="#section-2.1.3-2.11.1" class="pilcrow">¶</a></p>
@@ -2487,33 +2487,24 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 <a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
-<dt id="URN">[URN]</dt>
-<dd>
-<span class="refAuthor">Moats, R.</span>, <span class="refTitle">"Uniform Resource Names"</span>, <time datetime="1997-05">May 1997</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2141">https://tools.ietf.org/html/rfc2141</a>&gt;</span>. </dd>
-<dt id="OAuth.MTLS">[OAuth.MTLS]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens"</span>, <time datetime="2018-01">January 2018</time>, <span>&lt;<a href="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html</a>&gt;</span>. </dd>
-<dt id="JWS">[JWS]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Signature (JWS)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7515">https://tools.ietf.org/html/rfc7515</a>&gt;</span>. </dd>
-<dt id="RFC2616">[RFC2616]</dt>
-<dd>
-<span class="refAuthor">Fielding, R.</span>, <span class="refTitle">"Hypertext Transfer Protocol -- HTTP/1.1"</span>, <time datetime="1999-06">June 1999</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2616">https://tools.ietf.org/html/rfc2616</a>&gt;</span>. </dd>
 <dt id="JWT">[JWT]</dt>
 <dd>
 <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a>&gt;</span>. </dd>
-<dt id="OAuth.Multiple.Responses">[OAuth.Multiple.Responses]</dt>
+<dt id="JWS">[JWS]</dt>
 <dd>
-<span class="refAuthor">de Medeiros, B.</span><span class="refAuthor">, Scurtescu, M.</span><span class="refAuthor">, Tarjan, P.</span><span class="refAuthor">, and M. B. Jones</span>, <span class="refTitle">"OAuth 2.0 Multiple Response Type Encoding Practices"</span>, <time datetime="2014-02-25">25 February 2014</time>, <span>&lt;<a href="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html</a>&gt;</span>. </dd>
-<dt id="OIDC">[OIDC]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
-<dt id="OAuth.PAR">[OAuth.PAR]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, Tonge, D.</span><span class="refAuthor">, and F. Skokan</span>, <span class="refTitle">"OAuth 2.0 Pushed Authorization Requests draft-lodderstedt-oauth-par-01"</span>, <time datetime="2019-11-02">2 November 2019</time>, <span>&lt;<a href="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01</a>&gt;</span>. </dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Signature (JWS)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7515">https://tools.ietf.org/html/rfc7515</a>&gt;</span>. </dd>
 <dt id="RFC8417">[RFC8417]</dt>
 <dd>
 <span class="refAuthor">Hunt, Ed., P.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, Denniss, W.</span><span class="refAuthor">, and M. Ansari</span>, <span class="refTitle">"Security Event Token (SET)"</span>, <time datetime="2018-07">July 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8417">https://www.rfc-editor.org/info/rfc8417</a>&gt;</span>. </dd>
+<dt id="OAuth.MTLS">[OAuth.MTLS]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens"</span>, <time datetime="2018-01">January 2018</time>, <span>&lt;<a href="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html</a>&gt;</span>. </dd>
+<dt id="OAuth.PAR">[OAuth.PAR]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, Tonge, D.</span><span class="refAuthor">, and F. Skokan</span>, <span class="refTitle">"OAuth 2.0 Pushed Authorization Requests draft-lodderstedt-oauth-par-01"</span>, <time datetime="2019-11-02">2 November 2019</time>, <span>&lt;<a href="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01</a>&gt;</span>. </dd>
+<dt id="URN">[URN]</dt>
+<dd>
+<span class="refAuthor">Moats, R.</span>, <span class="refTitle">"Uniform Resource Names"</span>, <time datetime="1997-05">May 1997</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2141">https://tools.ietf.org/html/rfc2141</a>&gt;</span>. </dd>
 <dt id="OAuth.NativeApps">[OAuth.NativeApps]</dt>
 <dd>
 <span class="refAuthor">Denniss, W.</span><span class="refAuthor"> and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 for Native Apps"</span>, <time datetime="2017-10">October 2017</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc8252">https://tools.ietf.org/html/rfc8252</a>&gt;</span>. </dd>
@@ -2523,6 +2514,15 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 <dt id="OAuth2.0">[OAuth2.0]</dt>
 <dd>
 <span class="refAuthor">Hardt, C.</span>, <span class="refTitle">"The OAuth 2.0 Authorization Framework"</span>, <time datetime="2012-10">October 2012</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>&gt;</span>. </dd>
+<dt id="RFC2616">[RFC2616]</dt>
+<dd>
+<span class="refAuthor">Fielding, R.</span>, <span class="refTitle">"Hypertext Transfer Protocol -- HTTP/1.1"</span>, <time datetime="1999-06">June 1999</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2616">https://tools.ietf.org/html/rfc2616</a>&gt;</span>. </dd>
+<dt id="OAuth.Multiple.Responses">[OAuth.Multiple.Responses]</dt>
+<dd>
+<span class="refAuthor">de Medeiros, B.</span><span class="refAuthor">, Scurtescu, M.</span><span class="refAuthor">, Tarjan, P.</span><span class="refAuthor">, and M. B. Jones</span>, <span class="refTitle">"OAuth 2.0 Multiple Response Type Encoding Practices"</span>, <time datetime="2014-02-25">25 February 2014</time>, <span>&lt;<a href="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html</a>&gt;</span>. </dd>
+<dt id="OIDC">[OIDC]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
 </dl>
 </section>
 <div id="iana-considerations">
@@ -2556,23 +2556,8 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
       <h2 id="name-notices">
 <a href="#section-appendix.b" class="section-number selfRef">Appendix B. </a><a href="#name-notices" class="section-name selfRef">Notices</a>
       </h2>
-<p id="section-appendix.b-1">MIT License<a href="#section-appendix.b-1" class="pilcrow">¶</a></p>
-<p id="section-appendix.b-2">Copyright (c) 2020 Grupo Santander<a href="#section-appendix.b-2" class="pilcrow">¶</a></p>
-<p id="section-appendix.b-3">Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:<a href="#section-appendix.b-3" class="pilcrow">¶</a></p>
-<p id="section-appendix.b-4">The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.<a href="#section-appendix.b-4" class="pilcrow">¶</a></p>
-<p id="section-appendix.b-5">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.<a href="#section-appendix.b-5" class="pilcrow">¶</a></p>
+<p id="section-appendix.b-1">Copyright (c) 2020 Grupo Santander<a href="#section-appendix.b-1" class="pilcrow">¶</a></p>
+<p id="section-appendix.b-2">We intent to release this especification under MIT license, pending internal process.<a href="#section-appendix.b-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="document-history">

@@ -25,7 +25,7 @@
 <keyword>trust</keyword>
 
 <abstract>
-<t>This document defines the Digital Trust Protocol authorization code flow, which allows End-Users share verified information with Clients in a secure way using OIDC and OAuth 2.0 protocols.</t>
+<t>This document defines the Digital Trust Protocol authorization code flow, which allows End-Users to share verified information with Clients in a secure way using OIDC and OAuth 2.0 protocols.</t>
 </abstract>
 
 </front>
@@ -33,11 +33,11 @@
 <middle>
 
 <section anchor="Introduction"><name>Introduction</name>
-<t>Privacy is one of the most important things of our lives, thanks to the grown of online services we have improved our day to day, but we are losing our privacy, while services are relying in non trusted data that allows the creation of fake identities in the internet.</t>
+<t>Privacy is one of the most important things in our lives and thanks to the growth of online services, we have began to lose direct control of our own data. Many services rely on data from untrusted sources, leading to the creation and usage of fake identities online.</t>
 <t>Most of the services require private information that is introduced by the user, making users spread the same details around the different service providers while not allowing these service providers to verify the information filled by customers. We believe that this is inefficient for both parties.</t>
-<t>We want to define a way that will help customers to share the minimum required level of details while allow services to get rich and trusted information from the customer, preserving and avoiding the risk of storing sensitive information.</t>
-<t>OIDC provides a mechanism to verify identity of the End-User based on authentication performed by an Auth Server and get Basic profile information. We would like to use this mechanism in order to provide certified information by a secure communication protocol, to achieve this we will use OpenId as base.</t>
-<t>The specification depicted in this document covers only the security profile for Digital Trust Protocol, other extensions will also complement the full protocol specifications.</t>
+<t>We want to define a way that will help customers to share the minimum required level of details whilst allowing services to get rich and trusted information. Taking advantage of the assertion claims proccess will give third parties the option of not having to handle sensitive data storage.</t>
+<t>OIDC provides a mechanism to verify the identity of the End-User based on authentication performed by an Auth Server and retrieval of Basic profile information. We would like to use this mechanism in order to provide certified information via a secure communication protocol, therefore, we chose OpenId as base.</t>
+<t>The specification depicted in this document covers only the security profile for Digital Trust Protocol. Any other extensions will also complement the full protocol specifications.</t>
 
 <section anchor="notational-conventions"><name>Notational conventions</name>
 <t>The key words &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;MAY&quot;, and &quot;CAN&quot; in this document are to be interpreted as described in &quot;Key words for use in RFCs to Indicate Requirement Levels&quot; <xref target="RFC2119"></xref>. These key words are not used as dictionary terms such that any occurrence of them shall be interpreted as key words and are not to be interpreted with their natural language meanings</t>
@@ -56,23 +56,23 @@
 </section>
 
 <section anchor="dtp-authorization-code-flow"><name>DTP Authorization Code flow</name>
-<t>This section describes how to perform a customer information share using the Authorization Code Flow, this flow is based on &quot;Authentication using the Authorization Code Flow&quot; Section 3.1 of <xref target="OIDC"></xref> specification with some add ons and changes to fulfil our requirements, with customer privacy control and security best practices.</t>
+<t>This section describes how to perform a customer information share using the Authorization Code Flow, this flow is based on the &quot;Authentication using the Authorization Code Flow&quot; Section 3.1 of <xref target="OIDC"></xref> specification. We have made some add ons and changes to fulfil our requirements, with focus on customer privacy control and security best practices.</t>
 
 <section anchor="authorization-code-flow-steps"><name>Authorization Code Flow Steps</name>
 <t>These steps of the flow are illustrated in the following diagram:</t>
 <figure><artwork src="DiagramRFC.svg" type="svg" name="Diagram"/></figure>
 <t><eref target="http://www.plantuml.com/plantuml/uml/XLFHRjiw37ttL_0n1b8aj_Tbo9QXGHPi7OhPQBBrCL0bDXPgIvb4T-s-nj_YBnlbHe6zP9kV3F6SG_AGlF8a7DLLcNWfIeHAFCERwHH-Q4L58YHP1ylQawtG9SdAaAONkCsFlrcUy3UVynlSuRtNX9F5VW_pUPBmqyNx8tisY0l_gCqE7bXU2H994c5COQqPoC9QZv0x-wGLkfZZ5h_Nw2dglsDqnkYL9t5VQbz0LLCjIjZSh6C176-RjicpzGOcscZIWl12r5HOftyYZ6IfqH18XmeDHqi_1dV8y_bkdIP9bhVD8TCtKMh50h1W0LXsrBE0A74-k9PsZnxi0r1nXC98UAY4OOHrBoai2vIFeMifJCG4l4TGI4ANVY2-TDZBkwsTXj7Nsoyfi29ubiJGJg2mBMqJNFwqsUHmEVslJngt3JxljKE_rQRp_JYRXPIu9n-dS7RA_qyluSPAGTgQ6KoEFh-DHb-hSJzTEfnzblT9V-PaUKHdzoIqwKyCQi_BrIT4_606hzAQfNsOHiYWj4CPNUWfjaslojUbWrct0a511hNHZTrfavxWPWVNG5hZ6GqJM6F9MK0RNl-gCmh8WY-4mmaib88FWiHnzVkrTrECIXpuc_V3TfWg2CVCLGYZQ727l0XlwUa9VbnjO03S1k11AGm-0jlcANhQnUAnRkmZ6hWsX4uMmkpmjxDjct_SBRmUBGMTitTwjhvXtpid3BtiSNOA7Lxsqvd3ZHrgjJqK4TRBEjw9LJfc7wL4xoSE7npw8askqAYwAdy1">Diagram Source Here</eref></t>
-<t>The Authorization Code Flow goes through the following steps: (separated in groups as in the flow diagram)</t>
+<t>The Authorization Code Flow follows the steps outlined below: (separated in groups as in the flow diagram)</t>
 
 <section anchor="rp-website-app-flow-steps"><name>RP website/APP Flow Steps</name>
-<t>This is the start of the process, can be initiated and presented to the customer in many different ways but common steps are:</t>
+<t>The start of the process can be initiated and presented to the customer in different ways, but common steps are:</t>
 
 <ol>
-<li><t>Customer is navigating in a RP website or using an RP app.</t>
+<li><t>Customer is going through a journey in an RP website or app.</t>
 </li>
 <li><t>RP website/app asks for a certified data to the customer and offers the different providers that are integrated in the RP implementation.</t>
 </li>
-<li><t>Customer selects a provider to provide the requested information.</t>
+<li><t>Customer selects a provider to retrieve the requested information.</t>
 </li>
 </ol>
 </section>
@@ -81,44 +81,44 @@
 <t>Once the RP gets the provider selected by the customer the steps to initiate the information interchange are:</t>
 
 <ol>
-<li><t>It is RECOMMENDED that RP and OP establish a mutual TLS connection, if not possible communication with the Authorization Server MUST utilize TLS. See Section 16.17 of <xref target="OIDC"></xref> for more information on using TLS.</t>
+<li><t>It is RECOMMENDED that RP and OP establish a mutual TLS connection. If a mutual TLS connection is not possible, then communication with the Authorization Server MUST utilize TLS. See Section 16.17 of <xref target="OIDC"></xref> for more information on using TLS.</t>
 </li>
-<li><t>RP sends the request to the Initiate Authorization endpoint in OP to initiate the process, the auhtorization data is sent inside a request object as described in section <eref target="#initi-auth-req">Initiate Authorization Request</eref> of this specification.</t>
+<li><t>RP sends the request to the Initiate Authorization endpoint in the OP to initiate the process and the authorization data is sent inside a request object as described in section <eref target="#initi-auth-req">Initiate Authorization Request</eref> of this specification.</t>
 </li>
-<li><t>OP MUST validate that the client is correctly authenticate and MUST validate the request object as described in Section 3.1.2.2. of <xref target="OIDC"></xref>, additionally MUST validate the <tt>request</tt> JWS following Section 6.3. of <xref target="OIDC"></xref> specification.</t>
+<li><t>OP MUST validate that the client is correctly authenticated and MUST validate the request object as described in Section 3.1.2.2. of <xref target="OIDC"></xref>. Additionally the OP MUST validate the <tt>request</tt> JWS following Section 6.3. of <xref target="OIDC"></xref> specification.</t>
 </li>
-<li><t>If validations are correct the OP MUST store the JWS and generate a <tt>request_uri</tt> that identify where is located. As described in <xref target="OAuth.PAR"></xref> specification.</t>
+<li><t>If validations are correct, the OP MUST store the JWS and generate a <tt>request_uri</tt> that identifies where it is located. This is as described in the <xref target="OAuth.PAR"></xref> specification.</t>
 </li>
 <li><t>OP will return to the RP a response with the format described in section <eref target="#succ-init-auth-resp">Successful Initiate Authorization Response</eref> of this specification.</t>
 </li>
-<li><t>In case of any error OP will return an error response as described in section <eref target="#err-init-auth-resp">Initiate Authorization Error Response</eref> of this specification.</t>
+<li><t>In case of any error, the OP will return an error response as described in section <eref target="#err-init-auth-resp">Initiate Authorization Error Response</eref> of this specification.</t>
 </li>
 </ol>
 </section>
 
 <section anchor="customer-accepts-request-flow-steps"><name>Customer Accepts Request Flow Steps</name>
-<t>Once the OP has validated the request JWS from RP, the user authentication and consent flow continues as follow:</t>
+<t>Once the OP has validated the request JWS from the RP, the user authentication and consent flow continues as follows:</t>
 
 <ol>
-<li><t>RP responds to the user with a HTTP 302 redirect response as described in Section 3.1.2.1 of <xref target="OIDC"></xref>, containing in Location header the url with the needed params to make an authentication Request to OP. An example of this response can be found in <eref target="#auth-redirect-resp">Authorize redirect response</eref></t>
+<li><t>RP responds to the user with a HTTP 302 redirect response as described in Section 3.1.2.1 of <xref target="OIDC"></xref>. Contained in the Location header, is the url with the needed params to make an authentication Request to the OP. An example of this response can be found in <eref target="#auth-redirect-resp">Authorize redirect response</eref></t>
 </li>
-<li><t>The customer User Agent follows the redirection and make an Authentication Request to the Authorization Endpoint in OP. Example of the request: <eref target="#auth-req">Authentication request</eref>.</t>
+<li><t>The customer User Agent follows the redirection and makes a new Authentication Request to the Authorization Endpoint in the OP. Example of the request: <eref target="#auth-req">Authentication request</eref>.</t>
 </li>
-<li><t>OP MUST obtain the request JWS from storage using the <tt>request_uri</tt> parameter, OP MUST check that <tt>request_uri</tt> is still valid and not expired.</t>
+<li><t>OP MUST obtain the request JWS from storage using the <tt>request_uri</tt> parameter. OP MUST check that <tt>request_uri</tt> is still valid and has not expired.</t>
 </li>
-<li><t>OP then MUST validate the request as described in Section 3.1.2.2. of <xref target="OIDC"></xref>, OP MUST be aware that even if the <tt>request_uri</tt> parameter is used, parameters MAY also be passed using the OAuth 2.0 request syntax, parameter values contained in the referenced JWT supersede those passed using the OAuth 2.0 request syntax, as described in Section 6.2. of <xref target="OIDC"></xref>.</t>
+<li><t>OP MUST then validate the request as described in Section 3.1.2.2. of <xref target="OIDC"></xref>. OP MUST be aware that even if the <tt>request_uri</tt> parameter is used, parameters MAY also be passed using the OAuth 2.0 request syntax. This occurs when the parameter values contained in the referenced JWT supersede those passed using the OAuth 2.0 request syntax, as described in Section 6.2. of <xref target="OIDC"></xref>.</t>
 </li>
-<li><t>If the request is valid, the OP attempts to Authenticate the End-User or determines whether the End-User is Authenticated, the way to authenticate the user (user, password, 2FA, cookies... ) is out of the scope of this specification. The normal approach is to present the user one or more pages (steps auth) to authenticate the user. More details in Section 3.1.2.3. of <xref target="OIDC"></xref>.</t>
+<li><t>If the request is valid, the OP attempts to Authenticate the End-User or determine whether the End-User is Authenticated. The way to authenticate the user (user, password, 2FA, cookies... ) is out of the scope of this specification. The normal approach is to present the user one or more pages (steps auth) to allow them to authenticate. More details in Section 3.1.2.3. of <xref target="OIDC"></xref>.</t>
 </li>
-<li><t>Once customer is authenticated, the Authorization Server MUST obtain an authorization decision before releasing information to the RP, as described in Section 3.1.2.4. of <xref target="OIDC"></xref>. The OP will present an interactive dialog to the customer explaining what are the claims requested by the RP, RP MAY show the data that is going to be share in order to help End-user to take a decision, in this case please follow the security recommendations described in section <eref target="#security-considerations">Security Considetarions</eref>. The customer then accepts or selects information to share with the RP.</t>
+<li><t>Once the customer is authenticated, the Authorization Server MUST obtain an authorization decision before releasing information to the RP, as described in Section 3.1.2.4. of <xref target="OIDC"></xref>. The OP will present an interactive dialog to the customer explaining what are the claims requested by the RP. The RP MAY show the data that is going to be shared in order to help the End-user to take a decision and in this case, please follow the security recommendations described in section <eref target="#security-considerations">Security Considetarions</eref>. The customer then accepts or selects information to share with the RP.</t>
 </li>
-<li><t>Once customer consents the request, OP will store the consent information (which claims has been consented) and generates an authorization code.</t>
+<li><t>Once customer gives their consent to the request, the OP will store the information (which of the claims have been consented) and generate an authorization code.</t>
 </li>
-<li><t>OP responds to the user with a HTTP 302 redirect response, with Location header pointing to the <tt>redirect_uri</tt> and as query parameter the generated <tt>code</tt>, as described in Section 3.1.2.5. of <xref target="OIDC"></xref>. Example of the response: <eref target="#succ-auth-resp">Successful Authorize response</eref>.</t>
+<li><t>OP responds to the user with a HTTP 302 redirect response, with Location header pointing to the <tt>redirect_uri</tt> and the generated <tt>code</tt> passed as a query parameter, as described in Section 3.1.2.5. of <xref target="OIDC"></xref>. Example of the response: <eref target="#succ-auth-resp">Successful Authorize response</eref>.</t>
 </li>
-<li><t>In case of any error OP will return an error response as described in section <eref target="#err-resp">Error Response</eref>, and will use the error codes from Section 3.1.2.6 of <xref target="OIDC"></xref>.</t>
+<li><t>In case of any error, the OP will return an error response as described in section <eref target="#err-resp">Error Response</eref>, and will use the error codes from Section 3.1.2.6 of <xref target="OIDC"></xref>.</t>
 </li>
-<li><t>The customer User Agent follows the redirection and makes a request to the RP callback uri, providing the authorization code in the query string, example of the request: <eref target="#callback-req">Callback RP request</eref>.</t>
+<li><t>The customer User Agent follows the redirection and makes a request to the RP callback uri, providing the authorization code in the query string. An example of the request is: <eref target="#callback-req">Callback RP request</eref>.</t>
 </li>
 <li><t>RP MUST validate the authorization response following Section 3.1.2.7. of <xref target="OIDC"></xref> specification.</t>
 </li>
@@ -737,13 +737,52 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 
 <back>
 <references><name>Normative References</name>
-<reference anchor="URN" target="https://tools.ietf.org/html/rfc2141">
+<reference anchor="JWT" target="https://tools.ietf.org/html/rfc7519">
   <front>
-    <title>Uniform Resource Names</title>
-    <author fullname="Ryan Moats" initials="R." surname="Moats">
-      <organization>AT&amp;T</organization>
+    <title>JSON Web Token (JWT)</title>
+    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
+      <organization>NRI</organization>
     </author>
-    <date year="1997" month="May"></date>
+    <author fullname="Mike Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <author fullname="John Bradley" initials="J." surname="Bradley">
+      <organization>Ping Identity</organization>
+    </author>
+    <date year="2015" month="May"></date>
+  </front>
+</reference>
+<reference anchor="JWS" target="https://tools.ietf.org/html/rfc7515">
+  <front>
+    <title>JSON Web Signature (JWS)</title>
+    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
+      <organization>NRI</organization>
+    </author>
+    <author fullname="Mike Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <author fullname="John Bradley" initials="J." surname="Bradley">
+      <organization>Ping Identity</organization>
+    </author>
+    <date year="2015" month="May"></date>
+  </front>
+</reference>
+<reference anchor="RFC8417" target="https://www.rfc-editor.org/info/rfc8417">
+  <front>
+    <title>Security Event Token (SET)</title>
+    <author fullname="Phil Hunt" initials="P." surname="Hunt, Ed.">
+      <organization>Oracle</organization>
+    </author>
+    <author fullname="Michael B. Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <author fullname="William Denniss" initials="W." surname="Denniss">
+      <organization>Google</organization>
+    </author>
+    <author fullname="Morteza Ansari" initials="M." surname="Ansari">
+      <organization>Cisco</organization>
+    </author>
+    <date year="2018" month="July"></date>
   </front>
 </reference>
 <reference anchor="OAuth.MTLS" target="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">
@@ -764,19 +803,64 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="2018" month="January"></date>
   </front>
 </reference>
-<reference anchor="JWS" target="https://tools.ietf.org/html/rfc7515">
+<reference anchor="OAuth.PAR" target="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">
   <front>
-    <title>JSON Web Signature (JWS)</title>
+    <title>OAuth 2.0 Pushed Authorization Requests draft-lodderstedt-oauth-par-01</title>
     <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
       <organization>NRI</organization>
     </author>
-    <author fullname="Mike Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
+    <author fullname="Torsten Lodderstedt" initials="T." surname="Lodderstedt">
+      <organization>yes.com</organization>
+    </author>
+    <author fullname="Brian Campbell" initials="B." surname="Campbell">
+      <organization>Ping Identity</organization>
+    </author>
+    <author fullname="Dave Tonge" initials="D." surname="Tonge">
+      <organization>Moneyhub Financial Technology</organization>
+    </author>
+    <author fullname="Filip Skokan" initials="F." surname="Skokan">
+      <organization>Auth0</organization>
+    </author>
+    <date year="2019" month="November" day="2"></date>
+  </front>
+</reference>
+<reference anchor="URN" target="https://tools.ietf.org/html/rfc2141">
+  <front>
+    <title>Uniform Resource Names</title>
+    <author fullname="Ryan Moats" initials="R." surname="Moats">
+      <organization>AT&amp;T</organization>
+    </author>
+    <date year="1997" month="May"></date>
+  </front>
+</reference>
+<reference anchor="OAuth.NativeApps" target="https://tools.ietf.org/html/rfc8252">
+  <front>
+    <title>OAuth 2.0 for Native Apps</title>
+    <author fullname="William Denniss" initials="W." surname="Denniss">
+      <organization>Google</organization>
     </author>
     <author fullname="John Bradley" initials="J." surname="Bradley">
       <organization>Ping Identity</organization>
     </author>
-    <date year="2015" month="May"></date>
+    <date year="2017" month="October"></date>
+  </front>
+</reference>
+<reference anchor="RFC2119" target="https://tools.ietf.org/html/rfc2119">
+  <front>
+    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
+    <author fullname="Scott Bradner" initials="S." surname="Bradner">
+      <organization>Harvard University</organization>
+    </author>
+    <date year="1997" month="March"></date>
+  </front>
+</reference>
+<reference anchor="OAuth2.0" target="https://tools.ietf.org/html/rfc6749">
+  <front>
+    <title>The OAuth 2.0 Authorization Framework</title>
+    <author fullname="Dick Hardt" initials="C." surname="Hardt">
+      <organization>Microsoft</organization>
+    </author>
+    <date year="2012" month="October"></date>
   </front>
 </reference>
 <reference anchor="RFC2616" target="https://tools.ietf.org/html/rfc2616">
@@ -786,21 +870,6 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
       <organization>UC Irvine</organization>
     </author>
     <date year="1999" month="June"></date>
-  </front>
-</reference>
-<reference anchor="JWT" target="https://tools.ietf.org/html/rfc7519">
-  <front>
-    <title>JSON Web Token (JWT)</title>
-    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
-      <organization>NRI</organization>
-    </author>
-    <author fullname="Mike Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <author fullname="John Bradley" initials="J." surname="Bradley">
-      <organization>Ping Identity</organization>
-    </author>
-    <date year="2015" month="May"></date>
   </front>
 </reference>
 <reference anchor="OAuth.Multiple.Responses" target="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">
@@ -842,75 +911,6 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="2014" month="Nov" day="8"></date>
   </front>
 </reference>
-<reference anchor="OAuth.PAR" target="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">
-  <front>
-    <title>OAuth 2.0 Pushed Authorization Requests draft-lodderstedt-oauth-par-01</title>
-    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
-      <organization>NRI</organization>
-    </author>
-    <author fullname="Torsten Lodderstedt" initials="T." surname="Lodderstedt">
-      <organization>yes.com</organization>
-    </author>
-    <author fullname="Brian Campbell" initials="B." surname="Campbell">
-      <organization>Ping Identity</organization>
-    </author>
-    <author fullname="Dave Tonge" initials="D." surname="Tonge">
-      <organization>Moneyhub Financial Technology</organization>
-    </author>
-    <author fullname="Filip Skokan" initials="F." surname="Skokan">
-      <organization>Auth0</organization>
-    </author>
-    <date year="2019" month="November" day="2"></date>
-  </front>
-</reference>
-<reference anchor="RFC8417" target="https://www.rfc-editor.org/info/rfc8417">
-  <front>
-    <title>Security Event Token (SET)</title>
-    <author fullname="Phil Hunt" initials="P." surname="Hunt, Ed.">
-      <organization>Oracle</organization>
-    </author>
-    <author fullname="Michael B. Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <author fullname="William Denniss" initials="W." surname="Denniss">
-      <organization>Google</organization>
-    </author>
-    <author fullname="Morteza Ansari" initials="M." surname="Ansari">
-      <organization>Cisco</organization>
-    </author>
-    <date year="2018" month="July"></date>
-  </front>
-</reference>
-<reference anchor="OAuth.NativeApps" target="https://tools.ietf.org/html/rfc8252">
-  <front>
-    <title>OAuth 2.0 for Native Apps</title>
-    <author fullname="William Denniss" initials="W." surname="Denniss">
-      <organization>Google</organization>
-    </author>
-    <author fullname="John Bradley" initials="J." surname="Bradley">
-      <organization>Ping Identity</organization>
-    </author>
-    <date year="2017" month="October"></date>
-  </front>
-</reference>
-<reference anchor="RFC2119" target="https://tools.ietf.org/html/rfc2119">
-  <front>
-    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
-    <author fullname="Scott Bradner" initials="S." surname="Bradner">
-      <organization>Harvard University</organization>
-    </author>
-    <date year="1997" month="March"></date>
-  </front>
-</reference>
-<reference anchor="OAuth2.0" target="https://tools.ietf.org/html/rfc6749">
-  <front>
-    <title>The OAuth 2.0 Authorization Framework</title>
-    <author fullname="Dick Hardt" initials="C." surname="Hardt">
-      <organization>Microsoft</organization>
-    </author>
-    <date year="2012" month="October"></date>
-  </front>
-</reference>
 </references>
 
 <section anchor="iana-considerations"><name>IANA Considerations</name>
@@ -930,23 +930,8 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 </section>
 
 <section anchor="notices"><name>Notices</name>
-<t>MIT License</t>
 <t>Copyright (c) 2020 Grupo Santander</t>
-<t>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</t>
-<t>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</t>
-<t>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</t>
+<t>We intent to release this especification under MIT license, pending internal process.</t>
 </section>
 
 <section anchor="document-history"><name>Document History</name>
