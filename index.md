@@ -8,7 +8,7 @@ When defining Digital Trust Protocol, the first major decision we took was to bu
 However, we thought that extending existing OpenID specs would be needed to fulfil our requirements, with end-user privacy control, and security best practices as core principles.
 
 
-### Security Profile
+### DTP Authorization Code Flow
 The core specification for OpenID includes the main elements that will help fully adoption by the industry, however and by design, in order to support many use cases it's a very open specification subject to individual implementations.
 That led us to the conclusion that we should create our own profile restricting less secure elements and flows within OpenID Core, but also to produce a set of extensions to cover specific features for identity and verified data sharing.
 
