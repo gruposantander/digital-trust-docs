@@ -27,14 +27,14 @@ With this extension proposal, requested claims by the RP can refer to a desired 
 
 - Read specifications (TBD)
 
+## Sandbox
+Check our Sandbox where you will be able to review further documentation to help you getting started. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
+
 ## SDKs
 TBD
 
-## Sample Application
+## Sample Reference Implementation
 TBD
-
-## Sandbox
-Check our Sandbox where you will be able to review further documentation to help you getting started. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
 
 ## Support or Contact
 
