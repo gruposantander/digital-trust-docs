@@ -1,4 +1,5 @@
 ## Introduction
+Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
 
 ## Client Authentication
 For any communication between RP and OP we will use private_key_jwt as client credentials it will provide a strong security in this communication, details
@@ -75,7 +76,7 @@ This request object will be signed with the RP private key generated at registra
 
 The encoded Request Object JWS will look like this:
 
-´´´
+```
 eyJraWQiOiJRdWlja0pvYnNfS0VZIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.
 eyJhdWQiOiJodHRwczovL29wLmlhbWlkLmlvIiwiaXNzIjoiZ0Z2ckQybTBDRW5ISG5nRnhxWndoIiwiY2xpZW50X2lkIjoiZ0Z2ckQybTBDRW5I
 SG5nRnhxWndoIiwicmVzcG9uc2VfdHlwZSI6ImNvZGUiLCJyZWRpcmVjdF91cmkiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJub25jZSI6IjBj
@@ -95,7 +96,7 @@ InB1cnBvc2UiOiJXZSB3aWxsIHVzZSB5b3UgZW1haWwgZm9yIGNvbnRhY3QgcHVycG9zZXMiLCJlc3Nl
 YmVyIjp7InB1cnBvc2UiOiJXZSB3aWxsIGdpdmUgeW91ciBwaG9uZSBudW1iZXIgdG8gdGhlIGVtcGxveWVlciIsImVzc2VudGlhbCI6dHJ1ZX19
 fSwiaWF0IjoxNTgzMTU3NDE1LCJuYmYiOjE1ODMxNTc0MTUsImV4cCI6MTU4MzE1ODAyMCwianRpIjoiVUxBSnkyZV9IR1UtRjhXVlhkUFR5In0.
 cxyv7zmrsHwGuI7L1x3sgeCsz9HEWGsdg_RmYbPFBZhVV4a5CFotPVm91iWMO5lN-i1qjaWfjtsgSDjOukuKgndG7q-WZTdzVZbcHk5XLYT7smhE7Bnh8euqNVClWblA1POIJTX3MGbpTlFFIngfHvQav2rzNb1kLewZ4R3IhAAI8TzAyHoI5RGSeksVukDO7MJDaDeH8NmusSI4Is0CimzCntj5c0SOH8NA6LXRBJSHzH8OA4_oDKVtvAw3P8S-2najwj0AmSWTIEEnNRT2Gv6-P_q5-7_-G6cKHe43I8z2DXD7i1McmKaHxO74GhcQB9cmg9s_OYbrWrgShzg
-´´´
+```
 
 The following parameters will be sent:
 - client_assertion_type: urn:ietf:params:oauth:client-assertion-type:jwt-bearer
@@ -104,7 +105,7 @@ The following parameters will be sent:
 
 Here is an example of the http request:
 
-´´´
+```
 POST /initiate-authorize
 Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.11.0
@@ -131,14 +132,14 @@ InB1cnBvc2UiOiJXZSB3aWxsIHVzZSB5b3UgZW1haWwgZm9yIGNvbnRhY3QgcHVycG9zZXMiLCJlc3Nl
 YmVyIjp7InB1cnBvc2UiOiJXZSB3aWxsIGdpdmUgeW91ciBwaG9uZSBudW1iZXIgdG8gdGhlIGVtcGxveWVlciIsImVzc2VudGlhbCI6dHJ1ZX19
 fSwiaWF0IjoxNTgzMTU3NDE1LCJuYmYiOjE1ODMxNTc0MTUsImV4cCI6MTU4MzE1ODAyMCwianRpIjoiVUxBSnkyZV9IR1UtRjhXVlhkUFR5In0.
 cxyv7zmrsHwGuI7L1x3sgeCsz9HEWGsdg_RmYbPFBZhVV4a5CFotPVm91iWMO5lN-i1qjaWfjtsgSDjOukuKgndG7q-WZTdzVZbcHk5XLYT7smhE7Bnh8euqNVClWblA1POIJTX3MGbpTlFFIngfHvQav2rzNb1kLewZ4R3IhAAI8TzAyHoI5RGSeksVukDO7MJDaDeH8NmusSI4Is0CimzCntj5c0SOH8NA6LXRBJSHzH8OA4_oDKVtvAw3P8S-2najwj0AmSWTIEEnNRT2Gv6-P_q5-7_-G6cKHe43I8z2DXD7i1McmKaHxO74GhcQB9cmg9s_OYbrWrgShzg
-´´´
+```
 
 ### Response
 The response of the call will be a expiration (in seconds) and a request_uri internal to the OP that will be used when calling the /authorize endpoint:
 
-´´´
+```
 {
   "expires_in": 600,
   "request_uri": "urn:op.iamid.io:sdPTT1ixFvrJMIh13CjURy4Y0iBgnJ5AaYOV0Eo_q24"
 }
-´´´
+```
