@@ -1,11 +1,15 @@
-## Quick Develoment Guide
+
+- [Quick Develoment Guide](#quick-develoment-guide)
+  - [Client Authentication](#client-authentication)
+  - [How to initiate a request](#how-to-initiate-a-request)
+    - [Request](#request)
+    - [Response](#response)
+  - [Redirection for authorization](#redirection-for-authorization)
+  - [Getting the id_token](#getting-the-idtoken)
+  
+# Quick Develoment Guide
 Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
 
-- [Client Authentication][]
-- [How to initiate a request][]
- - [Request][]
- - [Response][]
-- [Redirection for authorization][]
 
 ## Client Authentication
 For any communication between RP and OP we will use `private_key_jwt` as client credentials it will provide a strong security in this communication, details about how to generate it can be found [here](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
@@ -165,7 +169,7 @@ GnIw2VWxiMwVQ6WthUSUsczMCsHkcIMnfFYqYKESmD9
 
 At this point flow will be managed by the OP to get consent from the customer
 
-### Getting the id_token
+## Getting the id_token
 Once the customer has consented the RP will get a call to the callback endpoint used in the request with the code to get the token, this callback must match the callback uri provided in RP registration.
 
 An example can be found here:
