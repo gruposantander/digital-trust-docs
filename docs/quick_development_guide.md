@@ -1,5 +1,5 @@
 
-- [Quick Develoment Guide](#quick-develoment-guide)
+- [Quick Development Guide](#quick-development-guide)
   - [Client Authentication](#client-authentication)
   - [How to initiate a request](#how-to-initiate-a-request)
     - [Request](#request)
@@ -7,7 +7,7 @@
   - [Redirection for authorization](#redirection-for-authorization)
   - [Getting the id_token](#getting-the-idtoken)
   
-# Quick Develoment Guide
+# Quick Development Guide
 Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
 
 
