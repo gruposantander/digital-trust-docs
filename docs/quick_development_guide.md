@@ -1,3 +1,6 @@
+---
+title: Quick Development Guide
+---
 ## Introduction
 Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
 

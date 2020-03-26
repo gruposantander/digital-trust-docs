@@ -15,7 +15,7 @@ openssl rsa -in privatekey.key -outform PEM -pubout -out publickey.pem
 ```
 
 To register your application with the OP you will need to pass your public key. The format the public key will be accepted is as a JWK key, 
-there are different ways for you to obtain the key as JWK, for demo purposes you could just simply go to https://irrte.ch/jwt-js-decode/pem2jwk.html and paste your certificate and obtain something like this:
+there are different ways for you to obtain the key as JWK, for demo purposes you could just simply go to [https://irrte.ch/jwt-js-decode/pem2jwk.html](https://irrte.ch/jwt-js-decode/pem2jwk.html) and paste your certificate (never paste production ones!!) and obtain something like this:
 
 ```
 {
@@ -27,7 +27,7 @@ rTrP34_HaMN7Z_W4GNV7KpxvzOc2jh0mKwWVAjzADyGNCuoxqFKPqunyQ8SvWNEg7Q9i07D9JDP9jVw"
 }
 ```
 
-You could also use npm package tool from [here](https://www.npmjs.com/package/pem-jwk). Follow the instructions, basically run the following commands:
+You could also use `pem-jwk` npm package tool from [here](https://www.npmjs.com/package/pem-jwk). Follow the instructions, basically run the following commands:
 
 ```
 npm install -g pem-jwk
