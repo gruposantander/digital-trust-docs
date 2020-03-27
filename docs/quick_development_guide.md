@@ -7,6 +7,7 @@
   - [Redirection for authorization](#redirection-for-authorization)
   - [Getting the id_token](#getting-the-idtoken)
   - [Annex 1: Using Assertion Claims](#annex-1-using-assertion-claims)
+  - [Annex 2: Integration from Native Apps](#annex-2-integration-from-native-apps)
   
 # Quick Development Guide
 Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
@@ -260,3 +261,6 @@ The token signature must be validated using the OP public key that can be found 
 
 ## Annex 1: Using Assertion Claims
 {% include_relative assertion_claims.md %}
+
+## Annex 2: Integration from Native Apps
+{% include_relative native_apps.md %}
