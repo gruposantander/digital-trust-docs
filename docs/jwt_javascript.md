@@ -1,8 +1,7 @@
 For JWT manipulation (generate, parse and validation) in Javascript there exist a very good library [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) created by auth0.
 
-**Tip**
+**Tip**:
 A great resource to find jwt libraries in all languages with the featured that this libraries implement you can have a look to the web [https://jwt.io](https://jwt.io), section "Libraries".
-{: .note}
 
 ### Generating a private_key_jwt 
 
