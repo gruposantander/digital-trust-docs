@@ -36,7 +36,7 @@ Some sample applications:
 - Facilitates adoption for Relying Parties
 - Facilitates implementation for Identity Providers / Data Verifiers
 - Open Source specifications, client libraries and reference implementation
-- Level of Assurance support
+- Level of Assurance support [Based on eIDAS and NIST specifications]
 - [Backlog] Proof of Verification support [Reference to Document, ZKP, Verifiable Credentials]
 - [Backlog] Other flows to be supported such as CIBA and Device Authorization
 

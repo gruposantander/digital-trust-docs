@@ -1663,19 +1663,19 @@ Country: US
           <h4 id="name-rp-token-interchange-flow-s">
 <a href="#section-2.1.4" class="section-number selfRef">2.1.4. </a><a href="#name-rp-token-interchange-flow-s" class="section-name selfRef">RP Token Interchange Flow Steps</a>
           </h4>
-<p id="section-2.1.4-1">If the RP obtains the consent from the customer in form of authorization <code>code</code>, the token interchange process continue with these steps:<a href="#section-2.1.4-1" class="pilcrow">¶</a></p>
+<p id="section-2.1.4-1">If the RP obtains the consent from the customer in the form of an authorization <code>code</code>, then the token interchange process continues with these steps:<a href="#section-2.1.4-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.1.4-2">
             <li id="section-2.1.4-2.1">
-              <p id="section-2.1.4-2.1.1">Is RECOMMENDED that RP and OP establish a mutual TLS connection, if not possible communication with the Authorization Server MUST utilize TLS. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-2.1.4-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.4-2.1.1">It is RECOMMENDED that the RP and OP establish a mutual TLS connection. Where this is not possible, any communication with the Authorization Server MUST utilize TLS. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-2.1.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.4-2.2">
-              <p id="section-2.1.4-2.2.1">RP sends a token request to the OP <code>/token</code> endpoint containing the authorization <code>code</code>, following the specification described in the section 3.1.3.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. An example of this request in section <a href="#token-req">Token request</a><a href="#section-2.1.4-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.4-2.2.1">RP sends a token request to the OP <code>/token</code> endpoint containing the authorization <code>code</code>, following the specification described in the section 3.1.3.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. An example of this request can be found in section <a href="#token-req">Token request</a><a href="#section-2.1.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.4-2.3">
-              <p id="section-2.1.4-2.3.1">OP MUST validate that the client is correctly authenticate and MUST validate the request following the specification in Section 3.1.3.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. In case of any error OP will return an error response as described in section <a href="#err-resp">Error Response</a>, and will use the error codes from Section 3.1.3.4. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-2.1.4-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.4-2.3.1">The OP MUST validate that the client is correctly authenticated and MUST validate the request, following the specification in Section 3.1.3.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. In case of an error, the OP will return an error response as described in section <a href="#err-resp">Error Response</a>, and will use the error codes from Section 3.1.3.4. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-2.1.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-2.1.4-2.4">
-              <p id="section-2.1.4-2.4.1">If validations are correct OP returns a successful response that includes an <code>id_token</code> and an <code>access_token</code> as described in Section 3.1.3.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. An example of response: <a href="#token-resp">Token response</a>. RP must validate the token response as described in Section 3.1.3.5 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.4-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-2.1.4-2.4.1">If the validations are correct, the OP returns a successful response that includes an <code>id_token</code> and an <code>access_token</code> as described in Section 3.1.3.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. An example of such a response is: <a href="#token-resp">Token response</a>. RP must validate the token response as described in Section 3.1.3.5 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-2.1.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 </section>
@@ -1689,15 +1689,15 @@ Country: US
       <h2 id="name-initiate-authorization-endp">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-initiate-authorization-endp" class="section-name selfRef">Initiate Authorization Endpoint</a>
       </h2>
-<p id="section-3-1">This endpoint is a profile of the specification defined in OAuth 2.0 Pushed Authorization Requests <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>, see Section <a href="#par-rest-ext">PAR Restrictions and Extension</a> for more info about differences with the PAR specification.<a href="#section-3-1" class="pilcrow">¶</a></p>
-<p id="section-3-2">Initiate Authorization endpoint performs the validation of the request and stores the JWS that is going to be referenced as <code>request_uri</code> in the Authorization Request.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-1">This endpoint is a profile of the specification as defined in OAuth 2.0 Pushed Authorization Requests <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>. See Section <a href="#par-rest-ext">PAR Restrictions and Extension</a> for more info regarding any differences relating to the PAR specification.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">Initiate Authorization endpoint performs the validation of the request and stores the JWS that will be referenced as the <code>request_uri</code> in the Authorization Request.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <div id="initi-auth-req">
 <section id="section-3.1">
         <h3 id="name-initiate-authorization-requ">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-initiate-authorization-requ" class="section-name selfRef">Initiate Authorization Request</a>
         </h3>
-<p id="section-3.1-1">Initiate Authorization Request follow the specification described in Section 2.1. of <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
-<p id="section-3.1-2">OP MUST support the use of the HTTP POST method defined in <span>[<a href="#RFC2616" class="xref">RFC2616</a>]</span> at the Initiate Authorization Endpoint. The Client uses a HTTPS POST to send a parameter <code>request</code> with a signed JWT that should contain the data explained in section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. Request parameters are serialized using Form Serialization as described in section 13.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. This JWT is a "Request Object" as described in Section 6 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">The Initiate Authorization Request follows the specification described in Section 2.1. of <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-2">The OP MUST support the use of the HTTP POST method defined in <span>[<a href="#RFC2616" class="xref">RFC2616</a>]</span> at the Initiate Authorization Endpoint. The Client uses a HTTPS POST to send a parameter <code>request</code> with a signed JWT that should contain the data explained in section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. Request parameters are serialized using Form Serialization as described in section 13.2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. This JWT is a "Request Object" as described in Section 6 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 <p id="section-3.1-3">The Client MUST authenticate with the Initiate Authorization Endpoint using the authentication method registered for its <code>client_id</code>, as described in Section <a href="#client-auth-methods">Client Authentication Methods.</a><a href="#section-3.1-3" class="pilcrow">¶</a></p>
 <p id="section-3.1-4">The following is a non-normative example of a Initiate Authorization Request. (line wraps within JWS for display purposes only)<a href="#section-3.1-4" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-3.1-5">
@@ -1733,7 +1733,7 @@ er1U2j77B_X01_3gbLAk6Gz48CPfZsDC6c6jW56mt99YZvjf5DQ
 <p id="section-3.2-1">The Authorization Server MUST validate the request received as follows:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-3.2-2">
           <li id="section-3.2-2.1">
-            <p id="section-3.2-2.1.1">The Authorization Server MUST verify that Client authentication is valid.<a href="#section-3.2-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-3.2-2.1.1">The Authorization Server MUST verify that the Client authentication is valid.<a href="#section-3.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.2-2.2">
             <p id="section-3.2-2.2.1">The Authorization Server MUST verify that the request fulfils all validations described in section 3.1.2.2 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.2-2.2.1" class="pilcrow">¶</a></p>
@@ -1742,7 +1742,7 @@ er1U2j77B_X01_3gbLAk6Gz48CPfZsDC6c6jW56mt99YZvjf5DQ
             <p id="section-3.2-2.3.1">The Authorization Server MUST verify that the request object is a valid JWS, the signature algorithm is not <code>none</code>, and the signature is correct as in section 6.3 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.2-2.4">
-            <p id="section-3.2-2.4.1">The Authorization Server MUST verify that Client is asking for user claims using scopes (including scope templates) or claims parameter, as described in section 5.4. and 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.2-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-3.2-2.4.1">The Authorization Server MUST verify that Client is asking for user claims using the scopes (including scope templates) or claims parameter, as described in section 5.4. and 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 <p id="section-3.2-3">If the Authorization Server encounters any error, it MUST return an error response, as per Section <a href="%7B#err-init-auth-resp%7D">Initiate Authorization Error Response</a> in this document.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
@@ -1754,7 +1754,7 @@ er1U2j77B_X01_3gbLAk6Gz48CPfZsDC6c6jW56mt99YZvjf5DQ
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-successful-initiate-authori" class="section-name selfRef">Successful Initiate Authorization Response</a>
         </h3>
 <p id="section-3.3-1">If the verification is successful, the authorization server shall generate a request URI and return a JSON payload that contains <code>request_uri</code> and <code>expires_in</code> claims at the top level with 201 Created HTTP response code, as described in Section 2.2. of <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
-<p id="section-3.3-2">The <code>request_uri</code> shall be based on a cryptographic random value so that it is difficult to predict for an attacker. The request URI shall be bound to the client identifier of the client that posted the request object. Since the request URI can be replayed, its lifetime should be short and preferably limited to one-time use.<a href="#section-3.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.3-2">The <code>request_uri</code> shall be based on a cryptographic random value so that it is difficult to predict for an attacker. The <code>request_uri</code> shall be bound to the client identifier of the client that posted the request object. Since the <code>request_uri</code> can be replayed, its lifetime should be short and preferably limited to one-time use.<a href="#section-3.3-2" class="pilcrow">¶</a></p>
 <p id="section-3.3-3">The value of these claims in the JSON payload shall be as follows:<a href="#section-3.3-3" class="pilcrow">¶</a></p>
 <ul>
 <li id="section-3.3-4.1">
@@ -1780,8 +1780,8 @@ Content-Type: application/json
 }
 </pre><a href="#section-3.3-6" class="pilcrow">¶</a>
 </div>
-<p id="section-3.3-7">Note that <code>request_uri</code> can be either URL or URN, within this spec it is hosted by the authorization server. The advantage of the authorization server hosting the request object is that it does not have to support outbound requests to a client specified request URI nor rely on the entropy of the URI for the confidentiality of the request object.<a href="#section-3.3-7" class="pilcrow">¶</a></p>
-<p id="section-3.3-8">When the request object is stored at the authorization server, the <code>request_uri</code> value typically is a <span>[<a href="#URN" class="xref">URN</a>]</span>.<a href="#section-3.3-8" class="pilcrow">¶</a></p>
+<p id="section-3.3-7">Note that <code>request_uri</code> can be either a URL or URN - within this spec it is hosted by the authorization server. The advantage of the authorization server hosting the request object is that it does not have to support outbound requests to a client specified request URI, nor rely on the entropy of the URI for the confidentiality of the request object.<a href="#section-3.3-7" class="pilcrow">¶</a></p>
+<p id="section-3.3-8">When the request object is stored on the authorization server, the <code>request_uri</code> value typically is a <span>[<a href="#URN" class="xref">URN</a>]</span>.<a href="#section-3.3-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="err-init-auth-resp">
@@ -1796,13 +1796,13 @@ Content-Type: application/json
             <p id="section-3.4-3.1.1"><code>invalid_request_object</code>: The parameters inside the request object are invalid, is signed with none algorithm or the signature is not correct.<a href="#section-3.4-3.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.4-3.2">
-            <p id="section-3.4-3.2.1"><code>invalid_request</code>: The request not contain the parameter <code>request</code>.<a href="#section-3.4-3.2.1" class="pilcrow">¶</a></p>
+            <p id="section-3.4-3.2.1"><code>invalid_request</code>: The request does not contain the parameter <code>request</code>.<a href="#section-3.4-3.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.4-3.3">
             <p id="section-3.4-3.3.1"><code>method_not_allowed</code>: If the request was not POST, the authorization server MUST return a HTTP 405 Method Not Allowed status code.<a href="#section-3.4-3.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.4-3.4">
-            <p id="section-3.4-3.4.1"><code>too_many_request</code>: If the request from the client per a time period goes beyond the number the authorization server allows. the authorization server MUST return a HTTP 429 Too Many Requests status code.<a href="#section-3.4-3.4.1" class="pilcrow">¶</a></p>
+            <p id="section-3.4-3.4.1"><code>too_many_request</code>: If the request from the client per a specified time period goes beyond the number the authorization server allows, then the authorization server MUST return a HTTP 429 Too Many Requests status code.<a href="#section-3.4-3.4.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
 <p id="section-3.4-4">The following is a non-normative example of an Initiate Authorization Error Response:<a href="#section-3.4-4" class="pilcrow">¶</a></p>
@@ -1825,7 +1825,7 @@ Pragma: no-cache
         <h3 id="name-initiate-authorization-resp">
 <a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-initiate-authorization-resp" class="section-name selfRef">Initiate Authorization Response Validation</a>
         </h3>
-<p id="section-3.5-1">The Client MUST validate that the Inititate Authorization Response contains a valid <code>request_uri</code> and <code>expires_in</code> parameters.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
+<p id="section-3.5-1">The Client MUST validate that the Inititate Authorization Response contains valid <code>request_uri</code> and <code>expires_in</code> parameters.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="error-member">
@@ -1833,9 +1833,9 @@ Pragma: no-cache
         <h3 id="name-errors-member-in-successful">
 <a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-errors-member-in-successful" class="section-name selfRef"><em>errors</em> member in Successful Initiate Authorization Response</a>
         </h3>
-<p id="section-3.6-1">This specification add an additional field called <code>errors</code> in the successful response of the initiate authorize response, the original fields (<code>request_uri</code> and <code>expires_in</code>) are described in in Section 2.2. of <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
-<p id="section-3.6-2"><code>errors</code> member is an OPTIONAL field of type array that contain a list of errors that are detected in the <code>claims</code> request parameter (see section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.6-2" class="pilcrow">¶</a></p>
-<p id="section-3.6-3">The purpose of this new field is to avoid the RP wait until the end of the process when exchange the code for the <code>id_token</code> in the <code>/token</code> endpoint or when obtain the claims in the user info endpoint using the <code>access_token</code> to know about an error in the request syntax, this fields give the RP a quick feedback in the success response, this means that RP can continue with the process but is already aware about the problem.<a href="#section-3.6-3" class="pilcrow">¶</a></p>
+<p id="section-3.6-1">This specification adds an additional field called <code>errors</code> in the successful response of the initiate authorize response,. The original fields (<code>request_uri</code> and <code>expires_in</code>) are described in in Section 2.2. of <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
+<p id="section-3.6-2">The <code>errors</code> member is an OPTIONAL field of type array that contains a list of errors that are detected in the <code>claims</code> request parameter (see section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-3.6-2" class="pilcrow">¶</a></p>
+<p id="section-3.6-3">The purpose of this new field is to avoid the RP having to wait until the end of the process when exchanging the code for the <code>id_token</code> in the <code>/token</code> endpoint or when obtaining the claims in the user info endpoint using the <code>access_token</code> to know about an error in the request syntax. These fields give the RP instant feedback in the success response, meaning the RP can continue with the process, whilst being informed about the issue.<a href="#section-3.6-3" class="pilcrow">¶</a></p>
 <p id="section-3.6-4">The following is a non-normative example of a <code>errors</code> member structure<a href="#section-3.6-4" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-3.6-5">
 <pre>"errors": [
@@ -1852,16 +1852,16 @@ Pragma: no-cache
 ]
 </pre><a href="#section-3.6-5" class="pilcrow">¶</a>
 </div>
-<p id="section-3.6-6">Each array object contain the next fields:<a href="#section-3.6-6" class="pilcrow">¶</a></p>
+<p id="section-3.6-6">Each array object contains the following fields:<a href="#section-3.6-6" class="pilcrow">¶</a></p>
 <ul>
 <li id="section-3.6-7.1">
-            <p id="section-3.6-7.1.1"><code>group</code>: The group <code>id_token</code> or <code>userinfo</code> where claim is requested.<a href="#section-3.6-7.1.1" class="pilcrow">¶</a></p>
+            <p id="section-3.6-7.1.1"><code>group</code>: The group <code>id_token</code> or <code>userinfo</code> where a claim is requested.<a href="#section-3.6-7.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.6-7.2">
-            <p id="section-3.6-7.2.1"><code>key</code>: The claim name that contain the problem.<a href="#section-3.6-7.2.1" class="pilcrow">¶</a></p>
+            <p id="section-3.6-7.2.1"><code>key</code>: The claim name that contains the problem.<a href="#section-3.6-7.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.6-7.3">
-            <p id="section-3.6-7.3.1"><code>description</code>: An error description to help RP developer.<a href="#section-3.6-7.3.1" class="pilcrow">¶</a></p>
+            <p id="section-3.6-7.3.1"><code>description</code>: An error description to help the RP developer.<a href="#section-3.6-7.3.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
 </section>
@@ -1871,31 +1871,31 @@ Pragma: no-cache
         <h3 id="name-par-restrictions-and-extens">
 <a href="#section-3.7" class="section-number selfRef">3.7. </a><a href="#name-par-restrictions-and-extens" class="section-name selfRef">PAR Restrictions and Extension</a>
         </h3>
-<p id="section-3.7-1">The Initiate Authorization Endpoint has some restrictions or add ons to the original specification described in <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.7-1" class="pilcrow">¶</a></p>
+<p id="section-3.7-1">The Initiate Authorization Endpoint has some restrictions or add ons to the original specification as described in <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.7-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-3.7-2">
           <li id="section-3.7-2.1">
             <p id="section-3.7-2.1.1">The endpoint recommended name is <code>/initiate-authorize</code>.<a href="#section-3.7-2.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.7-2.2">
-            <p id="section-3.7-2.2.1">OP SHALL require the use of a request object sent in the request parameter.<a href="#section-3.7-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-3.7-2.2.1">The OP SHALL require the use of a request object sent in the request parameter.<a href="#section-3.7-2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.7-2.3">
-            <p id="section-3.7-2.3.1">OP SHALL support only signed JWT request objects, this means OP SHALL REQUIRE request parameter.<a href="#section-3.7-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-3.7-2.3.1">The OP SHALL support only signed JWT request objects. This means that the OP SHALL REQUIRE a request parameter.<a href="#section-3.7-2.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.7-2.4">
-            <p id="section-3.7-2.4.1">OP SHALL ONLY allow <em>response_type</em> with value <code>code</code>.<a href="#section-3.7-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-3.7-2.4.1">The OP SHALL ONLY allow <em>response_type</em> with value <code>code</code>.<a href="#section-3.7-2.4.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.7-2.5">
-            <p id="section-3.7-2.5.1">OP SHALL only support the client authentication methods described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-3.7-2.5.1" class="pilcrow">¶</a></p>
+            <p id="section-3.7-2.5.1">The OP SHALL only support the client authentication methods as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-3.7-2.5.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.7-2.6">
-            <p id="section-3.7-2.6.1">OP MAY NOT implement the error validation described in Section "2.3.1.5. Request entity too large" of <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.7-2.6.1" class="pilcrow">¶</a></p>
+            <p id="section-3.7-2.6.1">The OP MAY NOT implement the error validation described in Section "2.3.1.5. Request entity too large" of <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span>.<a href="#section-3.7-2.6.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.7-2.7">
-            <p id="section-3.7-2.7.1">OP SHALL REQUIRE scope param contain value <code>openid</code>.<a href="#section-3.7-2.7.1" class="pilcrow">¶</a></p>
+            <p id="section-3.7-2.7.1">The OP SHALL REQUIRE a scope param containing the value <code>openid</code>.<a href="#section-3.7-2.7.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.7-2.8">
-            <p id="section-3.7-2.8.1">OP MAY return the <code>errors</code> field in the Successful Initiate Authorization Response to help RP.<a href="#section-3.7-2.8.1" class="pilcrow">¶</a></p>
+            <p id="section-3.7-2.8.1">The OP MAY return the <code>errors</code> field in the Successful Initiate Authorization Response to help the RP.<a href="#section-3.7-2.8.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 </section>
@@ -1907,8 +1907,8 @@ Pragma: no-cache
       <h2 id="name-txn-claim">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-txn-claim" class="section-name selfRef">txn Claim</a>
       </h2>
-<p id="section-4-1">As part of this specification a new claim called txn should be introduced by the OP in all the <code>id_tokens</code> generated and also in the <code>/userinfo</code> endpoint responses, this claim as defined in <span>[<a href="#RFC8417" class="xref">RFC8417</a>]</span> is used in the context of this extension to build audit trails across the parties involved in an OpenID Connect transaction.<a href="#section-4-1" class="pilcrow">¶</a></p>
-<p id="section-4-2">This transaction data MUST be stored as long as it is required to store transaction data for auditing purposes by the respective regulation.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<p id="section-4-1">As part of this specification a new claim called txn should be introduced by the OP in all of the <code>id_tokens</code> generated and also in the <code>/userinfo</code> endpoint responses. This claim, as defined in <span>[<a href="#RFC8417" class="xref">RFC8417</a>]</span>, is used in the context of this extension to build audit trails across the parties involved in an OpenID Connect transaction.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">This transaction data MUST be stored as long as it is required to store transaction data for auditing purposes by any respective regulation.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <p id="section-4-3">The <code>txn</code> value MUST allow an RP to obtain these transaction details if needed.<a href="#section-4-3" class="pilcrow">¶</a></p>
 <p id="section-4-4">Note: The mechanism to obtain the transaction details from the OP and their format is out of scope of this specification.<a href="#section-4-4" class="pilcrow">¶</a></p>
 </section>
@@ -1929,46 +1929,46 @@ Pragma: no-cache
             <p id="section-5.1-2.1.1">MAY support mutual TLS connections.<a href="#section-5.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.2">
-            <p id="section-5.1-2.2.1">if mutual TLS is not possible, client SHALL communicate with the Authorization Server using TLS. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-5.1-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.2.1">If mutual TLS is not possible, the client SHALL communicate with the Authorization Server using TLS. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-5.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.3">
-            <p id="section-5.1-2.3.1">SHALL authenticate when making requests to the Authentication Server at the <code>/token</code> and <code>/initiate-authorize</code> endpoint, as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-5.1-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.3.1">SHALL authenticate when making requests to the Authentication Server at the <code>/token</code> and <code>/initiate-authorize</code> endpoints, as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-5.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.4">
             <p id="section-5.1-2.4.1">SHALL include the <code>request_uri</code> parameter as defined in Section 6 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> in the authentication request;<a href="#section-5.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.5">
-            <p id="section-5.1-2.5.1">SHALL additionally send duplicates of the parameters/values using the OAuth 2.0 request syntax where required by the OAuth specification.<a href="#section-5.1-2.5.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.5.1">SHALL additionally send duplicates of the parameters/values using the OAuth 2.0 request syntax, where required by the OAuth specification.<a href="#section-5.1-2.5.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.6">
-            <p id="section-5.1-2.6.1">SHALL use the initiate authorize endpoint before call the authentication request, as described in section <a href="#init-auth-endpoint">Initiate Authorization Endpoint</a> of this specification.<a href="#section-5.1-2.6.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.6.1">SHALL use the initiate authorize endpoint before calling the authentication request, as described in section <a href="#init-auth-endpoint">Initiate Authorization Endpoint</a> of this specification.<a href="#section-5.1-2.6.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.7">
-            <p id="section-5.1-2.7.1">SHALL sign the JWT request object sent to initiate authorize endpoint, as described in Section 6.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-5.1-2.7.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.7.1">SHALL sign the JWT request object that is sent to the initiate authorize endpoint, as described in Section 6.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-5.1-2.7.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.8">
-            <p id="section-5.1-2.8.1">SHALL NOT use <code>none</code> algorithm in JWT.<a href="#section-5.1-2.8.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.8.1">SHALL NOT use the <code>none</code> algorithm in JWT.<a href="#section-5.1-2.8.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.9">
-            <p id="section-5.1-2.9.1">SHALL require and validate JWS signed ID Token be returned from token endpoint.<a href="#section-5.1-2.9.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.9.1">SHALL require and validate the JWS signed ID Token to be returned from the token endpoint.<a href="#section-5.1-2.9.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.10">
-            <p id="section-5.1-2.10.1">SHALL include the <code>nonce</code> parameter in authentication request, as described in in Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>,<a href="#section-5.1-2.10.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.10.1">SHALL include the <code>nonce</code> parameter in the authentication request, as described in Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>,<a href="#section-5.1-2.10.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.11">
-            <p id="section-5.1-2.11.1">Is RECOMMENDED to include the <code>state</code> parameters in authentication request, as described in Section <em>3.1.2.1</em> of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>,<a href="#section-5.1-2.11.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.11.1">Is RECOMMENDED to include the <code>state</code> parameters in the authentication request, as described in Section <em>3.1.2.1</em> of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>,<a href="#section-5.1-2.11.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.12">
-            <p id="section-5.1-2.12.1">SHALL use as preferred method for request claims the <code>claims</code> parameter inside the JWT request Object as described in section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.1-2.12.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.12.1">SHALL use the <code>claims</code> parameter inside the JWT request Object, which is the preferred method for request claims as described in section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.1-2.12.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.13">
-            <p id="section-5.1-2.13.1">MAY use scopes templates as an alternative to request claims.<a href="#section-5.1-2.13.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.13.1">MAY use a scope template as an alternative to request claims.<a href="#section-5.1-2.13.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.14">
-            <p id="section-5.1-2.14.1">SHALL include <code>openid</code> value as scope in all authorization request.<a href="#section-5.1-2.14.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.14.1">SHALL include <code>openid</code> value as the scope in all authorization requests.<a href="#section-5.1-2.14.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.15">
-            <p id="section-5.1-2.15.1">SHALL use the PCKE as described in <span>[<a href="#OAuth.NativeApps" class="xref">OAuth.NativeApps</a>]</span> for native apps clients.<a href="#section-5.1-2.15.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.15.1">SHALL use the PCKE as described in <span>[<a href="#OAuth.NativeApps" class="xref">OAuth.NativeApps</a>]</span> for any native app clients.<a href="#section-5.1-2.15.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 </section>
@@ -1987,37 +1987,37 @@ Pragma: no-cache
             <p id="section-5.2-2.2.1">MAY support mutual TLS connections.<a href="#section-5.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.3">
-            <p id="section-5.2-2.3.1">if mutual TLS is not possible, Authorization Server SHALL require use of TLS in the endpoints. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-5.2-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.3.1">If mutual TLS is not possible, Authorization Server SHALL require the use of TLS in these endpoints. See Section 16.17 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> for more information on using TLS.<a href="#section-5.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.4">
-            <p id="section-5.2-2.4.1">SHALL validate for <code>/token</code> and <code>/initiate-authorize</code> endpoint that Client is authenticated, as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-5.2-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.4.1">SHALL validate for the <code>/token</code> and <code>/initiate-authorize</code> endpoints that the Client is authenticated as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-5.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.5">
             <p id="section-5.2-2.5.1">SHALL require the <code>response_type</code> values <code>code</code>;<a href="#section-5.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.6">
-            <p id="section-5.2-2.6.1">SHALL require signed JWT request object, as described in Section 6.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.2-2.6.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.6.1">SHALL require a signed JWT request object, as described in Section 6.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.7">
             <p id="section-5.2-2.7.1">SHALL require the <code>request_uri</code> parameter as defined in Section 6 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span> in the authentication request;<a href="#section-5.2-2.7.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.8">
-            <p id="section-5.2-2.8.1">SHALL require that <code>request_uri</code> has been generated by this OP in the endpoint Initiate Authorize and indicates the location of a JWT Request inside the Authentication Server.<a href="#section-5.2-2.8.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.8.1">SHALL require that the <code>request_uri</code> has been generated by the OP in the endpoint <code>/initiate-authorize</code> and indicates the location of a JWT Request inside the Authentication Server.<a href="#section-5.2-2.8.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.9">
-            <p id="section-5.2-2.9.1">SHALL support the initiate <code>/authorize</code> endpoint, as described in section <a href="#initi-auth-req">Initiate Authorization Request</a> of this specification.<a href="#section-5.2-2.9.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.9.1">SHALL support the <code>/initiate-authorize</code> endpoint, as described in section <a href="#initi-auth-req">Initiate Authorization Request</a> of this specification.<a href="#section-5.2-2.9.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.10">
-            <p id="section-5.2-2.10.1">SHALL return signed ID Token. (JWS)<a href="#section-5.2-2.10.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.10.1">SHALL return a signed ID Token. (JWS)<a href="#section-5.2-2.10.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.11">
-            <p id="section-5.2-2.11.1">SHALL ignore additional parameters passed using the OAuth 2.0 request syntax in the <code>/authorize</code> endpoint, only the <code>client_id</code> param should be passed (will be used to identify the RP), the parameters for authorization should be passed previously inside request_object in initiate authorize endpoint. This statement contradict section 6.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.2-2.11.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.11.1">SHALL ignore additional parameters passed using the OAuth 2.0 request syntax in the <code>/authorize</code> endpoint. Only the <code>client_id</code> param should be passed - this will be used to identify the RP. The parameters for authorization should be passed inside the request_object for the <code>/initiate-authorize</code> endpoint, and not at the <code>/authorize</code> endpoint. This statement contradicts section 6.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.2-2.11.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.12">
-            <p id="section-5.2-2.12.1">SHALL validate <code>openid</code> value is present in scopes in all authorization requests.<a href="#section-5.2-2.12.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.12.1">SHALL validate the <code>openid</code> value is present in the scope for all authorization requests.<a href="#section-5.2-2.12.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.13">
-            <p id="section-5.2-2.13.1">SHALL generate and include the <code>txn</code> claim in all the generated <code>id_tokens</code> and claim responses (user info) to maintain a audit trail and traceability for all the Open ID process. (From beginning to end of the transaction)<a href="#section-5.2-2.13.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.13.1">SHALL generate and include the <code>txn</code> claim in all the generated <code>id_tokens</code> and claim responses (user info) to maintain an audit trail and traceability for all Open ID processes. (From beginning to end of the transaction)<a href="#section-5.2-2.13.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 </section>
@@ -2029,8 +2029,8 @@ Pragma: no-cache
       <h2 id="name-error-response">
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-error-response" class="section-name selfRef">Error Response</a>
       </h2>
-<p id="section-6-1">When Authorization Server should return a error to the Client because of any reason, the returned structure for the Error Response will have the defined in section 5.2. of <span>[<a href="#OAuth2.0" class="xref">OAuth2.0</a>]</span>.<a href="#section-6-1" class="pilcrow">¶</a></p>
-<p id="section-6-2">In case that the Error Response is returned in a direct communication between the OP and the RP, the error response parameters will be returned in the HTTP response body using the application/json media type with HTTP response code of 400 (unless specified otherwise). As described in Section 3.1.3.4. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-6-2" class="pilcrow">¶</a></p>
+<p id="section-6-1">When the Authorization Server should return an error to the Client because of any reason, the returned structure for the Error Response will be as defined in section 5.2. of <span>[<a href="#OAuth2.0" class="xref">OAuth2.0</a>]</span>.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-2">In the case that the Error Response is returned in a direct communication between the OP and the RP, the error response parameters will be returned in the HTTP response body using the application/json media type with HTTP response code of 400 (unless specified otherwise). As described in Section 3.1.3.4. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <p id="section-6-3">The following is a non-normative example Error Response for this case:<a href="#section-6-3" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-6-4">
 <pre>  HTTP/1.1 400 Bad Request
@@ -2044,7 +2044,7 @@ Pragma: no-cache
   }
 </pre><a href="#section-6-4" class="pilcrow">¶</a>
 </div>
-<p id="section-6-5">In case that the Error Response is returned in a redirection step (like Authentication Request) the error response parameters are added to the query component of the Redirection URI, unless a different Response Mode was specified. As described in Section 3.1.2.6. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-6-5" class="pilcrow">¶</a></p>
+<p id="section-6-5">In the case that the Error Response is returned in a redirection step (like Authentication Request) the error response parameters are added to the query component of the Redirection URI, unless a different Response Mode was specified as described in Section 3.1.2.6. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-6-5" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-6-6">
 <pre>  HTTP/1.1 302 Found
   Location: https://rp.example.com/cb?
@@ -2059,10 +2059,10 @@ Pragma: no-cache
       <h2 id="name-authorization-server-metada">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-authorization-server-metada" class="section-name selfRef">Authorization Server Metadata</a>
       </h2>
-<p id="section-7-1">If the authorization server implement the DTP profile, it SHOULD include the following OAuth/OpenID Provider Metadata parameter in discovery responses:<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">If the authorization server implements the DTP profile, it SHOULD include the following OAuth/OpenID Provider Metadata parameter in discovery responses:<a href="#section-7-1" class="pilcrow">¶</a></p>
 <ul>
 <li id="section-7-2.1">
-          <p id="section-7-2.1.1"><code>digital_trust_protocol_extension</code> : A boolean field with value <em>true</em> to inform the RP this OP implement this profile.<a href="#section-7-2.1.1" class="pilcrow">¶</a></p>
+          <p id="section-7-2.1.1"><code>digital_trust_protocol_extension</code> : A boolean field with value <em>true</em> to inform the RP that this OP implements this profile.<a href="#section-7-2.1.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
 </section>
@@ -2077,7 +2077,7 @@ Pragma: no-cache
         <h3 id="name-native-apps">
 <a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-native-apps" class="section-name selfRef">Native Apps</a>
         </h3>
-<p id="section-8.1-1">For authorizing users in native apps the best practice described in RFC <span>[<a href="#OAuth.NativeApps" class="xref">OAuth.NativeApps</a>]</span> should be followed, for example the use of PKCE in the authorization flow.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
+<p id="section-8.1-1">For authorizing users in native apps, the best practice described in RFC <span>[<a href="#OAuth.NativeApps" class="xref">OAuth.NativeApps</a>]</span> should be followed - for example the use of PKCE in the authorization flow.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="client-auth-methods">
@@ -2085,11 +2085,11 @@ Pragma: no-cache
         <h3 id="name-client-authentication-metho">
 <a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-client-authentication-metho" class="section-name selfRef">Client Authentication Methods</a>
         </h3>
-<p id="section-8.2-1">To enhance security implementations MUST only support and allow <code>private_key_jwt</code> as Client Authentication method, described in Section 9. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-8.2-1" class="pilcrow">¶</a></p>
-<p id="section-8.2-2">The reasons for this specification to do not allow other Client Authentication Methods are:<a href="#section-8.2-2" class="pilcrow">¶</a></p>
+<p id="section-8.2-1">To enhance security, implementations MUST only support and allow <code>private_key_jwt</code> as the Client Authentication method, as described in Section 9. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-8.2-1" class="pilcrow">¶</a></p>
+<p id="section-8.2-2">The reasons that this specification does not allow other Client Authentication Methods are:<a href="#section-8.2-2" class="pilcrow">¶</a></p>
 <ul>
 <li id="section-8.2-3.1">
-            <p id="section-8.2-3.1.1"><code>none</code>: is not an authentication method so is not allowed.<a href="#section-8.2-3.1.1" class="pilcrow">¶</a></p>
+            <p id="section-8.2-3.1.1"><code>none</code>: is not an authentication method, so is not allowed.<a href="#section-8.2-3.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-8.2-3.2">
             <p id="section-8.2-3.2.1"><code>client_secret_basic</code> and <code>client_secret_post</code> send over the network the complete credential that can be intercepted.<a href="#section-8.2-3.2.1" class="pilcrow">¶</a></p>
@@ -2098,12 +2098,12 @@ Pragma: no-cache
             <p id="section-8.2-3.3.1"><code>client_secret_jwt</code> is based on a shared secret and is a less secure version of the <code>private_key_jwt</code>.<a href="#section-8.2-3.3.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-8.2-3.4">
-            <p id="section-8.2-3.4.1"><code>tls_client_auth</code> and <code>self_signed_tls_client_auth</code> described in specification <span>[<a href="#OAuth.MTLS" class="xref">OAuth.MTLS</a>]</span>, are discarded because bind Network and Authentication layer.<a href="#section-8.2-3.4.1" class="pilcrow">¶</a></p>
+            <p id="section-8.2-3.4.1"><code>tls_client_auth</code> and <code>self_signed_tls_client_auth</code> described in the specification <span>[<a href="#OAuth.MTLS" class="xref">OAuth.MTLS</a>]</span>, are discarded because  they bind the Network and Authentication layer.<a href="#section-8.2-3.4.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
-<p id="section-8.2-4">During Client Registration, the RP (Client) MUST register a Client Authentication method. If no method is registered, the default method is <code>private_key_jwt</code>.<a href="#section-8.2-4" class="pilcrow">¶</a></p>
-<p id="section-8.2-5">The supported Client Authentication Methods MAY be expanded if in the future if other method is provided by other implementers that commit with the security level provided by this specification.<a href="#section-8.2-5" class="pilcrow">¶</a></p>
-<p id="section-8.2-6">The next is a non normative example of a jwt bearer following the specification of private<em>key</em>jwt method: (line wraps within JWS for display purposes only)<a href="#section-8.2-6" class="pilcrow">¶</a></p>
+<p id="section-8.2-4">During the Client Registration, the RP (Client) MUST register a Client Authentication method. If no method is registered, the default method is <code>private_key_jwt</code>.<a href="#section-8.2-4" class="pilcrow">¶</a></p>
+<p id="section-8.2-5">The supported Client Authentication Methods MAY be expanded in the future if other methods are provided by other implementers that commit to ensuring compliance with the security level provided by this specification.<a href="#section-8.2-5" class="pilcrow">¶</a></p>
+<p id="section-8.2-6">The next is a non normative example of a JWT bearer following the specification of a private<em>key</em>jwt method: (line wraps within JWS for display purposes only)<a href="#section-8.2-6" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-8.2-7">
 <pre>eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCIsImtpZCI6InJwX3NlY19rZXkifQ.eyJpc3MiOiIzZGZkODllMS05NjRiLTRhYzQtY
 mE0Ni05NzdmYzVmODdkYjkiLCJhdWQiOiJodHRwczovL29wLmV4YW1wbGUub3JnLyIsInN1YiI6IjNkZmQ4OWUxLTk2NGItNGFjN
@@ -2121,8 +2121,8 @@ C1G--vHUZ6A9IxP84fR636IxSSUo8Y76Bp4ShmfqeD0jvTner1U2j77B_X01_3gbLAk6Gz48CPfZsDC6
         <h3 id="name-initiate-authorize-endpoint">
 <a href="#section-8.3" class="section-number selfRef">8.3. </a><a href="#name-initiate-authorize-endpoint" class="section-name selfRef">Initiate authorize endpoint phishing</a>
         </h3>
-<p id="section-8.3-1">In this attack, the RP developer is social engineered into believing that the initiate authorize endpoint has been changed to a URL that is controlled by the attacker. As the result, the client could send sensitive details to a rogue OP and the attacker will get hold of sensitive data.<a href="#section-8.3-1" class="pilcrow">¶</a></p>
-<p id="section-8.3-2">This can be partially  mitigated by having the RP to enquiry the value of the above endpoint by calling the well known configuration endpoint. Alternatively, JWE could be used when sending requests.<a href="#section-8.3-2" class="pilcrow">¶</a></p>
+<p id="section-8.3-1">In this attack, the RP developer has been socially engineered into believing that the <code>/initiate-authorize</code> endpoint has been changed to a URL that is still controlled by the original OP, when it is actually controlled by an attacker. As a result, the client could send sensitive details to a rogue OP and the attacker will get hold of sensitive data.<a href="#section-8.3-1" class="pilcrow">¶</a></p>
+<p id="section-8.3-2">This can be partially mitigated by having the RP enquire to the value of the above endpoint by calling the well known configuration endpoint. Alternatively, a JWE could be used when sending requests.<a href="#section-8.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="token-endpoint-phishing">
@@ -2130,8 +2130,8 @@ C1G--vHUZ6A9IxP84fR636IxSSUo8Y76Bp4ShmfqeD0jvTner1U2j77B_X01_3gbLAk6Gz48CPfZsDC6
         <h3 id="name-token-endpoint-phishing">
 <a href="#section-8.4" class="section-number selfRef">8.4. </a><a href="#name-token-endpoint-phishing" class="section-name selfRef">Token endpoint phishing</a>
         </h3>
-<p id="section-8.4-1">In this attack, the RP developer is social engineered into believing that the token endpoint has been changed to a URL that is controlled by the attacker. As the result, the client could send an authorization code and a valid credential to a rogue OP. The attacked could then use them to retrieve the token from the honest OP.<a href="#section-8.4-1" class="pilcrow">¶</a></p>
-<p id="section-8.4-2">This can be partially  mitigated by having the RP to enquiry the value of the above endpoint by calling the well known configuration endpoint. Alternatively, token can be returned encrypted as JWE.<a href="#section-8.4-2" class="pilcrow">¶</a></p>
+<p id="section-8.4-1">In this attack, the RP developer has been socially engineered into believing that the <code>/token</code> endpoint has been changed to a URL that is still controlled by the original OP, when it is actually controlled by an attacker. As a result, the client could send an authorization code and valid credentials to a rogue OP. The attacker could then use them to retrieve the token from an legitimate OP.<a href="#section-8.4-1" class="pilcrow">¶</a></p>
+<p id="section-8.4-2">This can be partially mitigated by having the RP enquire to the value of the above endpoint by calling the well known configuration endpoint. Alternatively the token can be returned encrypted as a JWE.<a href="#section-8.4-2" class="pilcrow">¶</a></p>
 <p id="section-8.4-3">Mutual TLS will prevent this attack, since the token endpoint cannot be called without a valid client certificate.<a href="#section-8.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2145,8 +2145,8 @@ C1G--vHUZ6A9IxP84fR636IxSSUo8Y76Bp4ShmfqeD0jvTner1U2j77B_X01_3gbLAk6Gz48CPfZsDC6
           <h4 id="name-tls-considerations">
 <a href="#section-8.5.1" class="section-number selfRef">8.5.1. </a><a href="#name-tls-considerations" class="section-name selfRef">TLS considerations</a>
           </h4>
-<p id="section-8.5.1-1">The minimum version of TLS MUST be v1.2.<a href="#section-8.5.1-1" class="pilcrow">¶</a></p>
-<p id="section-8.5.1-2">Use only ciphersuites that ensure perfect forward secrecy (PFS) and authenticated encryption with associated data (AEAD). Therefore, encryption should be either AES with GCM or CHACHA20 with POLY1305, while key exchange and authentication SHOULD be part of ECDHE<em>RSA, ECDHE</em>ECDSA, DHE<em>RSA, DHE</em>DSS, CECPQ1 (together with all TLS 1.3 ciphers).<a href="#section-8.5.1-2" class="pilcrow">¶</a></p>
+<p id="section-8.5.1-1">The minimum version of the TLS MUST be v1.2.<a href="#section-8.5.1-1" class="pilcrow">¶</a></p>
+<p id="section-8.5.1-2">Only use ciphersuites that ensure perfect forward secrecy (PFS), as well as authenticated encryption with associated data (AEAD). Therefore, encryption should be with either AES with GCM or CHACHA20 with POLY1305, whilst key exchange and authentication SHOULD be part of ECDHE<em>RSA, ECDHE</em>ECDSA, DHE<em>RSA, DHE</em>DSS, CECPQ1 (together with all TLS 1.3 ciphers).<a href="#section-8.5.1-2" class="pilcrow">¶</a></p>
 <p id="section-8.5.1-3">Examples of valid ciphers:<a href="#section-8.5.1-3" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-8.5.1-4">
 <pre>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
@@ -2160,9 +2160,9 @@ TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
           <h4 id="name-jws-signing-algorithms-cons">
 <a href="#section-8.5.2" class="section-number selfRef">8.5.2. </a><a href="#name-jws-signing-algorithms-cons" class="section-name selfRef">JWS signing algorithms considerations</a>
           </h4>
-<p id="section-8.5.2-1">The following alghorithms SHALL NOT be allowd:
+<p id="section-8.5.2-1">The following alghorithms SHALL NOT be allowed:
  * <em>none:</em> It does not provide any form of authenticity nor integrity
- * <em>hmac:</em> It does relies on the knowledge of a pre-shared key between OP and RP<a href="#section-8.5.2-1" class="pilcrow">¶</a></p>
+ * <em>hmac:</em> It relies on the knowledge of a pre-shared key between the OP and RP<a href="#section-8.5.2-1" class="pilcrow">¶</a></p>
 <p id="section-8.5.2-2">It is reccomended to
 1.  Not use PKCS #1 v1.5 (RS256, RS384, RS512)
 2.  Use PS256, ES256 or better<a href="#section-8.5.2-2" class="pilcrow">¶</a></p>
@@ -2177,13 +2177,13 @@ TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
       <h2 id="name-data-examples">
 <a href="#section-9" class="section-number selfRef">9. </a><a href="#name-data-examples" class="section-name selfRef">Data Examples</a>
       </h2>
-<p id="section-9-1">The following sections show examples about request and responses that are used in the protocol flow.<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">The following sections show examples about requests and responses that are used in the protocol flow.<a href="#section-9-1" class="pilcrow">¶</a></p>
 <div id="auth-redirect-resp">
 <section id="section-9.1">
         <h3 id="name-authorize-redirect-response">
 <a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-authorize-redirect-response" class="section-name selfRef">Authorize redirect response</a>
         </h3>
-<p id="section-9.1-1">The following is a non-normative example of a response from RP to the customer to start the authentication process. This redirect follow the Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-9.1-1" class="pilcrow">¶</a></p>
+<p id="section-9.1-1">The following is a non-normative example of a response from RP to the customer to start the authentication process. This redirect follows the Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-9.1-1" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-9.1-2">
 <pre>HTTP/1.1 302 Found
 Location: https://op.example.com/authorize
@@ -2191,7 +2191,7 @@ Location: https://op.example.com/authorize
     &amp;request_uri=urn:example:Y7AyOKAK
 </pre><a href="#section-9.1-2" class="pilcrow">¶</a>
 </div>
-<p id="section-9.1-3">Note that since we are using <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span> <code>client_id</code> param can be omitted and used inside the request object.<a href="#section-9.1-3" class="pilcrow">¶</a></p>
+<p id="section-9.1-3">Note that since we are using <span>[<a href="#OAuth.PAR" class="xref">OAuth.PAR</a>]</span> the <code>client_id</code> param can be omitted and used inside the request object.<a href="#section-9.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="auth-req">
@@ -2199,8 +2199,8 @@ Location: https://op.example.com/authorize
         <h3 id="name-authentication-request">
 <a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-authentication-request" class="section-name selfRef">Authentication request</a>
         </h3>
-<p id="section-9.2-1">The following is a non-normative example of an authentication request to the <code>/authorize</code> endpoint in OP. This request follow the specification defined in Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-9.2-1" class="pilcrow">¶</a></p>
-<p id="section-9.2-2">This request is the result of the redirection response <a href="#auth-redirect-resp">Authorize redirect response</a>. As explained in the <a href="#auth-redirect-resp">Authorize redirect response</a> example <code>client_id</code> param can be omitted here.<a href="#section-9.2-2" class="pilcrow">¶</a></p>
+<p id="section-9.2-1">The following is a non-normative example of an authentication request to the <code>/authorize</code> endpoint in OP. This request follows the specification defined in Section 3.1.2.1 of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-9.2-1" class="pilcrow">¶</a></p>
+<p id="section-9.2-2">This request is the result of the redirection response <a href="#auth-redirect-resp">Authorize redirect response</a>. As explained in the <a href="#auth-redirect-resp">Authorize redirect response</a> example, the <code>client_id</code> param can be omitted here.<a href="#section-9.2-2" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-9.2-3">
 <pre>GET /authorize
   ?client_id=3dfd89e1-964b-4ac4-ba46-977fc5f87db9
@@ -2216,7 +2216,7 @@ Host: op.example.com
         <h3 id="name-successful-authorize-respon">
 <a href="#section-9.3" class="section-number selfRef">9.3. </a><a href="#name-successful-authorize-respon" class="section-name selfRef">Successful Authorize response</a>
         </h3>
-<p id="section-9.3-1">The following is a non-normative example of a response from OP when the customer Authenticates and consent to share the information. This response follow the specification described in Section 3.1.2.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-9.3-1" class="pilcrow">¶</a></p>
+<p id="section-9.3-1">The following is a non-normative example of a response from the OP when the customer Authenticates and consents to share the information. This response follows the specification as described in Section 3.1.2.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-9.3-1" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-9.3-2">
 <pre>HTTP/1.1 302 Found
 Location: https://rp.example.com/cb
@@ -2247,8 +2247,8 @@ Host: rp.example.com
         <h3 id="name-token-request">
 <a href="#section-9.5" class="section-number selfRef">9.5. </a><a href="#name-token-request" class="section-name selfRef">Token request</a>
         </h3>
-<p id="section-9.5-1">The following is a non-normative example of a Token Request following the specification described described in the section 3.1.3.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.5-1" class="pilcrow">¶</a></p>
-<p id="section-9.5-2">The Client MUST be authenticated to the Token Endpoint using the authentication method registered for its <code>client_id</code>, as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-9.5-2" class="pilcrow">¶</a></p>
+<p id="section-9.5-1">The following is a non-normative example of a Token Request following the specification as described in section 3.1.3.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.5-1" class="pilcrow">¶</a></p>
+<p id="section-9.5-2">The Client MUST be authenticated to the Token Endpoint using the authentication method registered for its <code>client_id</code> as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-9.5-2" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-9.5-3">
 <pre>POST /token HTTP/1.1
 Host: op.example.com
@@ -2273,7 +2273,7 @@ er1U2j77B_X01_3gbLAk6Gz48CPfZsDC6c6jW56mt99YZvjf5DQ
         <h3 id="name-token-response">
 <a href="#section-9.6" class="section-number selfRef">9.6. </a><a href="#name-token-response" class="section-name selfRef">Token response</a>
         </h3>
-<p id="section-9.6-1">The following is a non-normative example of a token response following the specifications of described in Section 3.1.3.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.6-1" class="pilcrow">¶</a></p>
+<p id="section-9.6-1">The following is a non-normative example of a token response following the specifications as described in Section 3.1.3.3. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.6-1" class="pilcrow">¶</a></p>
 <p id="section-9.6-2">The <code>id_token</code> parameter is explained in section <a href="#id-token-example">ID token example</a> (with line wraps within values for display purposes only)<a href="#section-9.6-2" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-9.6-3">
 <pre>HTTP/1.1 200 OK
@@ -2304,8 +2304,8 @@ iOjE1NjgzNzk4ODQsImV4cCI6MTU2ODM3OTk0NH0.chwTi-Pt9A7t2O1WvAGQzxNBIoQKbxlDThLa946
         <h3 id="name-jws-request-object">
 <a href="#section-9.7" class="section-number selfRef">9.7. </a><a href="#name-jws-request-object" class="section-name selfRef">JWS request object</a>
         </h3>
-<p id="section-9.7-1">The following is a non-normative example of an authorization request JWT, this example follow the specification described in Section 6. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.7-1" class="pilcrow">¶</a></p>
-<p id="section-9.7-2">The request object contain the requested claims inside the payload as described in section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>, apart from using scopes as templates this is the preferred way to request claims instead scope directly. Additional JWT object MUST contain the next claims:<a href="#section-9.7-2" class="pilcrow">¶</a></p>
+<p id="section-9.7-1">The following is a non-normative example of an authorization request JWT. This example follows the specification as described in Section 6. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.7-1" class="pilcrow">¶</a></p>
+<p id="section-9.7-2">The request object contains the requested claims inside the payload as described in section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>. Apart from using scopes as templates, this is the preferred way to request claims instead the scope directly. Any additional JWT objects MUST contain the next claims:<a href="#section-9.7-2" class="pilcrow">¶</a></p>
 <ul>
 <li id="section-9.7-3.1">
             <p id="section-9.7-3.1.1"><code>nbf</code>: The time before which the signed authentication request is unacceptable<a href="#section-9.7-3.1.1" class="pilcrow">¶</a></p>
@@ -2314,7 +2314,7 @@ iOjE1NjgzNzk4ODQsImV4cCI6MTU2ODM3OTk0NH0.chwTi-Pt9A7t2O1WvAGQzxNBIoQKbxlDThLa946
             <p id="section-9.7-3.2.1"><code>jti</code>: A unique identifier for the signed authentication request.<a href="#section-9.7-3.2.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
-<p id="section-9.7-4">The reason for this two claims is to avoid an attacker in control to the clock on the client to generate long lived JWT Authentication request.<a href="#section-9.7-4" class="pilcrow">¶</a></p>
+<p id="section-9.7-4">The reason for these two claims is to avoid an attacker in control of the clock on the client side to generate a long lived JWT Authentication request.<a href="#section-9.7-4" class="pilcrow">¶</a></p>
 <div id="section-9.7-5">
 <pre class="sourcecode lang-json">{
    "iss": "3dfd89e1-964b-4ac4-ba46-977fc5f87db9",
@@ -2340,7 +2340,7 @@ iOjE1NjgzNzk4ODQsImV4cCI6MTU2ODM3OTk0NH0.chwTi-Pt9A7t2O1WvAGQzxNBIoQKbxlDThLa946
 }
 </pre><a href="#section-9.7-5" class="pilcrow">¶</a>
 </div>
-<p id="section-9.7-6">Signing it with the <code>RS512</code> algorithm results in this Request Object value <span>[<a href="#JWS" class="xref">JWS</a>]</span>, this value is used in the request <a href="#auth-req">Authentication request</a>.<a href="#section-9.7-6" class="pilcrow">¶</a></p>
+<p id="section-9.7-6">Signing it with the <code>RS512</code> algorithm results in this Request Object value <span>[<a href="#JWS" class="xref">JWS</a>]</span>. This value is used in the request <a href="#auth-req">Authentication request</a>.<a href="#section-9.7-6" class="pilcrow">¶</a></p>
 <p id="section-9.7-7"> (line wraps within values for display purposes only)<a href="#section-9.7-7" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-9.7-8">
 <pre>eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCIsImtpZCI6InJwX2tleV8yIn0.eyJpc3MiOiIzZGZkODllMS05NjRiLTRhYzQtYmE0Ni05NzdmYzVmODdk
@@ -2361,7 +2361,7 @@ LCnwN2le0PFo51fVYKLwupIfnCduY_i2iPgVuCMlx9UM5WV9FdogDf-r1BoF-cp9FLCCd8x-C9VIXKHT
         <h3 id="name-id-token-example">
 <a href="#section-9.8" class="section-number selfRef">9.8. </a><a href="#name-id-token-example" class="section-name selfRef">ID token example</a>
         </h3>
-<p id="section-9.8-1">The following is a non-normative example of an <code>id_token</code> returned by the OP following the specifications described in Section 2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.8-1" class="pilcrow">¶</a></p>
+<p id="section-9.8-1">The following is a non-normative example of an <code>id_token</code> returned by the OP following the specifications as described in Section 2. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>.<a href="#section-9.8-1" class="pilcrow">¶</a></p>
 <div id="section-9.8-2">
 <pre class="sourcecode lang-json">{
    "iss": "https://op.example.org/",
@@ -2376,7 +2376,7 @@ LCnwN2le0PFo51fVYKLwupIfnCduY_i2iPgVuCMlx9UM5WV9FdogDf-r1BoF-cp9FLCCd8x-C9VIXKHT
 }
 </pre><a href="#section-9.8-2" class="pilcrow">¶</a>
 </div>
-<p id="section-9.8-3">After signing the JWT and add the mandatory claims we obtain the next <span>[<a href="#JWS" class="xref">JWS</a>]</span>. (line wraps within values for display purposes only)<a href="#section-9.8-3" class="pilcrow">¶</a></p>
+<p id="section-9.8-3">After signing the JWT and add the mandatory claims, we obtain the next <span>[<a href="#JWS" class="xref">JWS</a>]</span>. (line wraps within values for display purposes only)<a href="#section-9.8-3" class="pilcrow">¶</a></p>
 <div class="artwork art-text alignLeft" id="section-9.8-4">
 <pre>eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCIsImtpZCI6Im9wX2tleV8xIn0.eyJpc3MiOiJodHRwczovL29wLmV4YW1wbGUub3JnLyIsIm
 F1ZCI6IjNkZmQ4OWUxLTk2NGItNGFjNC1iYTQ2LTk3N2ZjNWY4N2RiOSIsInN1YiI6IjE0MjUzNjc0OCIsIm5vbmNlIjoibi0wMTBfTTE2
@@ -2399,8 +2399,8 @@ EL5kohM44E5JKZbSpgmnKAQMn-fYDl1y5kExaNbruzzu2F2Rsk976YJxKd_R8Wg67FhMFqbOGn71vGRG
         <h3 id="name-example-keys">
 <a href="#section-9.9" class="section-number selfRef">9.9. </a><a href="#name-example-keys" class="section-name selfRef">Example Keys</a>
         </h3>
-<p id="section-9.9-1">The next keys are just for illustrative purposes, should only be used to generate the examples in this documentation.<a href="#section-9.9-1" class="pilcrow">¶</a></p>
-<p id="section-9.9-2">All the sample jws showed in this page have been signed using these keys using the same for RP and OP jwts, in a real implementation each actor in the protocol has his own key pairs.<a href="#section-9.9-2" class="pilcrow">¶</a></p>
+<p id="section-9.9-1">The next keys are just for illustrative purposes and should only be used to generate the examples in this documentation.<a href="#section-9.9-1" class="pilcrow">¶</a></p>
+<p id="section-9.9-2">All the sample JWS's showed on this page have been signed using the same keys for the RP and OP JWT's. In a real implementation, each actor in the protocol has their own key pairs.<a href="#section-9.9-2" class="pilcrow">¶</a></p>
 <div id="public-key">
 <section id="section-9.9.1">
           <h4 id="name-public-key">
@@ -2487,18 +2487,12 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 <a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
-<dt id="JWT">[JWT]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a>&gt;</span>. </dd>
 <dt id="JWS">[JWS]</dt>
 <dd>
 <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Signature (JWS)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7515">https://tools.ietf.org/html/rfc7515</a>&gt;</span>. </dd>
-<dt id="RFC8417">[RFC8417]</dt>
+<dt id="OIDC">[OIDC]</dt>
 <dd>
-<span class="refAuthor">Hunt, Ed., P.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, Denniss, W.</span><span class="refAuthor">, and M. Ansari</span>, <span class="refTitle">"Security Event Token (SET)"</span>, <time datetime="2018-07">July 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8417">https://www.rfc-editor.org/info/rfc8417</a>&gt;</span>. </dd>
-<dt id="OAuth.MTLS">[OAuth.MTLS]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens"</span>, <time datetime="2018-01">January 2018</time>, <span>&lt;<a href="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html</a>&gt;</span>. </dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
 <dt id="OAuth.PAR">[OAuth.PAR]</dt>
 <dd>
 <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, Tonge, D.</span><span class="refAuthor">, and F. Skokan</span>, <span class="refTitle">"OAuth 2.0 Pushed Authorization Requests draft-lodderstedt-oauth-par-01"</span>, <time datetime="2019-11-02">2 November 2019</time>, <span>&lt;<a href="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01</a>&gt;</span>. </dd>
@@ -2514,15 +2508,21 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 <dt id="OAuth2.0">[OAuth2.0]</dt>
 <dd>
 <span class="refAuthor">Hardt, C.</span>, <span class="refTitle">"The OAuth 2.0 Authorization Framework"</span>, <time datetime="2012-10">October 2012</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>&gt;</span>. </dd>
+<dt id="JWT">[JWT]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a>&gt;</span>. </dd>
+<dt id="OAuth.MTLS">[OAuth.MTLS]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens"</span>, <time datetime="2018-01">January 2018</time>, <span>&lt;<a href="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html</a>&gt;</span>. </dd>
 <dt id="RFC2616">[RFC2616]</dt>
 <dd>
 <span class="refAuthor">Fielding, R.</span>, <span class="refTitle">"Hypertext Transfer Protocol -- HTTP/1.1"</span>, <time datetime="1999-06">June 1999</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2616">https://tools.ietf.org/html/rfc2616</a>&gt;</span>. </dd>
 <dt id="OAuth.Multiple.Responses">[OAuth.Multiple.Responses]</dt>
 <dd>
 <span class="refAuthor">de Medeiros, B.</span><span class="refAuthor">, Scurtescu, M.</span><span class="refAuthor">, Tarjan, P.</span><span class="refAuthor">, and M. B. Jones</span>, <span class="refTitle">"OAuth 2.0 Multiple Response Type Encoding Practices"</span>, <time datetime="2014-02-25">25 February 2014</time>, <span>&lt;<a href="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html</a>&gt;</span>. </dd>
-<dt id="OIDC">[OIDC]</dt>
+<dt id="RFC8417">[RFC8417]</dt>
 <dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
+<span class="refAuthor">Hunt, Ed., P.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, Denniss, W.</span><span class="refAuthor">, and M. Ansari</span>, <span class="refTitle">"Security Event Token (SET)"</span>, <time datetime="2018-07">July 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8417">https://www.rfc-editor.org/info/rfc8417</a>&gt;</span>. </dd>
 </dl>
 </section>
 <div id="iana-considerations">
@@ -2557,7 +2557,7 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 <a href="#section-appendix.b" class="section-number selfRef">Appendix B. </a><a href="#name-notices" class="section-name selfRef">Notices</a>
       </h2>
 <p id="section-appendix.b-1">Copyright (c) 2020 Grupo Santander<a href="#section-appendix.b-1" class="pilcrow">¶</a></p>
-<p id="section-appendix.b-2">We intent to release this especification under MIT license, pending internal process.<a href="#section-appendix.b-2" class="pilcrow">¶</a></p>
+<p id="section-appendix.b-2">We intend to release this specification under the MIT license, pending internal processes.<a href="#section-appendix.b-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="document-history">
