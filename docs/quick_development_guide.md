@@ -57,7 +57,7 @@ The request will have a request object, it can contain the same fields that are 
 
 Here is an example of a request object to request standard claims:
 
-```
+```json
 {
   "aud": "https://op.iamid.io",
   "iss": "gFvrD2m0CEnHHngFxqZwh",
@@ -226,7 +226,7 @@ uoy4KY-RhiUDhhIC-YiUs6ajSyjzySPrAaGomY4B3Z4kj2c6cMPh3QQK4IKnC6S535QJcoszH8Gv9dam
 
 As result an `id_token` will be returned together with an access token:
 
-```
+```json
 {
   "access_token": "SpBfSaSy5F7cbirHXbgCjYtwlc2fB_vctqzQN19qYAs",
   "expires_in": 1,
@@ -238,7 +238,7 @@ As result an `id_token` will be returned together with an access token:
 
 When inspecting above token this is what we get:
 
-```
+```json
 HEADER:
 {
   "alg": "RS256",
