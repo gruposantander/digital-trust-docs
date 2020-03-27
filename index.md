@@ -1,10 +1,22 @@
-# Welcome to Digital Trust Protocol Documentation Site
+
+- [Welcome to Digital Trust Protocol Documentation Site](#welcome-to-digital-trust-protocol-documentation-site)
+  - [Introduction](#introduction)
+  - [DTP Authorization Code Flow](#dtp-authorization-code-flow)
+  - [Assertion Claims](#assertion-claims)
+  - [Level of Assurance](#level-of-assurance)
+- [SDKs](#sdks)
+- [Quick Development Guide](#quick-development-guide)
+- [Sandbox](#sandbox)
+- [Sample Reference Implementation](#sample-reference-implementation)
+- [Support or Contact](#support-or-contact)
+
+## Welcome to Digital Trust Protocol Documentation Site
 
 You will be able to find here references to the different specifications we are publishing as part of the protocol.
 
 If you want to know more about the protocol, please follow this [link](docs/intro).
 
-## Introduction
+### Introduction
 
 When defining Digital Trust Protocol, the first major decision we took was to built on top of OpenID.  
 However, we thought that extending existing OpenID specs would be needed to fulfil our requirements, with end-user privacy control, and security best practices as core principles.
@@ -36,7 +48,7 @@ With this extension proposal, requested claims by the RP can refer to a desired 
 coming soon...
 
 ## Quick Development Guide
-The SDKs abstract you from internal details and help you create client applications to communicate with OP servers implementing our specs. If there is not a valid SDK for you or want or want to review more in detail who it works, follow this [Quick Development Guide] to help you getting started. 
+The SDKs abstract you from internal details and help you create client applications to communicate with OP servers implementing our specs. If there is not a valid SDK for you or want or want to review more in detail who it works, follow this [Quick Development Guide](./docs/quick_development_guide) to help you getting started. 
 
 ## Sandbox
 Check our Santander Labs Sandbox where you will be able to review further documentation to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/02/27/5e57d64cd511bDigital-Trust-Protocol---Sandbox.postman_collection.json.zip) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.

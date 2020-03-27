@@ -40,4 +40,4 @@ Some sample applications:
 - [Backlog] Proof of Verification support [Reference to Document, ZKP, Verifiable Credentials]
 - [Backlog] Other flows to be supported such as CIBA and Device Authorization
 
-
+{% include_relative protocol_flow.md %}
