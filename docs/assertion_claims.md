@@ -1,4 +1,4 @@
-### Request [request-assertions] #
+### Request
 To request data verification without disclosing the claim values, an `assertion_claims` element must be used. 
 
 Here is a sample request for obtaining assertion claims in the `id_token`, together with standard claims:
@@ -43,7 +43,7 @@ Here is a sample request for obtaining assertion claims in the `id_token`, toget
 
 Check [specifications](/assertions/claim-assertions-00.html) for full details on available operations and ways to build assertions.
 
-### Response [response-assertions] #
+### Response
 
 Here is an example of an `id_token` with `assertion_claims` in the response:
 
