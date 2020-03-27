@@ -13,4 +13,4 @@ To visualize the whole E2E, lets take the example of a fake company which allows
 
 The picture above shows the screens presented by the OP to the user before returning back to the RP:
 
-![Consent](../images/consent.png Consent")
+![Consent](../images/consent.png "Consent")
