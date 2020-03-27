@@ -152,7 +152,7 @@ cxyv7zmrsHwGuI7L1x3sgeCsz9HEWGsdg_RmYbPFBZhVV4a5CFotPVm91iWMO5lN-i1qjaWfjtsgSDjO
 ### Response
 The response of the call will be a expiration (in seconds) and a `request_uri` internal to the OP that will be used when calling the `/authorize` endpoint:
 
-```
+```json
 {
   "expires_in": 600,
   "request_uri": "urn:op.iamid.io:sdPTT1ixFvrJMIh13CjURy4Y0iBgnJ5AaYOV0Eo_q24"
