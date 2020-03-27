@@ -2,6 +2,8 @@
 
 You will be able to find here references to the different specifications we are publishing as part of the protocol.
 
+If you want to know more about the protocol, please follow this [link](docs/intro).
+
 ## Introduction
 
 When defining Digital Trust Protocol, the first major decision we took was to built on top of OpenID.  
