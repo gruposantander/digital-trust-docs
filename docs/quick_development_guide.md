@@ -6,6 +6,7 @@
     - [Response](#response)
   - [Redirection for authorization](#redirection-for-authorization)
   - [Getting the id_token](#getting-the-idtoken)
+  - [Annex 1: Using Assertion Claims](#annex-1-using-assertion-claims)
   
 # Quick Development Guide
 Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
@@ -219,7 +220,7 @@ vqlgsr6Kn5l4_jbSuSMfSx_mWhiQIWKZL6PN5xVHb39pNo3cDKOSnzHgXvdK5KJALu8lqZog0eEujLF4
 uoy4KY-RhiUDhhIC-YiUs6ajSyjzySPrAaGomY4B3Z4kj2c6cMPh3QQK4IKnC6S535QJcoszH8Gv9damr3In2TEVrEjjnOXYkteKNAY13gipmACoamWNA
 ```
 
-As result an `id_token` will be returned together with an access and a refresh tokens:
+As result an `id_token` will be returned together with an access token:
 
 ```
 {
@@ -231,7 +232,7 @@ As result an `id_token` will be returned together with an access and a refresh t
 }
 ```
 
-Inspecting the token this is what we get:
+When inspecting above token this is what we get:
 
 ```
 HEADER:
@@ -256,3 +257,6 @@ PAYLOAD:
 ```
 
 The token signature must be validated using the OP public key that can be found using the `jwks_uri` url provided the in the [openid-configuration](https://opserver-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com/.well-known/openid-configuration)
+
+## Annex 1: Using Assertion Claims
+{% include_relative ./assertion_claims.md %}
