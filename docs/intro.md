@@ -16,7 +16,7 @@ Sharing Verified Data applies to many multiple use cases, not only when someone'
   * At the customer’s request, the bank shares summary facts without disclosing private data. For example, this person is old enough to buy
 alcohol – but the date of birth will not be disclosed
 
-Some sample applications:
+**Some sample applications:**
 
 - Register with a service provider with minimum information shared
 - Apply for a product and get best deal based on your profile characteristics
