@@ -3,7 +3,7 @@ To request data verification without disclosing the claim values, an `assertion_
 
 Here is a sample request for obtaining assertion claims in the `id_token`, together with standard claims:
 
-```
+```json
 {
   "response_type": "code",
   "redirect_uri": "http://127.0.0.1:8080/cb",
@@ -47,7 +47,7 @@ Check [specifications](/assertions/claim-assertions-00.html) for full details on
 
 Here is an example of an `id_token` with `assertion_claims` in the response:
 
-```
+```json
 HEADER:
 {
   "alg": "RS256",

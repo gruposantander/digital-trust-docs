@@ -8,6 +8,9 @@
   - [Getting the id_token](#getting-the-idtoken)
   - [Annex 1: Using Assertion Claims](#annex-1-using-assertion-claims)
   - [Annex 2: Integration from Native Apps](#annex-2-integration-from-native-apps)
+  - [Annex 3: JWT handling in Javascript](#annex-3-jwt-handling-in-javascript)
+  - [Annex 4: Errors](#annex-4-errors)
+  - [Annex 5: Generate your public/private keys](#annex-5-generate-your-publicprivate-keys)
   
 # Quick Development Guide
 Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
@@ -45,7 +48,7 @@ In0.
 M0etMoZZNpx6MGeUEPQVgTaCmGopSKETTTTJwh7co_V-dFCkjC-_7MDAd-8nJrSPIFKKIe2-uNZYXjMOxmOjcsMvCtsCJLGb0MqKbpcMNElderlJm8uRQNqmnHdElaBlnl5MbHbr2EsNSqW_1dyo5cfrri3jJLs4T0ES6WUaZmryGOvF9qJdi32pWqeIdXEC30UMIBFJdKHAifKbnd47WSI8Bict
 y0WrWrlMRemoiVwyRU3usrpAnCgpzHSQidqk6DmpaWiyq8QytCmWt3NRm7kUkQHQ4S1wyzauFIkgIWwgPgaOSg9nea46F6HdP_Je_O_QDLSa2ANzvAbMZ_A
 ```
-Check instructions about [how to generate your development certificate and public keys](/docs/generate_keys).
+Check Annex 5 for instructions about [how to generate your development certificate and public keys](#annex-5-generate-your-publicprivate-keys).
 
 ## How to initiate a request
 
@@ -264,3 +267,12 @@ The token signature must be validated using the OP public key that can be found 
 
 ## Annex 2: Integration from Native Apps
 {% include_relative native_apps.md %}
+
+## Annex 3: JWT handling in Javascript
+{% include_relative jwt_javascript.md %}
+
+## Annex 4: Errors
+{% include_relative callback_errors.md %}
+
+## Annex 5: Generate your public/private keys
+{% include_relative generate_keys.md %}

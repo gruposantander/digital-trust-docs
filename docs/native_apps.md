@@ -7,7 +7,7 @@ The request is almost the same, but it needs 2 extra fields defined in [RFC7636]
 - `code_challenge`: challenge code (string)
 - `code_challenge_method`: defines the method used to generate the challenge 
 
-```
+```swift
 {
   "response_type": "code",
   "redirect_uri": "com.appid://cb",
@@ -45,7 +45,7 @@ The request is almost the same, but it needs 2 extra fields defined in [RFC7636]
 
 You can generate the code challenge and code verifier with this snippet:
 
-```
+```swift
 import CommonCrypto
 
 var buffer1 = [UInt8](repeating: 0, count: 32)
