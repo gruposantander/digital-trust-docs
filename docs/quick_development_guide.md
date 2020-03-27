@@ -256,7 +256,7 @@ PAYLOAD:
 }
 ```
 
-The token signature must be validated using the OP public key that can be found using the `jwks_uri` url provided the in the [openid-configuration](https://opserver-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com/.well-known/openid-configuration)
+The token signature must be validated using the OP public key that can be found using the `jwks_uri` url provided the in the [openid-configuration](https://opserver-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com/.well-known/openid-configuration).
 
 ## Annex 1: Using Assertion Claims
-{% include_relative ./assertion_claims.md %}
+
