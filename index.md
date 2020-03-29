@@ -1,5 +1,5 @@
 
-- [Welcome to Digital Trust Protocol Documentation Site](#welcome-to-digital-trust-protocol-documentation-site)
+- [Welcome](#welcome)
 - [OpenID profile and extensions](#openid-profile-and-extensions)
   - [DTP Authorization Code Flow](#dtp-authorization-code-flow)
   - [Assertion Claims](#assertion-claims)
@@ -10,7 +10,7 @@
 - [Sample Reference Implementation](#sample-reference-implementation)
 - [Support or Contact](#support-or-contact)
 
-## Welcome to Digital Trust Protocol Documentation Site
+## Welcome
 
 You will be able to find here references to the different specifications we are publishing as part of the protocol.
 
