@@ -57,11 +57,11 @@ HEADER:
 PAYLOAD:
 {
   "sub": "ec20142d7fb104b9b5b7c0377684189231072178f3029d9efef21bb07c341203",
-  "assertion_claims": [
+  "assertion_claims": {
     "give_name": { "result": false},
     "address": { "result": true},
     "age": { "result": true}
-  ],
+  },
   "phone_number": "+447698456251",
   "at_hash": "PRri2Kv1M2doVBMc49yIvQ",
   "aud": "TEST-2754efa75e8c4d11a6d7f95b90cd8e40-TEST",
