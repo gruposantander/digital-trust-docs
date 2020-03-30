@@ -11,6 +11,7 @@
   - [Annex 3: JWT handling in Javascript](#annex-3-jwt-handling-in-javascript)
   - [Annex 4: Errors](#annex-4-errors)
   - [Annex 5: Generate your public/private keys](#annex-5-generate-your-publicprivate-keys)
+  - [Annex 6: Registering your application](#annex-6-registering-your-application)
   
 # Quick Development Guide
 Although using the SDK makes easier and transparent integrating with a Digital Trust Protocol OP, if you want to directly interact without the SDK, here you will find some tips to help you implement your application integration.
@@ -277,3 +278,6 @@ If you want to build some assertions in the sandbox, check [Claims Dictionary](.
 
 ## Annex 5: Generate your public/private keys
 {% include_relative generate_keys.md %}
+
+## Annex 6: Registering your application
+{% include_relative app_registration.md %}

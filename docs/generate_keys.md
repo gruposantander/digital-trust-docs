@@ -1,5 +1,6 @@
-## Generating your private/public keys
 To be able to secure the whole messages exchange between your application and the OP server, your application will need to cryptographically sign some of the request parameters which consists on JWT tokens. You will need to generate a certificate and use the private key to sign the tokens and give us your public key to validate them.
+
+### Generating your private/public keys
 
 For development, please generate a dummy private key not related to your production systems, you can easily generate a new one with the following
 openssl command:
