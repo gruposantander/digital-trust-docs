@@ -11,3 +11,8 @@ claims:
     type: string
     example: Parker
     references: "[OpenID.Core]"
+  - name: birthdate
+    description: Date of birth of the End-User
+    type: date
+    example: 1976-02-02
+    references: "[OpenID.Core],[ISO.8601]"
