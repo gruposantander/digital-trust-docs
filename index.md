@@ -1,6 +1,6 @@
 
 - [Welcome](#welcome)
-- [OpenID profile and extensions](#openid-profile-and-extensions)
+- [Protocol Specifications](#protocol-specifications)
   - [DTP Authorization Code Flow](#dtp-authorization-code-flow)
   - [Assertion Claims](#assertion-claims)
   - [Level of Assurance](#level-of-assurance)
@@ -16,7 +16,7 @@ You will be able to find here references to the different specifications we are 
 
 If you want to know more about the protocol, please follow this [link](docs/intro).
 
-## OpenID profile and extensions
+## Protocol Specifications
 
 When defining Digital Trust Protocol, the first major decision we took was to built on top of OpenID.  
 However, we thought that extending existing OpenID specs would be needed to fulfil our requirements, with end-user privacy control, and security best practices as core principles.
