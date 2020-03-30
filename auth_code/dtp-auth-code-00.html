@@ -1311,7 +1311,7 @@ tr:nth-child(2n+1) > td {
 <p id="section-1-2">Most of the services require private information that is introduced by the user, making users spread the same details around the different service providers while not allowing these service providers to verify the information filled by customers. We believe that this is inefficient for both parties.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">We want to define a way that will help customers to share the minimum required level of details whilst allowing services to get rich and trusted information. Taking advantage of the assertion claims proccess will give third parties the option of not having to handle sensitive data storage.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">OIDC provides a mechanism to verify the identity of the End-User based on authentication performed by an Auth Server and retrieval of Basic profile information. We would like to use this mechanism in order to provide certified information via a secure communication protocol, therefore, we chose OpenId as base.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">The specification depicted in this document covers only the security profile for Digital Trust Protocol. Any other extensions will also complement the full protocol specifications.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-5">Further extensions will complement the full protocol specifications.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <div id="notational-conventions">
 <section id="section-1.1">
         <h3 id="name-notational-conventions">
@@ -1793,7 +1793,7 @@ Content-Type: application/json
 <p id="section-3.4-2">In addition to the error codes defined in Section 4.1.2.1 of OAuth 2.0 Authorization Framework <span>[<a href="#OAuth2.0" class="xref">OAuth2.0</a>]</span>, this specification also defines the following error codes:<a href="#section-3.4-2" class="pilcrow">¶</a></p>
 <ul>
 <li id="section-3.4-3.1">
-            <p id="section-3.4-3.1.1"><code>invalid_request_object</code>: The parameters inside the request object are invalid, is signed with none algorithm or the signature is not correct.<a href="#section-3.4-3.1.1" class="pilcrow">¶</a></p>
+            <p id="section-3.4-3.1.1"><code>invalid_request_object</code>: The parameters inside the request object are invalid, it is signed with <code>none</code> algorithm or the signature is not correct.<a href="#section-3.4-3.1.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-3.4-3.2">
             <p id="section-3.4-3.2.1"><code>invalid_request</code>: The request does not contain the parameter <code>request</code>.<a href="#section-3.4-3.2.1" class="pilcrow">¶</a></p>
@@ -1959,7 +1959,7 @@ Pragma: no-cache
             <p id="section-5.1-2.11.1">Is RECOMMENDED to include the <code>state</code> parameters in the authentication request, as described in Section <em>3.1.2.1</em> of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span>,<a href="#section-5.1-2.11.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.12">
-            <p id="section-5.1-2.12.1">SHALL use the <code>claims</code> parameter inside the JWT request Object, which is the preferred method for request claims as described in section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.1-2.12.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-2.12.1">SHALL use the <code>claims</code> parameter inside the JWT request Object, which is the preferred method for requesting claims as described in section 5.5. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.1-2.12.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.1-2.13">
             <p id="section-5.1-2.13.1">MAY use a scope template as an alternative to request claims.<a href="#section-5.1-2.13.1" class="pilcrow">¶</a></p>
@@ -1993,7 +1993,7 @@ Pragma: no-cache
             <p id="section-5.2-2.4.1">SHALL validate for the <code>/token</code> and <code>/initiate-authorize</code> endpoints that the Client is authenticated as described in Section <a href="#client-auth-methods">Client Authentication Methods</a>.<a href="#section-5.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.5">
-            <p id="section-5.2-2.5.1">SHALL require the <code>response_type</code> values <code>code</code>;<a href="#section-5.2-2.5.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.5.1">SHALL require the <code>response_type</code> value <code>code</code>;<a href="#section-5.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
 <li id="section-5.2-2.6">
             <p id="section-5.2-2.6.1">SHALL require a signed JWT request object, as described in Section 6.1. of <span>[<a href="#OIDC" class="xref">OIDC</a>]</span><a href="#section-5.2-2.6.1" class="pilcrow">¶</a></p>
@@ -2487,42 +2487,42 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 <a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
+<dt id="JWT">[JWT]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a>&gt;</span>. </dd>
 <dt id="JWS">[JWS]</dt>
 <dd>
 <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Signature (JWS)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7515">https://tools.ietf.org/html/rfc7515</a>&gt;</span>. </dd>
-<dt id="OIDC">[OIDC]</dt>
+<dt id="OAuth.Multiple.Responses">[OAuth.Multiple.Responses]</dt>
 <dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
+<span class="refAuthor">de Medeiros, B.</span><span class="refAuthor">, Scurtescu, M.</span><span class="refAuthor">, Tarjan, P.</span><span class="refAuthor">, and M. B. Jones</span>, <span class="refTitle">"OAuth 2.0 Multiple Response Type Encoding Practices"</span>, <time datetime="2014-02-25">25 February 2014</time>, <span>&lt;<a href="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html</a>&gt;</span>. </dd>
+<dt id="OAuth.NativeApps">[OAuth.NativeApps]</dt>
+<dd>
+<span class="refAuthor">Denniss, W.</span><span class="refAuthor"> and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 for Native Apps"</span>, <time datetime="2017-10">October 2017</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc8252">https://tools.ietf.org/html/rfc8252</a>&gt;</span>. </dd>
 <dt id="OAuth.PAR">[OAuth.PAR]</dt>
 <dd>
 <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, Tonge, D.</span><span class="refAuthor">, and F. Skokan</span>, <span class="refTitle">"OAuth 2.0 Pushed Authorization Requests draft-lodderstedt-oauth-par-01"</span>, <time datetime="2019-11-02">2 November 2019</time>, <span>&lt;<a href="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01</a>&gt;</span>. </dd>
 <dt id="URN">[URN]</dt>
 <dd>
 <span class="refAuthor">Moats, R.</span>, <span class="refTitle">"Uniform Resource Names"</span>, <time datetime="1997-05">May 1997</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2141">https://tools.ietf.org/html/rfc2141</a>&gt;</span>. </dd>
-<dt id="OAuth.NativeApps">[OAuth.NativeApps]</dt>
+<dt id="RFC8417">[RFC8417]</dt>
 <dd>
-<span class="refAuthor">Denniss, W.</span><span class="refAuthor"> and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 for Native Apps"</span>, <time datetime="2017-10">October 2017</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc8252">https://tools.ietf.org/html/rfc8252</a>&gt;</span>. </dd>
+<span class="refAuthor">Hunt, Ed., P.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, Denniss, W.</span><span class="refAuthor">, and M. Ansari</span>, <span class="refTitle">"Security Event Token (SET)"</span>, <time datetime="2018-07">July 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8417">https://www.rfc-editor.org/info/rfc8417</a>&gt;</span>. </dd>
+<dt id="OAuth.MTLS">[OAuth.MTLS]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens"</span>, <time datetime="2018-01">January 2018</time>, <span>&lt;<a href="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html</a>&gt;</span>. </dd>
 <dt id="RFC2119">[RFC2119]</dt>
 <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <time datetime="1997-03">March 1997</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>&gt;</span>. </dd>
 <dt id="OAuth2.0">[OAuth2.0]</dt>
 <dd>
 <span class="refAuthor">Hardt, C.</span>, <span class="refTitle">"The OAuth 2.0 Authorization Framework"</span>, <time datetime="2012-10">October 2012</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>&gt;</span>. </dd>
-<dt id="JWT">[JWT]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <time datetime="2015-05">May 2015</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a>&gt;</span>. </dd>
-<dt id="OAuth.MTLS">[OAuth.MTLS]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Lodderstedt, T.</span><span class="refAuthor">, Campbell, B.</span><span class="refAuthor">, and J. Bradley</span>, <span class="refTitle">"OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens"</span>, <time datetime="2018-01">January 2018</time>, <span>&lt;<a href="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html</a>&gt;</span>. </dd>
 <dt id="RFC2616">[RFC2616]</dt>
 <dd>
 <span class="refAuthor">Fielding, R.</span>, <span class="refTitle">"Hypertext Transfer Protocol -- HTTP/1.1"</span>, <time datetime="1999-06">June 1999</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2616">https://tools.ietf.org/html/rfc2616</a>&gt;</span>. </dd>
-<dt id="OAuth.Multiple.Responses">[OAuth.Multiple.Responses]</dt>
+<dt id="OIDC">[OIDC]</dt>
 <dd>
-<span class="refAuthor">de Medeiros, B.</span><span class="refAuthor">, Scurtescu, M.</span><span class="refAuthor">, Tarjan, P.</span><span class="refAuthor">, and M. B. Jones</span>, <span class="refTitle">"OAuth 2.0 Multiple Response Type Encoding Practices"</span>, <time datetime="2014-02-25">25 February 2014</time>, <span>&lt;<a href="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html</a>&gt;</span>. </dd>
-<dt id="RFC8417">[RFC8417]</dt>
-<dd>
-<span class="refAuthor">Hunt, Ed., P.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, Denniss, W.</span><span class="refAuthor">, and M. Ansari</span>, <span class="refTitle">"Security Event Token (SET)"</span>, <time datetime="2018-07">July 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8417">https://www.rfc-editor.org/info/rfc8417</a>&gt;</span>. </dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
 </dl>
 </section>
 <div id="iana-considerations">

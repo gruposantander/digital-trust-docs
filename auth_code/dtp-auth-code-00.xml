@@ -37,7 +37,7 @@
 <t>Most of the services require private information that is introduced by the user, making users spread the same details around the different service providers while not allowing these service providers to verify the information filled by customers. We believe that this is inefficient for both parties.</t>
 <t>We want to define a way that will help customers to share the minimum required level of details whilst allowing services to get rich and trusted information. Taking advantage of the assertion claims proccess will give third parties the option of not having to handle sensitive data storage.</t>
 <t>OIDC provides a mechanism to verify the identity of the End-User based on authentication performed by an Auth Server and retrieval of Basic profile information. We would like to use this mechanism in order to provide certified information via a secure communication protocol, therefore, we chose OpenId as base.</t>
-<t>The specification depicted in this document covers only the security profile for Digital Trust Protocol. Any other extensions will also complement the full protocol specifications.</t>
+<t>Further extensions will complement the full protocol specifications.</t>
 
 <section anchor="notational-conventions"><name>Notational conventions</name>
 <t>The key words &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;MAY&quot;, and &quot;CAN&quot; in this document are to be interpreted as described in &quot;Key words for use in RFCs to Indicate Requirement Levels&quot; <xref target="RFC2119"></xref>. These key words are not used as dictionary terms such that any occurrence of them shall be interpreted as key words and are not to be interpreted with their natural language meanings</t>
@@ -225,7 +225,7 @@ Content-Type: application/json
 <t>In addition to the error codes defined in Section 4.1.2.1 of OAuth 2.0 Authorization Framework <xref target="OAuth2.0"></xref>, this specification also defines the following error codes:</t>
 
 <ul>
-<li><t><tt>invalid_request_object</tt>: The parameters inside the request object are invalid, is signed with none algorithm or the signature is not correct.</t>
+<li><t><tt>invalid_request_object</tt>: The parameters inside the request object are invalid, it is signed with <tt>none</tt> algorithm or the signature is not correct.</t>
 </li>
 <li><t><tt>invalid_request</tt>: The request does not contain the parameter <tt>request</tt>.</t>
 </li>
@@ -342,7 +342,7 @@ Pragma: no-cache
 </li>
 <li><t>Is RECOMMENDED to include the <tt>state</tt> parameters in the authentication request, as described in Section <em>3.1.2.1</em> of <xref target="OIDC"></xref>,</t>
 </li>
-<li><t>SHALL use the <tt>claims</tt> parameter inside the JWT request Object, which is the preferred method for request claims as described in section 5.5. of <xref target="OIDC"></xref></t>
+<li><t>SHALL use the <tt>claims</tt> parameter inside the JWT request Object, which is the preferred method for requesting claims as described in section 5.5. of <xref target="OIDC"></xref></t>
 </li>
 <li><t>MAY use a scope template as an alternative to request claims.</t>
 </li>
@@ -365,7 +365,7 @@ Pragma: no-cache
 </li>
 <li><t>SHALL validate for the <tt>/token</tt> and <tt>/initiate-authorize</tt> endpoints that the Client is authenticated as described in Section <eref target="#client-auth-methods">Client Authentication Methods</eref>.</t>
 </li>
-<li><t>SHALL require the <tt>response_type</tt> values <tt>code</tt>;</t>
+<li><t>SHALL require the <tt>response_type</tt> value <tt>code</tt>;</t>
 </li>
 <li><t>SHALL require a signed JWT request object, as described in Section 6.1. of <xref target="OIDC"></xref></t>
 </li>
@@ -737,6 +737,21 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 
 <back>
 <references><name>Normative References</name>
+<reference anchor="JWT" target="https://tools.ietf.org/html/rfc7519">
+  <front>
+    <title>JSON Web Token (JWT)</title>
+    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
+      <organization>NRI</organization>
+    </author>
+    <author fullname="Mike Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <author fullname="John Bradley" initials="J." surname="Bradley">
+      <organization>Ping Identity</organization>
+    </author>
+    <date year="2015" month="May"></date>
+  </front>
+</reference>
 <reference anchor="JWS" target="https://tools.ietf.org/html/rfc7515">
   <front>
     <title>JSON Web Signature (JWS)</title>
@@ -752,25 +767,34 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="2015" month="May"></date>
   </front>
 </reference>
-<reference anchor="OIDC" target="http://openid.net/specs/openid-connect-core-1_0.html">
+<reference anchor="OAuth.Multiple.Responses" target="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">
   <front>
-    <title>OpenID Connect Core 1.0 incorporating errata set 1</title>
-    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
-      <organization>NRI</organization>
+    <title>OAuth 2.0 Multiple Response Type Encoding Practices</title>
+    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
+      <organization>Google</organization>
+    </author>
+    <author fullname="Marius Scurtescu" initials="M." surname="Scurtescu">
+      <organization>Google</organization>
+    </author>
+    <author fullname="Paul Tarjan" initials="P." surname="Tarjan">
+      <organization>Facebook</organization>
+    </author>
+    <author fullname="Michael B. Jones" initials="M." surname="B. Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <date year="2014" month="February" day="25"></date>
+  </front>
+</reference>
+<reference anchor="OAuth.NativeApps" target="https://tools.ietf.org/html/rfc8252">
+  <front>
+    <title>OAuth 2.0 for Native Apps</title>
+    <author fullname="William Denniss" initials="W." surname="Denniss">
+      <organization>Google</organization>
     </author>
     <author fullname="John Bradley" initials="J." surname="Bradley">
       <organization>Ping Identity</organization>
     </author>
-    <author fullname="Mike Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
-      <organization>Google</organization>
-    </author>
-    <author fullname="Chuck Mortimore" initials="C." surname="Mortimore">
-      <organization>Salesforce</organization>
-    </author>
-    <date year="2014" month="Nov" day="8"></date>
+    <date year="2017" month="October"></date>
   </front>
 </reference>
 <reference anchor="OAuth.PAR" target="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">
@@ -803,49 +827,22 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="1997" month="May"></date>
   </front>
 </reference>
-<reference anchor="OAuth.NativeApps" target="https://tools.ietf.org/html/rfc8252">
+<reference anchor="RFC8417" target="https://www.rfc-editor.org/info/rfc8417">
   <front>
-    <title>OAuth 2.0 for Native Apps</title>
+    <title>Security Event Token (SET)</title>
+    <author fullname="Phil Hunt" initials="P." surname="Hunt, Ed.">
+      <organization>Oracle</organization>
+    </author>
+    <author fullname="Michael B. Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
     <author fullname="William Denniss" initials="W." surname="Denniss">
       <organization>Google</organization>
     </author>
-    <author fullname="John Bradley" initials="J." surname="Bradley">
-      <organization>Ping Identity</organization>
+    <author fullname="Morteza Ansari" initials="M." surname="Ansari">
+      <organization>Cisco</organization>
     </author>
-    <date year="2017" month="October"></date>
-  </front>
-</reference>
-<reference anchor="RFC2119" target="https://tools.ietf.org/html/rfc2119">
-  <front>
-    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
-    <author fullname="Scott Bradner" initials="S." surname="Bradner">
-      <organization>Harvard University</organization>
-    </author>
-    <date year="1997" month="March"></date>
-  </front>
-</reference>
-<reference anchor="OAuth2.0" target="https://tools.ietf.org/html/rfc6749">
-  <front>
-    <title>The OAuth 2.0 Authorization Framework</title>
-    <author fullname="Dick Hardt" initials="C." surname="Hardt">
-      <organization>Microsoft</organization>
-    </author>
-    <date year="2012" month="October"></date>
-  </front>
-</reference>
-<reference anchor="JWT" target="https://tools.ietf.org/html/rfc7519">
-  <front>
-    <title>JSON Web Token (JWT)</title>
-    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
-      <organization>NRI</organization>
-    </author>
-    <author fullname="Mike Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <author fullname="John Bradley" initials="J." surname="Bradley">
-      <organization>Ping Identity</organization>
-    </author>
-    <date year="2015" month="May"></date>
+    <date year="2018" month="July"></date>
   </front>
 </reference>
 <reference anchor="OAuth.MTLS" target="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">
@@ -866,6 +863,24 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="2018" month="January"></date>
   </front>
 </reference>
+<reference anchor="RFC2119" target="https://tools.ietf.org/html/rfc2119">
+  <front>
+    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
+    <author fullname="Scott Bradner" initials="S." surname="Bradner">
+      <organization>Harvard University</organization>
+    </author>
+    <date year="1997" month="March"></date>
+  </front>
+</reference>
+<reference anchor="OAuth2.0" target="https://tools.ietf.org/html/rfc6749">
+  <front>
+    <title>The OAuth 2.0 Authorization Framework</title>
+    <author fullname="Dick Hardt" initials="C." surname="Hardt">
+      <organization>Microsoft</organization>
+    </author>
+    <date year="2012" month="October"></date>
+  </front>
+</reference>
 <reference anchor="RFC2616" target="https://tools.ietf.org/html/rfc2616">
   <front>
     <title>Hypertext Transfer Protocol -- HTTP/1.1</title>
@@ -875,40 +890,25 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="1999" month="June"></date>
   </front>
 </reference>
-<reference anchor="OAuth.Multiple.Responses" target="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">
+<reference anchor="OIDC" target="http://openid.net/specs/openid-connect-core-1_0.html">
   <front>
-    <title>OAuth 2.0 Multiple Response Type Encoding Practices</title>
+    <title>OpenID Connect Core 1.0 incorporating errata set 1</title>
+    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
+      <organization>NRI</organization>
+    </author>
+    <author fullname="John Bradley" initials="J." surname="Bradley">
+      <organization>Ping Identity</organization>
+    </author>
+    <author fullname="Mike Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
     <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
       <organization>Google</organization>
     </author>
-    <author fullname="Marius Scurtescu" initials="M." surname="Scurtescu">
-      <organization>Google</organization>
+    <author fullname="Chuck Mortimore" initials="C." surname="Mortimore">
+      <organization>Salesforce</organization>
     </author>
-    <author fullname="Paul Tarjan" initials="P." surname="Tarjan">
-      <organization>Facebook</organization>
-    </author>
-    <author fullname="Michael B. Jones" initials="M." surname="B. Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <date year="2014" month="February" day="25"></date>
-  </front>
-</reference>
-<reference anchor="RFC8417" target="https://www.rfc-editor.org/info/rfc8417">
-  <front>
-    <title>Security Event Token (SET)</title>
-    <author fullname="Phil Hunt" initials="P." surname="Hunt, Ed.">
-      <organization>Oracle</organization>
-    </author>
-    <author fullname="Michael B. Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <author fullname="William Denniss" initials="W." surname="Denniss">
-      <organization>Google</organization>
-    </author>
-    <author fullname="Morteza Ansari" initials="M." surname="Ansari">
-      <organization>Cisco</organization>
-    </author>
-    <date year="2018" month="July"></date>
+    <date year="2014" month="Nov" day="8"></date>
   </front>
 </reference>
 </references>
