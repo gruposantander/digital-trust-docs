@@ -1,0 +1,19 @@
+category: Government
+description: Data issued by a governmental institution, such as national identification, tax submission details or driving licenses.
+claims:
+  - name: passport_id
+    description: Passport Document id
+    type: string
+    example: "*****1212"
+    references: ""
+  - name: driving_license_id
+    description: Driving License Document id
+    type: string
+    example: "SCOT************06"
+    references: ""
+  - name: national_card_id
+    description: National ID Card Document id
+    type: string
+    example: "*****231A"
+    references: ""
+  
