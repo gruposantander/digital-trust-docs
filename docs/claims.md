@@ -1,4 +1,4 @@
 ---
-layout: claims_categories
+layout: claims
 ---
 

@@ -8,20 +8,25 @@ obtained from the well-known endpoint).</p>
 
 <table>
     <tr>
+        <th>Category</th>
         <th>Claim Id</th>
         <th>Description</th>
         <th>Type</th>
         <th>Example</th>
         <th>Normative Refs.</th>
     </tr>
-    {% for claim in site.data.all_claims.claims %}
-    <tr>
-        <td>{{ claim.name }}</td>
-        <td>{{ claim.description }}</td>
-        <td>{{ claim.type }}</td>
-        <td>{{ claim.example }}</td>
-        <td>{{ claim.references }}</td>
-    </tr>
+    {% for category_hash in site.data.claims %}
+        {% assign category = category_hash[1] %}
+        {% for claim in category.claims %}
+        <tr>
+            <td>{{ category.category }}</td>
+            <td>{{ claim.name }}</td>
+            <td>{{ claim.description }}</td>
+            <td>{{ claim.type }}</td>
+            <td>{{ claim.example }}</td>
+            <td>{{ claim.references }}</td>
+        </tr>
+        {% endfor %}
     {% endfor %}
 </table>
 
