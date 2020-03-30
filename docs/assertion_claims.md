@@ -1,7 +1,7 @@
 ### Request
 To request data verification without disclosing the claim values, an `assertion_claims` element must be used. 
 
-Here is a sample request for obtaining assertion claims in the `id_token`, together with standard claims:
+Here is a sample request for requesting assertion claims in the `id_token`, together with standard claims:
 
 ```json
 {
