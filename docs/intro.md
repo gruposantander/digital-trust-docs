@@ -43,4 +43,5 @@ alcohol – but the date of birth will not be disclosed
 
 {% include_relative protocol_flow.md %}
 
-{% include_relative claims.md %}
+If you want to review some use cases, please check [Claims Dictionary](./claims) for a list of available data topics you could use as an example to support your business ideas.
+
