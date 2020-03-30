@@ -14,7 +14,7 @@ obtained from the well-known endpoint).</p>
         <th>Example</th>
         <th>Normative Refs.</th>
     </tr>
-    {% for claim in site.data.all_claims %}
+    {% for claim in site.data.all_claims.claims %}
     <tr>
         <td>{{ claim.name }}</td>
         <td>{{ claim.description }}</td>
