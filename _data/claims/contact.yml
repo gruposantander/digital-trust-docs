@@ -10,5 +10,4 @@ claims:
     description: End-User's preferred e-mail address
     type: string
     example: user@email.com
-    references: "[OpenID.Core][IETF.RFC5322]
-
+    references: "[OpenID.Core][IETF.RFC5322]"
