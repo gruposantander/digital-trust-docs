@@ -5,8 +5,8 @@ layout: default
 <p>Digital Trust Protocol will provide access to a variety of data claims. It's up to the OpenId Provider (OP) to define the claims available (which can be
 obtained from the well-known endpoint).</p>
 <p>In the sandbox environment and for testing purposes, you should be able to request data and make assertions for the following data claims:</p>
-{% for category in site.data.claims %}
-
+{% for category_hash in site.data.claims %}
+{% assign category = category_hash[1] %}
 <h3>{{ category.category }}</h3>
 {{ category.description }}
 <table>
@@ -17,7 +17,8 @@ obtained from the well-known endpoint).</p>
         <th>Example</th>
         <th>Normative Refs.</th>
     </tr>
-    {% for claim in category.claims %}
+    {% for claim_hash in category.claims %}
+    {% assign claim = claim_hash[1] %}
     <tr>
         <td>{{ claim.name }}</td>
         <td>{{ claim.description }}</td>
