@@ -14,7 +14,13 @@ claims:
   - name: last_quarter_money_in
     description: Total amount of money incoming to user bank account for the last three months
     type: currency
-    example: '{amount:"10000.50", currency:"GBP"}'
+    example: |
+        ```json 
+        {
+          amount: "10000.50", 
+          currency: "GBP"
+        }
+        ```
     references: ""
   - name: average_monthly_money_in
     description: Average monthly amount of money incoming to user bank account for the last year
