@@ -7,8 +7,8 @@ obtained from the well-known endpoint).</p>
 <p>In the sandbox environment and for testing purposes, you should be able to request data and make assertions for the following data claims:</p>
 {% for category in site.data.claims %}
 
-<h3>{{category.name}}</h3>
-{{category.description}}
+<h3>{{ category.category }}</h3>
+{{ category.description }}
 <table>
     <tr>
         <th>Claim Id</th>
@@ -19,12 +19,12 @@ obtained from the well-known endpoint).</p>
     </tr>
     {% for claim in category.claims %}
     <tr>
-            <td>{{claim.name}}</td>
-            <td>{{claim.description}}</td>
-            <td>{{claim.type}}</td>
-            <td>{{claim.example}}</td>
-            <td>{{claim.references}}</td>
-        </tr>
+        <td>{{ claim.name }}</td>
+        <td>{{ claim.description }}</td>
+        <td>{{ claim.type }}</td>
+        <td>{{ claim.example }}</td>
+        <td>{{ claim.references }}</td>
+    </tr>
     {% endfor %}
 </table>
 {% endfor %}
