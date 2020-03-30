@@ -4,7 +4,7 @@ claims:
   - name: total_balance
     description: Total amount of money hold on user's bank accounts
     type: currency
-        example: |
+    example: |
         ```json 
         {
           "amount": "10000.50", 
@@ -15,7 +15,7 @@ claims:
   - name: last_year_money_in
     description: Total amount of money incoming to user bank account for the last year
     type: currency
-        example: |
+    example: |
         ```json 
         {
           "amount": "10000.50", 
