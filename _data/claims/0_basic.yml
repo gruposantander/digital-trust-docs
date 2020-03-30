@@ -16,3 +16,68 @@ claims:
     type: date
     example: 1976-02-02
     references: "[OpenID.Core],[ISO.8601]"
+  - name: gender
+    description: End-User's gender
+    type: string
+    example: female
+    references: "[OpenID.Core]"
+  - name: country_of_birth
+    description: End-User's country of birth
+    type: string
+    example: "UK"
+    references: "[ISO.3166]"
+  - name: title
+    description: End-User's title
+    type: string
+    example: "Dr."
+    references: ""
+  - name: nationality
+    description: End-User's nationality
+    type: string
+    example: "UK"
+    references: "[ISO.3166]"
+  - name: civil_status
+    description: Marital and civil partnership status
+    type: string
+    example: "Married"
+    references: ""
+  - name: age 
+    description: End-user´s age
+    type: number
+    example: 22
+    references: ""
+  - name: company_registered_name
+    description: Registered company name
+    type: string
+    example: "Acme Co"
+    references: ""
+  - name: company_trade_name
+    description: Name chooses by a company that is different to their registered name
+    type: string
+    example: "Acme"
+    references: ""
+  - name: company_type
+    description: Type of company (as per country regulation supported legal structure)
+    type: string
+    example: "Sole Trader"
+    references: ""
+  - name: company_start_date
+    description: Date the company legally started business
+    type: date
+    example: 1982-01-02
+    references: "[OpenID.Core],[ISO.8601]"
+  - name: company_end_date
+    description: Date the company legally closed business
+    type: date
+    example: 2019-01-02
+    references: "[OpenID.Core],[ISO.8601]"
+  - name: company_age 
+    description: Number of years since the company start date
+    type: number
+    example: 20
+    references: ""
+  - name: company_operating
+    description: True if the company is still operating (no end date)
+    type: boolean
+    example: true
+    references: ""
