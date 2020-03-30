@@ -5,27 +5,31 @@ claims:
     description: Given name(s) or first name(s) of the End-User
     type: string
     example: Alison
-    references: "[OpenID.Core]"
+    references: |
+      [OpenID.Core](https://openid.net/specs/openid-connect-core-1_0.html)
   - name: family_name
     description: Surname(s) or last name(s) of the End-User
     type: string
     example: Parker
-    references: "[OpenID.Core]"
+    references: |
+      [OpenID.Core](https://openid.net/specs/openid-connect-core-1_0.html)
   - name: birthdate
     description: Date of birth of the End-User
     type: date
-    example: 1976-02-02
-    references: "[OpenID.Core],[ISO.8601]"
+    references: |
+      [OpenID.Core](https://openid.net/specs/openid-connect-core-1_0.html),[ISO.8601](https://www.iso.org/iso-8601-date-and-time-format.html)
   - name: gender
     description: End-User's gender
     type: string
     example: female
-    references: "[OpenID.Core]"
+    references: |
+      [OpenID.Core](https://openid.net/specs/openid-connect-core-1_0.html)
   - name: country_of_birth
     description: End-User's country of birth
     type: string
     example: "UK"
-    references: "[ISO.3166]"
+    references: |
+      [ISO.3166](https://www.iso.org/iso-3166-country-codes.html)
   - name: title
     description: End-User's title
     type: string
@@ -35,7 +39,8 @@ claims:
     description: End-User's nationality
     type: string
     example: "UK"
-    references: "[ISO.3166]"
+    references: |
+      [ISO.3166](https://www.iso.org/iso-3166-country-codes.html)
   - name: civil_status
     description: Marital and civil partnership status
     type: string
@@ -65,12 +70,14 @@ claims:
     description: Date the company legally started business
     type: date
     example: 1982-01-02
-    references: "[OpenID.Core],[ISO.8601]"
+    references: |
+      [ISO.8601](https://www.iso.org/iso-8601-date-and-time-format.html)
   - name: company_end_date
     description: Date the company legally closed business
     type: date
     example: 2019-01-02
-    references: "[OpenID.Core],[ISO.8601]"
+    references: |
+      [ISO.8601](https://www.iso.org/iso-8601-date-and-time-format.html)
   - name: company_age 
     description: Number of years since the company start date
     type: number
@@ -81,3 +88,9 @@ claims:
     type: boolean
     example: true
     references: ""
+  - name: commpany_country_incorporation
+    description: Country the company is registered
+    type: string
+    example: "UK"
+    references: |
+      [ISO.3166](https://www.iso.org/iso-3166-country-codes.html)

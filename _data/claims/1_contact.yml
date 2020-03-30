@@ -12,6 +12,8 @@ claims:
     type: string
     example: user@email.com
     references: "[OpenID.Core][IETF.RFC5322]"
+    references: |
+      [OpenID.Core](https://openid.net/specs/openid-connect-core-1_0.html), [IETF.RFC5322](https://tools.ietf.org/html/rfc5322)
   - name: address
     description: End-User's preferred postal address
     type: json
@@ -27,4 +29,5 @@ claims:
             
         }
         ```
-    references: "[OpenID.Core]"
+    references: |
+      [OpenID.Core](https://openid.net/specs/openid-connect-core-1_0.html)
