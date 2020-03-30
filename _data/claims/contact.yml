@@ -1,0 +1,14 @@
+category: Contact
+description: Contact details including different channels and ways to interact with the user.
+claims:
+  - name: phone_number
+    description: End-User's preferred telephone number
+    type: phone
+    example: +44(0)0000000000
+    references: [OpenID.Core][ITU.E164]
+  - name: email
+    description: End-User's preferred e-mail address
+    type: string
+    example: user@email.com
+    references: [OpenID.Core][IETF.RFC5322]
+    
