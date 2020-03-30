@@ -264,6 +264,7 @@ The token signature must be validated using the OP public key that can be found 
 
 ## Annex 1: Using Assertion Claims
 {% include_relative assertion_claims.md %}
+If you want to build some assertions in the sandbox, check [Claims Dictionary](./claims) for a list of available topics.
 
 ## Annex 2: Integration from Native Apps
 {% include_relative native_apps.md %}

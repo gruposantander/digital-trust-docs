@@ -42,3 +42,5 @@ alcohol – but the date of birth will not be disclosed
 - [Backlog] Other flows to be supported such as CIBA and Device Authorization
 
 {% include_relative protocol_flow.md %}
+
+{% include_relative claims.md %}
