@@ -32,8 +32,7 @@ rTrP34_HaMN7Z_W4GNV7KpxvzOc2jh0mKwWVAjzADyGNCuoxqFKPqunyQ8SvWNEg7Q9i07D9JDP9jVw"
 And here is the request passing that data:
 
 ```
-curl -X POST \
- https://op-iamid-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com/reg \
+curl -X POST /reg \
  -H 'Accept: */*' \
  -H 'Content-Type: application/json' \
  -d '<<CLIENT_REGISTRATION_DETAILS>>'

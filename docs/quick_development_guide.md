@@ -10,7 +10,7 @@
   - [Annex 2: Integration from Native Apps](#annex-2-integration-from-native-apps)
   - [Annex 3: JWT handling in Javascript](#annex-3-jwt-handling-in-javascript)
   - [Annex 4: Errors](#annex-4-errors)
-  - [Annex 5: Generate your public/private keys](#annex-5-generate-your-publicprivate-keys)
+  - [Annex 5: Generate public/private keys](#annex-5-generate-publicprivate-keys)
   - [Annex 6: Registering your application](#annex-6-registering-your-application)
   
 # Quick Development Guide
@@ -276,7 +276,7 @@ If you want to build some assertions in the sandbox, check [Claims Dictionary](.
 ## Annex 4: Errors
 {% include_relative callback_errors.md %}
 
-## Annex 5: Generate your public/private keys
+## Annex 5: Generate public/private keys
 {% include_relative generate_keys.md %}
 
 ## Annex 6: Registering your application
