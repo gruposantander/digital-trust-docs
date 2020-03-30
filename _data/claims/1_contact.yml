@@ -17,12 +17,12 @@ claims:
     example:  |
         ```json 
         {
-            formatted : "1 Elm Lane, Lincoln, MAB0012, MA (USA)",
-            street_address: "1 Elm Lane",
-            locality: "Lincoln",
-            region: "MA",
-            postal_code: "MAB0012",
-            country: "USA"
+            "formatted": "1 Elm Lane, Lincoln, MAB0012, MA (USA)",
+            "street_address": "1 Elm Lane",
+            "locality": "Lincoln",
+            "region": "MA",
+            "postal_code": "MAB0012",
+            "country": "USA"
             
         }
         ```
