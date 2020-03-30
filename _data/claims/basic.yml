@@ -5,9 +5,9 @@ claims:
     description: Given name(s) or first name(s) of the End-User
     type: string
     example: Alison
-    references: [OpenID.Core]
+    references: "[OpenID.Core]"
   - name: family_name
     description: Surname(s) or last name(s) of the End-User
     type: string
     example: Parker
-    references: [OpenID.Core]
+    references: "[OpenID.Core]"
