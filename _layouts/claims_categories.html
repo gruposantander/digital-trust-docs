@@ -22,7 +22,7 @@ obtained from the well-known endpoint).</p>
         <td>{{ claim.name }}</td>
         <td>{{ claim.description }}</td>
         <td>{{ claim.type }}</td>
-        <td>{{ claim.example }}</td>
+        <td>{{ claim.example | markdownify }}</td>
         <td>{{ claim.references }}</td>
     </tr>
     {% endfor %}
