@@ -5,7 +5,8 @@ claims:
     description: End-User's preferred telephone number
     type: phone
     example: +44(0)0000000000
-    references: "[OpenID.Core][ITU.E164]"
+    references: |
+      [OpenID.Core](https://openid.net/specs/openid-connect-core-1_0.html), [ITU.E164](https://www.itu.int/rec/T-REC-E.164/en)
   - name: email
     description: End-User's preferred e-mail address
     type: string

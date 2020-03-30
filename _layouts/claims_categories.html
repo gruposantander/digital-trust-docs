@@ -19,11 +19,11 @@ obtained from the well-known endpoint).</p>
     </tr>
     {% for claim in category.claims %}
     <tr>
-        <td>{{ claim.name }}</td>
+        <td><strong>{{ claim.name }}</strong></td>
         <td>{{ claim.description }}</td>
         <td>{{ claim.type }}</td>
         <td>{{ claim.example | markdownify }}</td>
-        <td>{{ claim.references }}</td>
+        <td>{{ claim.references | markdownify }}</td>
     </tr>
     {% endfor %}
 </table>
