@@ -12,7 +12,7 @@
 
 ## Welcome
 
-You will be able to find here references to the different specifications we are publishing as part of the protocol, among other assest we are contributing with to help adoption from both Relying Parties and Identity Verification Providers.
+You will be able to find here references to the different specifications we are publishing as part of the protocol, among other assests we are contributing with to help adoption from both Relying Parties and Identity Verification Providers.
 
 ![Contribution](./images/contribution.png "Contribution")
 
