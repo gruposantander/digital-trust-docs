@@ -4,9 +4,9 @@
   - [DTP Authorization Code Flow](#dtp-authorization-code-flow)
   - [Assertion Claims](#assertion-claims)
   - [Level of Assurance](#level-of-assurance)
+- [Sandbox](#sandbox)
 - [SDKs](#sdks)
 - [Quick Development Guide](#quick-development-guide)
-- [Sandbox](#sandbox)
 - [Sample Reference Implementation](#sample-reference-implementation)
 - [Support or Contact](#support-or-contact)
 
@@ -46,14 +46,14 @@ With this extension proposal, requested claims by the RP can refer to a desired 
 - Read specifications (coming soon...)
 - Contribute to specifications (coming soon...)
 
+## Sandbox
+Check our Santander Labs Sandbox to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/02/27/5e57d64cd511bDigital-Trust-Protocol---Sandbox.postman_collection.json.zip) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
+
 ## SDKs
 coming soon...
 
 ## Quick Development Guide
 The SDKs abstract you from internal details and help you create client applications to communicate with OP servers implementing our specs. If there is not a valid SDK for you or want or want to review more in detail who it works, follow this [Quick Development Guide](./docs/quick_development_guide) to help you getting started. 
-
-## Sandbox
-Check our Santander Labs Sandbox where you will be able to review further documentation to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/02/27/5e57d64cd511bDigital-Trust-Protocol---Sandbox.postman_collection.json.zip) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
 
 ## Sample Reference Implementation
 coming soon...
