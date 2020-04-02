@@ -3,7 +3,7 @@
 - [Protocol Specifications](#protocol-specifications)
   - [DTP Authorization Code Flow](#dtp-authorization-code-flow)
   - [Assertion Claims](#assertion-claims)
-  - [Level of Assurance](#level-of-assurance)
+  - [Levels of Assurance](#levels-of-assurance)
 - [Sandbox](#sandbox)
 - [SDKs](#sdks)
 - [Quick Development Guide](#quick-development-guide)
@@ -37,7 +37,7 @@ By providing a rich syntax for creating such assertions, it will be possible to 
 - Read specifications [here](./assertions/claim-assertions-00.html)
 - Contribute to specifications [digital-trust-assertion-claims-specs](https://github.com/gruposantander/digital-trust-assertion-claims-specs)
 
-### Level of Assurance
+### Levels of Assurance
 Within current OpenID specifications, when returning claims to the RP, with the exception of email and telephone, there is no a way to declare and differentiate those claims that have been validated by the OP following their current customer due diligence or onboarding processes.  
 That is the concept around level of assurance, which has associated some degree of liability based on contractual conditions of the service and the relevant legislation the OP is attached too. For instance, banks currently perform KYC and AML checks as part of onboarding process. In that case, some of the claims provided by the bank, could be tight to a particular level of assurance and trust framework.  
 We believe that in the majority of situations, the level of assurance will be enough, and it will not be necessary to disclose any other attribute or evidence document back to the RP.  
