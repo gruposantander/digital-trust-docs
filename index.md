@@ -12,7 +12,7 @@
 
 ## Welcome
 
-You will be able to find here references to the different specifications we are publishing as part of the protocol, among other assests we are contributing with to help adoption from both Relying Parties and Identity Verification Providers.
+You will be able to find here references to the different specifications we are publishing as part of the protocol, among other assets we are contributing with to help adoption from both Relying Parties and Identity Verification Providers.
 
 ![Contribution](./images/contribution.png "Contribution")
 
@@ -43,8 +43,8 @@ That is the concept around level of assurance, which has associated some degree 
 We believe that in the majority of situations, the level of assurance will be enough, and it will not be necessary to disclose any other attribute or evidence document back to the RP.  
 With this extension proposal, requested claims by the RP can refer to a desired level of assurance. If the OP can meet that LoA for the claim and the user consents, the data will be included in the response, otherwise the claim will not be returned.
 
-- Read specifications (coming soon...)
-- Contribute to specifications (coming soon...)
+- Read specifications [here](./assurance_levels/assurance-levels-00.html)
+- Contribute to specifications [digital-trust-assurance-levels-specs](https://github.com/gruposantander/digital-trust-assurance-levels-specs)
 
 ## Sandbox
 Check our Santander Labs Sandbox to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/02/27/5e57d64cd511bDigital-Trust-Protocol---Sandbox.postman_collection.json.zip) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.

@@ -13,7 +13,7 @@
 <author initials="J." surname="Oliva" fullname="Jorge Oliva Fernandez"><organization>Santander</organization><address><postal><street></street>
 </postal><email>Jorge.OlivaFernandez@santander.co.uk</email>
 </address></author>
-<date year="2020" month="March" day="31"></date>
+<date year="2020" month="April" day="2"></date>
 <area>Identity</area>
 <workgroup>connect</workgroup>
 <keyword>security</keyword>
@@ -85,7 +85,9 @@
 </li>
 <li><t>lte: The value is equal or lower than the given value.</t>
 </li>
-<li><t>in: The value is equal to one of the elements in the list.</t>
+<li><t>in: The value is equal to one of the elements in the given list.</t>
+</li>
+<li><t>or: The value pass any of the given expressions.</t>
 </li>
 </ul>
 <t>The OP is entitled to change the specification to match any individual requirements.</t>
