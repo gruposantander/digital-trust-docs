@@ -1,15 +1,3 @@
-
-- [Welcome](#welcome)
-- [Protocol Specifications](#protocol-specifications)
-  - [DTP Authorization Code Flow](#dtp-authorization-code-flow)
-  - [Assertion Claims](#assertion-claims)
-  - [Levels of Assurance](#levels-of-assurance)
-- [Sandbox](#sandbox)
-- [SDKs](#sdks)
-- [Quick Development Guide](#quick-development-guide)
-- [Sample Reference Implementation](#sample-reference-implementation)
-- [Support or Contact](#support-or-contact)
-
 ## Welcome
 
 You will be able to find here references to the different specifications we are publishing as part of the protocol, among other assets we are contributing with to help adoption from both Relying Parties and Identity Verification Providers.
