@@ -41,7 +41,7 @@ Check our Santander Labs Sandbox to help you getting started and connect to a li
 coming soon...
 
 ## Quick Development Guide
-The SDKs abstract you from internal details and help you create client applications to communicate with OP servers implementing our specs. If there is not a valid SDK for you or want or want to review more in detail who it works, follow this [Quick Development Guide](./docs/quick_development_guide) to help you getting started. 
+The SDKs abstract you from internal details and help you create client applications to communicate with OP servers implementing our specs. If there is not a valid SDK for you or want to review more in detail who it works, follow this [Quick Development Guide](./docs/quick_development_guide) to help you getting started. 
 
 ## Sample Reference Implementation
 coming soon...
