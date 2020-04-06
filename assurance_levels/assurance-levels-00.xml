@@ -22,7 +22,7 @@
 <keyword>trust</keyword>
 
 <abstract>
-<t>This specification defines a new member attribute that allows requesting a minimum assurance levels over existing claims. As a response to this request, OP SHOULD provide extended information about the assurer and the resolved level.</t>
+<t>This specification defines a new member attribute that allows the process of requesting a minimum assurance level in relation to an existing claim. In the response to this request, the OP SHOULD provide extended information about the assurer and the resolved level.</t>
 </abstract>
 
 </front>
@@ -30,9 +30,9 @@
 <middle>
 
 <section anchor="Introduction"><name>Introduction</name>
-<t>Within current OpenID Connect specification <xref target="OIDC"></xref>, when returning claims to the RP, with the exception of email and telephone, there is no a way to declare and differentiate those claims that have been validated by the OP following their current customer due diligence or onboarding processes.</t>
-<t>That is the concept around level of assurance, which has associated some degree of liability based on contractual conditions of the service and the relevant legislation the OP is attached too. For instance, banks currently perform KYC and AML checks as part of onboarding process. In that case, some of the claims provided by the bank, could be tight to a particular level of assurance or trust framework.</t>
-<t>With this extension proposal, requested claims by the RP can refer to a desired level of assurance. If the OP can meet that level for the claim, and the user consents to share, the data will be included in the response, otherwise the claim will not be returned.</t>
+<t>Within the current OpenID Connect specification <xref target="OIDC"></xref>, when returning claims to the RP - with the exception of email and telephone - there is no a way to declare and differentiate the claims that have been validated by the OP as part of their current customer due diligence or onboarding processes.</t>
+<t>The concept around level of assurance, which has an associated degree of liability based on contractual conditions of the service and the relevant legislation for the OP, is attached too. For instance, banks currently perform KYC and AML checks as part of the onboarding process. In this case, some of the claims provided by the bank could be tied to a particular level of assurance or trust framework.</t>
+<t>With this extension proposal, requested claims by the RP can refer to a desired level of assurance. If the OP can meet that level for the claim, and the user consents to share the relevant information, the data will be included in the response. If this level of assurance cannot be met, the claim will not be returned.</t>
 
 <section anchor="notational-conventions"><name>Notational conventions</name>
 <t>The key words &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;MAY&quot;, and &quot;CAN&quot; in this document are to be interpreted as described in &quot;Key words for use in RFCs to Indicate Requirement Levels&quot; <xref target="RFC2119"></xref>. These key words are not used as dictionary terms such that any occurrence of them shall be interpreted as key words and are not to be interpreted with their natural language meanings.</t>
@@ -52,8 +52,8 @@
 </section>
 
 <section anchor="request"><name>Request</name>
-<t>This specification defines a generic mechanism to request assurance level over claims using the new OPTIONAL member <tt>ial</tt>. This new member will be used as part of the claims elements within <tt>id_token</tt> or <tt>userinfo</tt>, specified in section 5.5 of <xref target="OIDC"></xref>. It will contain one of the values of level of assurance defined by the OP.</t>
-<t>Any other member already supported by OpenID specifications remains valid, including members are defined for every claim:</t>
+<t>This specification defines a generic mechanism to request an assurance level over claims using the new OPTIONAL member <tt>ial</tt>. This new member will be used as part of the claims elements within <tt>id_token</tt> or <tt>userinfo</tt>, as specified in section 5.5 of <xref target="OIDC"></xref>. It will contain one of the values of the level of assurance as defined by the OP.</t>
+<t>Any other member already supported by OpenID specifications remains valid, including members that are defined for every claim.</t>
 <t>Here is a non normative example:</t>
 
 <sourcecode type="json">{
@@ -65,27 +65,27 @@
     }
 }
 </sourcecode>
-<t>IAL values are specified by OP as an ordered enumeration and represented as <tt>string</tt> values. Therefore, the comparison operations are defined and every verification level contain the previous one but the first level.</t>
-<t>Claim requests with invalid <tt>ial</tt> member SHOULD not be included in the response. Return the claim in this case could be misleading.</t>
-<t>Every claim MAY have a identity assurance level based on the level of OP verification of the actual data provided in the given claim. The IAL of the actual data at the OP MUST be equal or greater that the IAL in the request if the OP cannot provide the level of assurance the claim will not be returned.</t>
-<t>The values and meaning for the IALs supported by the OP MAY represent the legal framework the OP operates in, or at least the adherence to standard ways to attest the validity of the data being returned. Here is an example for IAL values with similarity to some standards such as NIST or eIDAS:</t>
+<t>IAL values are specified by the OP as an ordered enumeration and represented as <tt>string</tt> values. Therefore, the comparator operations are defined and every verification level contains the previous one excluding the first level.</t>
+<t>Claim requests with an invalid <tt>ial</tt> member SHOULD not be included in the response. Returning the claim in this case could be misleading.</t>
+<t>Every claim MAY have a identity assurance level based on the level of OP verification of the actual data provided in the given claim. The IAL of the actual data at the OP MUST be equal to or greater than the IAL in the request. If the OP cannot provide the level of assurance that has been requested, the claim will not be returned.</t>
+<t>The values and meaning for the IALs supported by the OP MAY represent the legal framework the OP operates in, or at least the adherence to standard ways to attest the validity of the data being returned. Here is an example for the IAL values with similarity to some standards such as NIST or eIDAS:</t>
 
 <ul>
 <li><t>&quot;1&quot;: There is no requirement to link the applicant to a specific real-life identity. Any attributes provided in conjunction with the subject’s activities are self-asserted or should be treated as self-asserted. Self-asserted attributes are neither validated nor verified.</t>
 </li>
 <li><t>&quot;2&quot;: Evidence supports the real-world existence of the claimed identity and verifies that the applicant is appropriately associated with this real-world identity. IAL2 introduces the need for either remote or physically-present identity proofing.</t>
 </li>
-<li><t>&quot;3&quot;: Physical presence is required for identity proofing. Identifying attributes must be verified by an authorized and trained representatives.</t>
+<li><t>&quot;3&quot;: Physical presence is required for identity proofing. Identifying attributes must be verified by authorized and trained representatives.</t>
 </li>
 </ul>
 </section>
 
 <section anchor="response"><name>Response</name>
-<t>The request will return as a result the claims that matches the assurance levels (IALs) requested by the RP.</t>
-<t>Implementers SHOULD return an object for each claim inside <tt>ial_claims</tt> element with the following fields:</t>
+<t>The request will return the resulting claims that match the assurance levels (IALs) requested by the RP.</t>
+<t>Implementers SHOULD return an object for each claim inside the <tt>ial_claims</tt> element with the following fields:</t>
 
 <ul>
-<li><t><tt>level</tt> REQUIRED. This is the level of assurance provided by the OP, it MUST be equal than the level requested.</t>
+<li><t><tt>level</tt> REQUIRED. This is the level of assurance provided by the OP - it MUST be equal to the level requested.</t>
 </li>
 <li><t><tt>assurer</tt> OPTIONAL. The <tt>id</tt> and <tt>name</tt> of the assurer (the entity assuring the data level). This id MUST be unique.</t>
 </li>
@@ -122,10 +122,10 @@
 </section>
 
 <section anchor="op-metadata"><name>OP Metadata</name>
-<t>The OP SHOULD advertise their capabilities with respect to assertion claims in their <tt>openid-configuration</tt> (see <xref target="OIDC.Discovery"></xref>) using the following new elements:</t>
+<t>The OP SHOULD advertise their capabilities with respect to the assertion claims in their <tt>openid-configuration</tt> (see <xref target="OIDC.Discovery"></xref>) using the following new elements:</t>
 
 <ul>
-<li><t><tt>ial_claims_supported</tt>: Boolean value indicating support of level of assurance claims.</t>
+<li><t><tt>ial_claims_supported</tt>: Boolean value indicating the support of any level of assurance claims.</t>
 </li>
 <li><t><tt>ials_definition_supported</tt>: List of supported IALs by the OP</t>
 </li>
@@ -213,7 +213,7 @@
 
 <section anchor="notices"><name>Notices</name>
 <t>Copyright (c) 2020 Grupo Santander</t>
-<t>We intent to release this specification under MIT license, pending internal process.</t>
+<t>We intend to release this specification under the MIT license, pending internal process.</t>
 </section>
 
 </back>
