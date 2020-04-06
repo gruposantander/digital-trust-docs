@@ -49,7 +49,7 @@ In0.
 M0etMoZZNpx6MGeUEPQVgTaCmGopSKETTTTJwh7co_V-dFCkjC-_7MDAd-8nJrSPIFKKIe2-uNZYXjMOxmOjcsMvCtsCJLGb0MqKbpcMNElderlJm8uRQNqmnHdElaBlnl5MbHbr2EsNSqW_1dyo5cfrri3jJLs4T0ES6WUaZmryGOvF9qJdi32pWqeIdXEC30UMIBFJdKHAifKbnd47WSI8Bict
 y0WrWrlMRemoiVwyRU3usrpAnCgpzHSQidqk6DmpaWiyq8QytCmWt3NRm7kUkQHQ4S1wyzauFIkgIWwgPgaOSg9nea46F6HdP_Je_O_QDLSa2ANzvAbMZ_A
 ```
-Check Annex 5 for instructions about [how to generate your development certificate and public keys](#annex-5-generate-your-publicprivate-keys).
+Check Annex 5 for instructions about [how to generate your development certificate and public keys](#annex-5-generate-publicprivate-keys).
 
 ## How to initiate a request
 
