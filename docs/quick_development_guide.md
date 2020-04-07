@@ -169,7 +169,7 @@ It is recommended to include the `state` parameter as part of the request to pre
 Here is an example of the redirection url:
 
 ```
-https://op.iamid.iohttps://op-iamid-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com/web/login?request_uri=urn:op.iamid.io:
+https://live.iamid.io/web/login?request_uri=urn:op.iamid.io:
 GnIw2VWxiMwVQ6WthUSUsczMCsHkcIMnfFYqYKESmD9
 ```
 
@@ -210,7 +210,7 @@ Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.11.0
 Accept: */*
 Cache-Control: no-cache
-Host: op-server-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com
+Host: live.iamid.io
 accept-encoding: gzip, deflate
 content-length: 974
 Connection: keep-alive
@@ -261,7 +261,7 @@ PAYLOAD:
 }
 ```
 
-The token signature must be validated using the OP public key that can be found using the `jwks_uri` url provided the in the [openid-configuration](https://opserver-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com/.well-known/openid-configuration).
+The token signature must be validated using the OP public key that can be found using the `jwks_uri` url provided the in the [openid-configuration](https://live.iamid.io/.well-known/openid-configuration).
 
 ## Annex 1: Using Assertion Claims
 {% include_relative assertion_claims.md %}
