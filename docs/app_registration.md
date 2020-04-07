@@ -46,7 +46,7 @@ As a result for that request you will receive together with the parameters above
     ...
  "client_id_issued_at": 1578654878,
  "client_id": "IhRhCPwnPikoCOJdAhyEp",
- "registration_client_uri": "https://op-iamid-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com/reg
+ "registration_client_uri": "https://live.iamid.io/reg
 /IhRhCPwnPikoCOJdAhyEp",
  "registration_access_token": "w8__DQ0lMSfkIAa9z_Mzwb3EP8gPD5jIzmoHIX1cA70"
 }
