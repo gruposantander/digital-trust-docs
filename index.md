@@ -35,7 +35,7 @@ With this extension proposal, requested claims by the RP can refer to a desired 
 - Contribute to specifications [digital-trust-assurance-levels-specs](https://github.com/gruposantander/digital-trust-assurance-levels-specs)
 
 ## Sandbox
-Check our Santander Labs Sandbox to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/02/27/5e57d64cd511bDigital-Trust-Protocol---Sandbox.postman_collection.json.zip) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
+Check our Santander Labs Sandbox to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/04/06/5e8b1df52f595Digital-Trust-Protocol---Sandbox.postman_collection.json) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
 
 ## SDKs
 coming soon...
