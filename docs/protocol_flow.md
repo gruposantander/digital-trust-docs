@@ -16,3 +16,10 @@ The picture above shows the screens presented by the OP to the user before retur
 ![Consent](../images/consent.png "Consent")
 
 You will see that after login, first the user is presented with the assertions consent and next the sharing data consent.
+
+You can see a video with a demo [here](https://vimeo.com/411750824), and also play with it live  at [https://demo.iamid.io](https://demo.iamid.io).
+
+When requested for login details, use the following sandbox credentials:
+
+- username: MB28itf6a2p
+- password: Minibank01!
