@@ -1,6 +1,23 @@
 category: Finance
 description: Details including assets and summary facts about the user financial position.
 claims:
+  - name: bank_account
+    description: Bank Account basic details and identifiers in supported formats (local and international)
+    type: account_details
+    example: |
+        ```json
+        {
+          "id":"09012700047186",
+          "type":"Personal",
+          "currency":"GBP",
+          "identifiers":[
+            { 
+              "type": "UK.SortCodeAccountNumber", 
+              "identification":"09012700047186"
+            }
+          ]
+        }
+        ```
   - name: total_balance
     description: Total amount of money hold on user's bank accounts
     type: currency
