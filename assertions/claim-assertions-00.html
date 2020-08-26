@@ -1167,10 +1167,13 @@ tr:nth-child(2n+1) > td {
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="xref">8</a>.  <a href="#name-normative-references" class="xref">Normative References</a><a href="#section-toc.1-1.8.1" class="pilcrow">¶</a></p>
 </li>
 <li class="toc ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-notices" class="xref">Notices</a><a href="#section-toc.1-1.9.1" class="pilcrow">¶</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-acknowledgements" class="xref">Acknowledgements</a><a href="#section-toc.1-1.9.1" class="pilcrow">¶</a></p>
 </li>
 <li class="toc ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-appendix.b" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a><a href="#section-toc.1-1.10.1" class="pilcrow">¶</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#section-appendix.b" class="xref">Appendix B</a>.  <a href="#name-notices" class="xref">Notices</a><a href="#section-toc.1-1.10.1" class="pilcrow">¶</a></p>
+</li>
+<li class="toc ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#section-appendix.c" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a><a href="#section-toc.1-1.11.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
 </nav>
@@ -1520,9 +1523,9 @@ tr:nth-child(2n+1) > td {
       <h2 id="name-privacy-considerations">
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-privacy-considerations" class="section-name selfRef">Privacy Considerations</a>
       </h2>
-<p id="section-6-1">The <code>assertion_claims</code> can contain Personally Identifiable Information (PII). As such, RP should obtain End-User consent for the release of the information at or prior to the request in accordance with relevant regulations.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">The <code>assertion_claims</code> can contain Personally Identifiable Information (PII). As such, OP SHOULD obtain End-User consent for the release of the information at or prior to the request in accordance with relevant regulations.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">How to get such consent is out of scope for this specification.<a href="#section-6-2" class="pilcrow">¶</a></p>
-<p id="section-6-3">The OP should not keep the information within <code>assertion_claims</code> unless necessary and should delete such information as soon as it is no longer necessary in accordance with relevant regulations.<a href="#section-6-3" class="pilcrow">¶</a></p>
+<p id="section-6-3">The RP SHOULD not keep the information within <code>assertion_claims</code> unless necessary and SHOULD delete such information as soon as it is no longer necessary in accordance with relevant regulations.<a href="#section-6-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1538,28 +1541,36 @@ tr:nth-child(2n+1) > td {
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
-<dt id="OIDC">[OIDC]</dt>
-<dd>
-<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
 <dt id="RFC2119">[RFC2119]</dt>
 <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <time datetime="1997-03">March 1997</time>, <span>&lt;<a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>&gt;</span>. </dd>
 <dt id="OIDC.Discovery">[OIDC.Discovery]</dt>
 <dd>
 <span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, and E. Jay</span>, <span class="refTitle">"OpenID Connect Discovery 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a>&gt;</span>. </dd>
+<dt id="OIDC">[OIDC]</dt>
+<dd>
+<span class="refAuthor">Sakimura, N.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, Jones, M.</span><span class="refAuthor">, de Medeiros, B.</span><span class="refAuthor">, and C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 1"</span>, <time datetime="2014-11-08">8 November 2014</time>, <span>&lt;<a href="http://openid.net/specs/openid-connect-core-1_0.html">http://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
 </dl>
 </section>
-<div id="notices">
+<div id="Acknowledgements">
 <section id="section-appendix.a">
-      <h2 id="name-notices">
-<a href="#section-appendix.a" class="section-number selfRef">Appendix A. </a><a href="#name-notices" class="section-name selfRef">Notices</a>
+      <h2 id="name-acknowledgements">
+<a href="#section-appendix.a" class="section-number selfRef">Appendix A. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
       </h2>
-<p id="section-appendix.a-1">Copyright (c) 2020 Grupo Santander<a href="#section-appendix.a-1" class="pilcrow">¶</a></p>
-<p id="section-appendix.a-2">We intent to release this specification under MIT license, pending internal process.<a href="#section-appendix.a-2" class="pilcrow">¶</a></p>
+<p id="section-appendix.a-1">We would like to thank Kai Lehmann and Kosuke Koiwai for their valuable feedback and contributions that helped to evolve this specification.<a href="#section-appendix.a-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="notices">
+<section id="section-appendix.b">
+      <h2 id="name-notices">
+<a href="#section-appendix.b" class="section-number selfRef">Appendix B. </a><a href="#name-notices" class="section-name selfRef">Notices</a>
+      </h2>
+<p id="section-appendix.b-1">Copyright (c) 2020 Grupo Santander<a href="#section-appendix.b-1" class="pilcrow">¶</a></p>
+<p id="section-appendix.b-2">We intent to release this specification under MIT license, pending internal process.<a href="#section-appendix.b-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
-<section id="section-appendix.b">
+<section id="section-appendix.c">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>

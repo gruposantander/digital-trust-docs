@@ -308,9 +308,9 @@
 </section>
 
 <section anchor="privacy-considerations"><name>Privacy Considerations</name>
-<t>The <tt>assertion_claims</tt> can contain Personally Identifiable Information (PII). As such, RP should obtain End-User consent for the release of the information at or prior to the request in accordance with relevant regulations.</t>
+<t>The <tt>assertion_claims</tt> can contain Personally Identifiable Information (PII). As such, OP SHOULD obtain End-User consent for the release of the information at or prior to the request in accordance with relevant regulations.</t>
 <t>How to get such consent is out of scope for this specification.</t>
-<t>The OP should not keep the information within <tt>assertion_claims</tt> unless necessary and should delete such information as soon as it is no longer necessary in accordance with relevant regulations.</t>
+<t>The RP SHOULD not keep the information within <tt>assertion_claims</tt> unless necessary and SHOULD delete such information as soon as it is no longer necessary in accordance with relevant regulations.</t>
 </section>
 
 <section anchor="iana-considerations"><name>IANA Considerations</name>
@@ -321,27 +321,6 @@
 
 <back>
 <references><name>Normative References</name>
-<reference anchor="OIDC" target="http://openid.net/specs/openid-connect-core-1_0.html">
-  <front>
-    <title>OpenID Connect Core 1.0 incorporating errata set 1</title>
-    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
-      <organization>NRI</organization>
-    </author>
-    <author fullname="John Bradley" initials="J." surname="Bradley">
-      <organization>Ping Identity</organization>
-    </author>
-    <author fullname="Mike Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
-      <organization>Google</organization>
-    </author>
-    <author fullname="Chuck Mortimore" initials="C." surname="Mortimore">
-      <organization>Salesforce</organization>
-    </author>
-    <date year="2014" month="Nov" day="8"></date>
-  </front>
-</reference>
 <reference anchor="RFC2119" target="https://tools.ietf.org/html/rfc2119">
   <front>
     <title>Key words for use in RFCs to Indicate Requirement Levels</title>
@@ -369,7 +348,32 @@
     <date year="2014" month="Nov" day="8"></date>
   </front>
 </reference>
+<reference anchor="OIDC" target="http://openid.net/specs/openid-connect-core-1_0.html">
+  <front>
+    <title>OpenID Connect Core 1.0 incorporating errata set 1</title>
+    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
+      <organization>NRI</organization>
+    </author>
+    <author fullname="John Bradley" initials="J." surname="Bradley">
+      <organization>Ping Identity</organization>
+    </author>
+    <author fullname="Mike Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
+      <organization>Google</organization>
+    </author>
+    <author fullname="Chuck Mortimore" initials="C." surname="Mortimore">
+      <organization>Salesforce</organization>
+    </author>
+    <date year="2014" month="Nov" day="8"></date>
+  </front>
+</reference>
 </references>
+
+<section anchor="Acknowledgements"><name>Acknowledgements</name>
+<t>We would like to thank Kai Lehmann and Kosuke Koiwai for their valuable feedback and contributions that helped to evolve this specification.</t>
+</section>
 
 <section anchor="notices"><name>Notices</name>
 <t>Copyright (c) 2020 Grupo Santander</t>
