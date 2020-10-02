@@ -12,7 +12,7 @@ openssl genrsa -out private.pem 2048
 Once you have your private key, you will be able to export the public key by running the following command:
 
 ```bash
-openssl rsa -in privatekey.key -outform PEM -pubout -out publickey.pem
+openssl rsa -in private.pem -outform PEM -pubout -out publickey.pem
 ```
 
 To register your application with the OP you will need to pass your public key. The format the public key will be accepted is as a JWK key, 
