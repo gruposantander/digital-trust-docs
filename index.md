@@ -38,7 +38,7 @@ With this extension proposal, requested claims by the RP can refer to a desired 
 Check our Santander Labs Sandbox to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/04/06/5e8b1df52f595Digital-Trust-Protocol---Sandbox.postman_collection.json) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
 
 ## SDKs
-coming soon...
+Check our SDK (server side) kits for [Nodejs](https://github.com/gruposantander/digital-trust-typescript-sdk) and [Java](https://github.com/gruposantander/digital-trust-java-sdk) for more info.
 
 ## Quick Development Guide
 The SDKs abstract you from internal details and help you create client applications to communicate with OP servers implementing our specs. If there is not a valid SDK for you or want to review more in detail who it works, follow this [Quick Development Guide](./docs/quick_development_guide) to help you getting started. 
