@@ -24,6 +24,7 @@ By providing a rich syntax for creating such assertions, it will be possible to 
 
 - Read specifications [here](./assertions/claim-assertions-00.html)
 - Contribute to specifications [digital-trust-assertion-claims-specs](https://github.com/gruposantander/digital-trust-assertion-claims-specs)
+- A very simple implementation for a sample expression language can be found [here](https://github.com/gruposantander/json-el)
 
 ### Levels of Assurance
 Within current OpenID specifications, when returning claims to the RP, with the exception of email and telephone, there is no a way to declare and differentiate those claims that have been validated by the OP following their current customer due diligence or onboarding processes.  
