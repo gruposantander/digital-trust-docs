@@ -24,6 +24,7 @@ By providing a rich syntax for creating such assertions, it will be possible to 
 
 - Read specifications [here](./assertions/claim-assertions-00.html)
 - Contribute to specifications [digital-trust-assertion-claims-specs](https://github.com/gruposantander/digital-trust-assertion-claims-specs)
+- A very simple implementation for a sample expression language can be found [here](https://github.com/gruposantander/json-el)
 
 ### Levels of Assurance
 Within current OpenID specifications, when returning claims to the RP, with the exception of email and telephone, there is no a way to declare and differentiate those claims that have been validated by the OP following their current customer due diligence or onboarding processes.  
@@ -35,16 +36,18 @@ With this extension proposal, requested claims by the RP can refer to a desired 
 - Contribute to specifications [digital-trust-assurance-levels-specs](https://github.com/gruposantander/digital-trust-assurance-levels-specs)
 
 ## Sandbox
-Check our Santander Labs Sandbox to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/04/06/5e8b1df52f595Digital-Trust-Protocol---Sandbox.postman_collection.json) for quick protocol try out. Please visit [Santanderlabs.io](https://www.santanderlabs.io/en/api/iamid) for more details.
+We have prepared a Sandbox to help you getting started and connect to a live sample OP server. You could also find [Postman Collection](https://www.santanderlabs.io/storage/uploads/2020/04/06/5e8b1df52f595Digital-Trust-Protocol---Sandbox.postman_collection.json) for quick protocol try out, then try SDK and Quick Development Guide below to get familiar and develop on top of the protocol.
 
 ## SDKs
-coming soon...
+Check our [Nodejs](https://github.com/gruposantander/digital-trust-typescript-sdk) SDK (server side) for more info.
+
+You can also check a [sample application](https://github.com/gruposantander/digital-trust-example-journey) using the SDK but also including a front-end application to build an E2E demo.
 
 ## Quick Development Guide
 The SDKs abstract you from internal details and help you create client applications to communicate with OP servers implementing our specs. If there is not a valid SDK for you or want to review more in detail who it works, follow this [Quick Development Guide](./docs/quick_development_guide) to help you getting started. 
 
 ## Sample Reference Implementation
-coming soon...
+coming soon... if you are interested in implement Digital Trust Protocol specs please contact us
 
 ## Support or Contact
 

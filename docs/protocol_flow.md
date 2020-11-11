@@ -21,5 +21,5 @@ You can see a video with a demo [here](https://vimeo.com/411750824), and also pl
 
 When requested for login details, use the following sandbox credentials:
 
-- username: MB28itf6a2p
-- password: Minibank01!
+- username: hilton
+- password: 12345
