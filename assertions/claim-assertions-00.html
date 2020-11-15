@@ -1147,7 +1147,10 @@ tr:nth-child(2n+1) > td {
                 <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-complex-types" class="xref">Complex Types</a><a href="#section-toc.1-1.3.2.2.1" class="pilcrow">¶</a></p>
 </li>
 <li class="toc ulEmpty" id="section-toc.1-1.3.2.3">
-                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-example" class="xref">Example</a><a href="#section-toc.1-1.3.2.3.1" class="pilcrow">¶</a></p>
+                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-array-types" class="xref">Array Types</a><a href="#section-toc.1-1.3.2.3.1" class="pilcrow">¶</a></p>
+</li>
+<li class="toc ulEmpty" id="section-toc.1-1.3.2.4">
+                <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-multiple-assertions-example" class="xref">Multiple Assertions Example</a><a href="#section-toc.1-1.3.2.4.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
 </li>
@@ -1268,6 +1271,15 @@ tr:nth-child(2n+1) > td {
 <li id="section-3-4.7">
           <p id="section-3-4.7.1">or: The value pass any of the given expressions.<a href="#section-3-4.7.1" class="pilcrow">¶</a></p>
 </li>
+<li id="section-3-4.8">
+          <p id="section-3-4.8.1">some: The value is equal to any of the values within an array.<a href="#section-3-4.8.1" class="pilcrow">¶</a></p>
+</li>
+<li id="section-3-4.9">
+          <p id="section-3-4.9.1">none: The value is not equal to any of the values within an array.<a href="#section-3-4.9.1" class="pilcrow">¶</a></p>
+</li>
+<li id="section-3-4.10">
+          <p id="section-3-4.10.1">every: The value is equal to all of the values within an array.<a href="#section-3-4.10.1" class="pilcrow">¶</a></p>
+</li>
 </ul>
 <p id="section-3-5">The OP is entitled to change the specification to match any individual requirements.<a href="#section-3-5" class="pilcrow">¶</a></p>
 <div id="simple-types">
@@ -1364,13 +1376,43 @@ tr:nth-child(2n+1) > td {
 <p id="section-3.2-8">Any assertion over a missing property returns <code>false</code>.<a href="#section-3.2-8" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="example">
+<div id="array-types">
 <section id="section-3.3">
-        <h3 id="name-example">
-<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-example" class="section-name selfRef">Example</a>
+        <h3 id="name-array-types">
+<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-array-types" class="section-name selfRef">Array Types</a>
         </h3>
-<p id="section-3.3-1">The following is a non normative example of a request containing assertions:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
-<div id="section-3.3-2">
+<p id="section-3.3-1">Some complex type claims could include properties as an array. If that's the case, the proposed set of operands also includes specific ones for creating assertions using those properties.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.3-2">Here is an example assertion request for a complex <code>bank_account</code> type claim which includes a property called <code>identifiers</code> , containing an array with several identifications for different schemas. The request could allow validating ownership on an account passing the identifier in Sort Code Account Number schema:<a href="#section-3.3-2" class="pilcrow">¶</a></p>
+<div id="section-3.3-3">
+<pre class="sourcecode lang-json">{
+  "assertion_claims": {
+    "bank_account":{
+      "assertion": {
+        "props": {
+          "identifiers": {
+            "some": {
+              "props": {
+                "identification": { "eq": "09012700047186"},
+                "type": {"eq": "UK.SortCodeAccountNumber" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+</pre><a href="#section-3.3-3" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+<div id="multiple-assertions-example">
+<section id="section-3.4">
+        <h3 id="name-multiple-assertions-example">
+<a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-multiple-assertions-example" class="section-name selfRef">Multiple Assertions Example</a>
+        </h3>
+<p id="section-3.4-1">The following is a non normative example of a request containing multiple assertions:<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<div id="section-3.4-2">
 <pre class="sourcecode lang-json">{
   "id_token": {
     "assertion_claims": {
@@ -1391,8 +1433,9 @@ tr:nth-child(2n+1) > td {
     }
   }
 }
-</pre><a href="#section-3.3-2" class="pilcrow">¶</a>
+</pre><a href="#section-3.4-2" class="pilcrow">¶</a>
 </div>
+<p id="section-3.4-3">Each assertion will be evaluated independently and the user should be able to consent and share each individual result back to the RP.<a href="#section-3.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1481,6 +1524,14 @@ tr:nth-child(2n+1) > td {
     "string": [
       "eq",
       "in"
+    ],
+    "boolean": [
+      "eq"
+    ],
+    "array": [
+      "none",
+      "every",
+      "some"
     ]
   },
   "assertion_claims_supported": true,
@@ -1510,7 +1561,35 @@ tr:nth-child(2n+1) > td {
     },
     "given_name": {
       "type": "string"
-    }
+    },
+    "bank_account": {
+      "type": "object",
+      "props": {
+        "id": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "identifiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "props": {
+              "type": {
+                "type": "string"
+              },
+              "identification": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+  }
   }
 }
 

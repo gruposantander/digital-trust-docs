@@ -737,6 +737,84 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 
 <back>
 <references><name>Normative References</name>
+<reference anchor="RFC2616" target="https://tools.ietf.org/html/rfc2616">
+  <front>
+    <title>Hypertext Transfer Protocol -- HTTP/1.1</title>
+    <author fullname="Roy T. Fielding" initials="R." surname="Fielding">
+      <organization>UC Irvine</organization>
+    </author>
+    <date year="1999" month="June"></date>
+  </front>
+</reference>
+<reference anchor="OAuth.Multiple.Responses" target="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">
+  <front>
+    <title>OAuth 2.0 Multiple Response Type Encoding Practices</title>
+    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
+      <organization>Google</organization>
+    </author>
+    <author fullname="Marius Scurtescu" initials="M." surname="Scurtescu">
+      <organization>Google</organization>
+    </author>
+    <author fullname="Paul Tarjan" initials="P." surname="Tarjan">
+      <organization>Facebook</organization>
+    </author>
+    <author fullname="Michael B. Jones" initials="M." surname="B. Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <date year="2014" month="February" day="25"></date>
+  </front>
+</reference>
+<reference anchor="OIDC" target="http://openid.net/specs/openid-connect-core-1_0.html">
+  <front>
+    <title>OpenID Connect Core 1.0 incorporating errata set 1</title>
+    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
+      <organization>NRI</organization>
+    </author>
+    <author fullname="John Bradley" initials="J." surname="Bradley">
+      <organization>Ping Identity</organization>
+    </author>
+    <author fullname="Mike Jones" initials="M." surname="Jones">
+      <organization>Microsoft</organization>
+    </author>
+    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
+      <organization>Google</organization>
+    </author>
+    <author fullname="Chuck Mortimore" initials="C." surname="Mortimore">
+      <organization>Salesforce</organization>
+    </author>
+    <date year="2014" month="Nov" day="8"></date>
+  </front>
+</reference>
+<reference anchor="URN" target="https://tools.ietf.org/html/rfc2141">
+  <front>
+    <title>Uniform Resource Names</title>
+    <author fullname="Ryan Moats" initials="R." surname="Moats">
+      <organization>AT&amp;T</organization>
+    </author>
+    <date year="1997" month="May"></date>
+  </front>
+</reference>
+<reference anchor="OAuth.NativeApps" target="https://tools.ietf.org/html/rfc8252">
+  <front>
+    <title>OAuth 2.0 for Native Apps</title>
+    <author fullname="William Denniss" initials="W." surname="Denniss">
+      <organization>Google</organization>
+    </author>
+    <author fullname="John Bradley" initials="J." surname="Bradley">
+      <organization>Ping Identity</organization>
+    </author>
+    <date year="2017" month="October"></date>
+  </front>
+</reference>
+<reference anchor="RFC2119" target="https://tools.ietf.org/html/rfc2119">
+  <front>
+    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
+    <author fullname="Scott Bradner" initials="S." surname="Bradner">
+      <organization>Harvard University</organization>
+    </author>
+    <date year="1997" month="March"></date>
+  </front>
+</reference>
 <reference anchor="JWT" target="https://tools.ietf.org/html/rfc7519">
   <front>
     <title>JSON Web Token (JWT)</title>
@@ -767,34 +845,31 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="2015" month="May"></date>
   </front>
 </reference>
-<reference anchor="OAuth.Multiple.Responses" target="https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html">
+<reference anchor="OAuth.MTLS" target="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">
   <front>
-    <title>OAuth 2.0 Multiple Response Type Encoding Practices</title>
-    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
-      <organization>Google</organization>
+    <title>OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens</title>
+    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
+      <organization>NRI</organization>
     </author>
-    <author fullname="Marius Scurtescu" initials="M." surname="Scurtescu">
-      <organization>Google</organization>
+    <author fullname="Torsten Lodderstedt" initials="T." surname="Lodderstedt">
+      <organization>yes.com</organization>
     </author>
-    <author fullname="Paul Tarjan" initials="P." surname="Tarjan">
-      <organization>Facebook</organization>
-    </author>
-    <author fullname="Michael B. Jones" initials="M." surname="B. Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <date year="2014" month="February" day="25"></date>
-  </front>
-</reference>
-<reference anchor="OAuth.NativeApps" target="https://tools.ietf.org/html/rfc8252">
-  <front>
-    <title>OAuth 2.0 for Native Apps</title>
-    <author fullname="William Denniss" initials="W." surname="Denniss">
-      <organization>Google</organization>
+    <author fullname="Brian Campbell" initials="B." surname="Campbell">
+      <organization>Ping Identity</organization>
     </author>
     <author fullname="John Bradley" initials="J." surname="Bradley">
       <organization>Ping Identity</organization>
     </author>
-    <date year="2017" month="October"></date>
+    <date year="2018" month="January"></date>
+  </front>
+</reference>
+<reference anchor="OAuth2.0" target="https://tools.ietf.org/html/rfc6749">
+  <front>
+    <title>The OAuth 2.0 Authorization Framework</title>
+    <author fullname="Dick Hardt" initials="C." surname="Hardt">
+      <organization>Microsoft</organization>
+    </author>
+    <date year="2012" month="October"></date>
   </front>
 </reference>
 <reference anchor="OAuth.PAR" target="https://tools.ietf.org/html/draft-lodderstedt-oauth-par-01">
@@ -818,15 +893,6 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
     <date year="2019" month="November" day="2"></date>
   </front>
 </reference>
-<reference anchor="URN" target="https://tools.ietf.org/html/rfc2141">
-  <front>
-    <title>Uniform Resource Names</title>
-    <author fullname="Ryan Moats" initials="R." surname="Moats">
-      <organization>AT&amp;T</organization>
-    </author>
-    <date year="1997" month="May"></date>
-  </front>
-</reference>
 <reference anchor="RFC8417" target="https://www.rfc-editor.org/info/rfc8417">
   <front>
     <title>Security Event Token (SET)</title>
@@ -843,72 +909,6 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
       <organization>Cisco</organization>
     </author>
     <date year="2018" month="July"></date>
-  </front>
-</reference>
-<reference anchor="OAuth.MTLS" target="https://tools.ietf.org/id/draft-ietf-oauth-mtls-07.html">
-  <front>
-    <title>OAuth 2.0 Mutual TLS Client Authentication and Certificate Bound Access Tokens</title>
-    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
-      <organization>NRI</organization>
-    </author>
-    <author fullname="Torsten Lodderstedt" initials="T." surname="Lodderstedt">
-      <organization>yes.com</organization>
-    </author>
-    <author fullname="Brian Campbell" initials="B." surname="Campbell">
-      <organization>Ping Identity</organization>
-    </author>
-    <author fullname="John Bradley" initials="J." surname="Bradley">
-      <organization>Ping Identity</organization>
-    </author>
-    <date year="2018" month="January"></date>
-  </front>
-</reference>
-<reference anchor="RFC2119" target="https://tools.ietf.org/html/rfc2119">
-  <front>
-    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
-    <author fullname="Scott Bradner" initials="S." surname="Bradner">
-      <organization>Harvard University</organization>
-    </author>
-    <date year="1997" month="March"></date>
-  </front>
-</reference>
-<reference anchor="OAuth2.0" target="https://tools.ietf.org/html/rfc6749">
-  <front>
-    <title>The OAuth 2.0 Authorization Framework</title>
-    <author fullname="Dick Hardt" initials="C." surname="Hardt">
-      <organization>Microsoft</organization>
-    </author>
-    <date year="2012" month="October"></date>
-  </front>
-</reference>
-<reference anchor="RFC2616" target="https://tools.ietf.org/html/rfc2616">
-  <front>
-    <title>Hypertext Transfer Protocol -- HTTP/1.1</title>
-    <author fullname="Roy T. Fielding" initials="R." surname="Fielding">
-      <organization>UC Irvine</organization>
-    </author>
-    <date year="1999" month="June"></date>
-  </front>
-</reference>
-<reference anchor="OIDC" target="http://openid.net/specs/openid-connect-core-1_0.html">
-  <front>
-    <title>OpenID Connect Core 1.0 incorporating errata set 1</title>
-    <author fullname="Nat Sakimura" initials="N." surname="Sakimura">
-      <organization>NRI</organization>
-    </author>
-    <author fullname="John Bradley" initials="J." surname="Bradley">
-      <organization>Ping Identity</organization>
-    </author>
-    <author fullname="Mike Jones" initials="M." surname="Jones">
-      <organization>Microsoft</organization>
-    </author>
-    <author fullname="Breno de Medeiros" initials="B." surname="de Medeiros">
-      <organization>Google</organization>
-    </author>
-    <author fullname="Chuck Mortimore" initials="C." surname="Mortimore">
-      <organization>Salesforce</organization>
-    </author>
-    <date year="2014" month="Nov" day="8"></date>
   </front>
 </reference>
 </references>
@@ -930,8 +930,23 @@ IOo5yIBxImQOSk5jz31gF9RJb15SDBIxonuWv8qAERyUfvrmEwR0kg==
 </section>
 
 <section anchor="notices"><name>Notices</name>
+<t>MIT License</t>
 <t>Copyright (c) 2020 Grupo Santander</t>
-<t>We intend to release this specification under the MIT license, pending internal processes.</t>
+<t>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</t>
+<t>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</t>
+<t>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</t>
 </section>
 
 <section anchor="document-history"><name>Document History</name>

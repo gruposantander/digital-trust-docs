@@ -89,6 +89,12 @@
 </li>
 <li><t>or: The value pass any of the given expressions.</t>
 </li>
+<li><t>some: The value is equal to any of the values within an array.</t>
+</li>
+<li><t>none: The value is not equal to any of the values within an array.</t>
+</li>
+<li><t>every: The value is equal to all of the values within an array.</t>
+</li>
 </ul>
 <t>The OP is entitled to change the specification to match any individual requirements.</t>
 
@@ -172,8 +178,33 @@
 <t>Any assertion over a missing property returns <tt>false</tt>.</t>
 </section>
 
-<section anchor="example"><name>Example</name>
-<t>The following is a non normative example of a request containing assertions:</t>
+<section anchor="array-types"><name>Array Types</name>
+<t>Some complex type claims could include properties as an array. If that's the case, the proposed set of operands also includes specific ones for creating assertions using those properties.</t>
+<t>Here is an example assertion request for a complex <tt>bank_account</tt> type claim which includes a property called <tt>identifiers</tt> , containing an array with several identifications for different schemas. The request could allow validating ownership on an account passing the identifier in Sort Code Account Number schema:</t>
+
+<sourcecode type="json">{
+  &quot;assertion_claims&quot;: {
+    &quot;bank_account&quot;:{
+      &quot;assertion&quot;: {
+        &quot;props&quot;: {
+          &quot;identifiers&quot;: {
+            &quot;some&quot;: {
+              &quot;props&quot;: {
+                &quot;identification&quot;: { &quot;eq&quot;: &quot;09012700047186&quot;},
+                &quot;type&quot;: {&quot;eq&quot;: &quot;UK.SortCodeAccountNumber&quot; }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+</sourcecode>
+</section>
+
+<section anchor="multiple-assertions-example"><name>Multiple Assertions Example</name>
+<t>The following is a non normative example of a request containing multiple assertions:</t>
 
 <sourcecode type="json">{
   &quot;id_token&quot;: {
@@ -196,6 +227,7 @@
   }
 }
 </sourcecode>
+<t>Each assertion will be evaluated independently and the user should be able to consent and share each individual result back to the RP.</t>
 </section>
 </section>
 
@@ -271,6 +303,14 @@
     &quot;string&quot;: [
       &quot;eq&quot;,
       &quot;in&quot;
+    ],
+    &quot;boolean&quot;: [
+      &quot;eq&quot;
+    ],
+    &quot;array&quot;: [
+      &quot;none&quot;,
+      &quot;every&quot;,
+      &quot;some&quot;
     ]
   },
   &quot;assertion_claims_supported&quot;: true,
@@ -300,7 +340,35 @@
     },
     &quot;given_name&quot;: {
       &quot;type&quot;: &quot;string&quot;
-    }
+    },
+    &quot;bank_account&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;props&quot;: {
+        &quot;id&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;currency&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;type&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;identifiers&quot;: {
+          &quot;type&quot;: &quot;array&quot;,
+          &quot;items&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;props&quot;: {
+              &quot;type&quot;: {
+                &quot;type&quot;: &quot;string&quot;
+              },
+              &quot;identification&quot;: {
+                &quot;type&quot;: &quot;string&quot;
+              }
+            }
+          }
+        }
+      }
+  }
   }
 }
 
