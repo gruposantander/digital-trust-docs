@@ -23,3 +23,5 @@ When requested for login details, use the following sandbox credentials:
 
 - username: hilton
 - password: 12345
+
+There are also other user [personas](./personas.md) available for your experiments.
