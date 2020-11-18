@@ -2,7 +2,7 @@
 
 We have prepared a set of personas or user profiles representing the different type of customers you can use for your experiments.
 
-When login into Digital Trust, use one of the below usernames in lowee case and whatever password, the data claims values will represent each of those personas.
+When login into Digital Trust, use one of the below usernames in lower case and whatever password, the data claims values will represent each of those personas.
 
 ## Pablo – Starting Out
 
