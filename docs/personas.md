@@ -29,3 +29,7 @@ Sara is a middle of the road home owners living in lower value housing that they
 ## Trevor – Limited Company
 
 Trevor is the Account Manager for a private limited company called Veleta, an SME with average turnover of 350k which mainly operates and sales online via other distribution platforms.
+
+## Joao - Low Income Informal Job
+
+Joao is a young journalist, without a bank account who works in a little local news agency among other informal jobs.
