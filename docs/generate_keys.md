@@ -37,5 +37,5 @@ npx pem-jwk publickey.pem > public.jwk
 If you need to generate jwk for your private key (you might need it depending on the code framework/language of your choice), just do the same passing this timethe private key pem file:
 
 ```bash
-pem-jwk private.pem > private.jwk
+npx pem-jwk private.pem > private.jwk
 ```
