@@ -31,12 +31,11 @@ rTrP34_HaMN7Z_W4GNV7KpxvzOc2jh0mKwWVAjzADyGNCuoxqFKPqunyQ8SvWNEg7Q9i07D9JDP9jVw"
 You could also use `pem-jwk` npm package tool from [here](https://www.npmjs.com/package/pem-jwk). Follow the instructions, basically run the following commands:
 
 ```bash
-npm install -g pem-jwk
-pem-jwk publickey.pem > public.jwk
+npx pem-jwk publickey.pem > public-jwk.json
 ```
 
 If you need to generate jwk for your private key (you might need it depending on the code framework/language of your choice), just do the same passing this timethe private key pem file:
 
 ```bash
-pem-jwk private.pem > private.jwk
+npx pem-jwk private.pem > private-jwk.json
 ```
