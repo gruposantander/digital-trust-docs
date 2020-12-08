@@ -33,3 +33,7 @@ Trevor is the Account Manager for a private limited company called Veleta, an SM
 ## Joao - Low Income Informal Job
 
 Joao is a young journalist, without a bank account who works in a little local news agency among other informal jobs.
+
+## Leo - High school
+
+Leo is in high school and lives with his parents. He has a bank account with small amount of money primarely given by family members and used for small purchases.
